@@ -1,7 +1,7 @@
 import React from 'react'
 import '../AuthCss/ResetPassword.css'
 import { useNavigate } from 'react-router-dom'
-import imgVector from '../assets/vector.svg'
+import imgVector from '../assets/Vector.svg'
 import logo from '../assets/Logo.svg'
 
 const ResetPassword = () => {
