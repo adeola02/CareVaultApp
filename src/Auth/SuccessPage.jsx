@@ -1,7 +1,7 @@
 import React from 'react'
 import '../AuthCss/SuccessPage.css'
 import { useNavigate } from 'react-router-dom'
-import imgVector from '../assets/vector.svg'
+
 import logo from '../assets/Logo.svg'
 
 const SuccessPage = () => {
@@ -12,7 +12,7 @@ const SuccessPage = () => {
         <div className="SuccessPage-form">
       <div className="logo">
       <img src={logo} alt="" />
-      <img src={imgVector} alt='' className='cancel'/>
+     
 
       </div>
       <div className="text-and-btn">

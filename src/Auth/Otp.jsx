@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../AuthCss/Otp.css'
 import OtpInput from 'react-otp-input';
-import imgVector from '../assets/vector.svg'
+
 import logo from '../assets/Logo.svg'
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ export const Otp = () => {
         <div className='otp-form'>
             <div className="logo">
             <img src={logo} alt="" />
-            <img src={imgVector} alt="" className='cancel' />
+            
             </div>
             <div className="otpHeaderText">
                 <h2>Please check your email</h2>

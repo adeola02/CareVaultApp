@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "../AuthCss/Sign.css";
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import imgVector from '../assets/Vector.svg'
+
 import logo from '../assets/Logo.svg'
 
 const SignUp = () => {
@@ -94,7 +94,7 @@ const handleChange = (e) => {
       <div className='Signup-FormHolder'>
         <div className='logo'>
           <img src={logo} alt="" />
-          <img src={imgVector} alt=""  className='cancel'/>
+         
         </div>
         <div className='formText'>
           <h2>Sign Up</h2>

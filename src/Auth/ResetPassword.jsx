@@ -1,7 +1,7 @@
 import React from 'react'
 import '../AuthCss/ResetPassword.css'
 import { useNavigate } from 'react-router-dom'
-import imgVector from '../assets/Vector.svg'
+
 import logo from '../assets/Logo.svg'
 
 const ResetPassword = () => {
@@ -12,7 +12,7 @@ const ResetPassword = () => {
         <form action="" className='resetPassword-form'>
         <div className='logo'>
         <img src={logo} alt="" />
-        <img src={imgVector} alt='' className='cancel'/>
+        
             </div>
             <div className='form-Text'>
                 <h2>Reset Password?</h2>

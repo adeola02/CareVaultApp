@@ -1,7 +1,7 @@
 import React from 'react'
 import '../AuthCss/Login.css'
 import { useNavigate } from 'react-router-dom'
-import imgVector from '../assets/Vector.svg'
+
 import logo from '../assets/Logo.svg'
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
       <form action="" className='login-form'>
         <div className='logo'>
         <img src={logo} alt="" />
-        <img src={ imgVector} alt='' className='cancel'/>
+       
         </div>
         <div className='login-header-text'>
           <h3>Welcome back</h3>
