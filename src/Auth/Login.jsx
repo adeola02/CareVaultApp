@@ -2,7 +2,7 @@ import React from 'react'
 import '../AuthCss/Login.css'
 import { useNavigate } from 'react-router-dom'
 
-import logo from '../assets/Logo.svg'
+import logo from '../assets/CareVault.png'
 
 const Login = () => {
   
@@ -15,8 +15,8 @@ const Login = () => {
   return (
     <div className='Login'>
       <form action="" className='login-form'>
-        <div className='logo'>
-        <img src={logo} alt="" />
+        <div className='company-logo'>
+        <img src={logo} alt="" style={{background:"white"}}/>
        
         </div>
         <div className='login-header-text'>

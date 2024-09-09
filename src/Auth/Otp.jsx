@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../AuthCss/Otp.css'
 import OtpInput from 'react-otp-input';
 
-import logo from '../assets/Logo.svg'
+import logo from '../assets/CareVault.png'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -12,7 +12,7 @@ export const Otp = () => {
   return (
     <div className='otp'>
         <div className='otp-form'>
-            <div className="logo">
+            <div className="company-logo">
             <img src={logo} alt="" />
             
             </div>

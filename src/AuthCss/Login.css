@@ -19,7 +19,9 @@
     gap: 12px;
 
 }
-
+.company-logo{
+    margin-right: auto;
+}
 .logo {  
     height: 10%;  
     width: 90%; 

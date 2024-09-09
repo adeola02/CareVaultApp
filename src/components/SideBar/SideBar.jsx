@@ -15,7 +15,7 @@ const SideBar = () => {
       <div>
         <img src={careVault} alt="" />
       </div>
-      <section>
+      <section className="sideBarSection">
           <NavLink
             to={"/dashBoard"}
             className={({ isActive }) => (isActive ? "isActive" : "notActive")}

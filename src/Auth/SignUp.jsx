@@ -3,7 +3,7 @@ import "../AuthCss/Sign.css";
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
-import logo from '../assets/Logo.svg'
+import logo from '../assets/CareVault.png'
 
 const SignUp = () => {
 
@@ -92,7 +92,7 @@ const handleChange = (e) => {
   return(
     <div className='SignUp'>
       <div className='Signup-FormHolder'>
-        <div className='logo'>
+        <div className='company-logo'>
           <img src={logo} alt="" />
          
         </div>
