@@ -1,0 +1,384 @@
+.SignUp {  
+    height: 100vh;  
+    width: 100%;  
+    background: linear-gradient(#5F9EEB, #315682);  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+}  
+
+.Signup-FormHolder {  
+    height: 85%;  
+    width: 45%;  
+    background: white;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: space-around;  
+    border-radius: 10px;  
+}  
+
+/* Logo */  
+/* .logo {  
+    height: 80px;  
+    width: 90%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    & img {  
+        object-fit: contain;  
+        height: 77%;  
+    } 
+    
+    .cancel{
+        height: 34%;
+        object-fit: contain;
+    }
+}   */
+
+/* Form Text */  
+.formText {  
+    height: 19%;  
+    width: 75%;  
+
+    & h2 {  
+        font-size: 2rem;  
+        margin-block-start: -10px;  
+    }  
+
+    & p {  
+        margin-block-start: -23px;   
+    }  
+}  
+
+/* Input Div */  
+.inputDiv {  
+    height: 41%;  
+    width: 75%;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: space-between;  
+
+    & input {  
+        height: 15%;  
+        width: 100%;  
+        border: 1px solid gray;  
+        border-radius: 10px;  
+        padding: 10px;  
+    }  
+}  
+
+.date-and-gender-div {  
+    height: 16%;  
+    width: 100%;  
+    display: flex;  
+    gap: 10px;  
+
+    & input,  
+    & select {  
+        height: 100%;  
+        width: 50%;  
+        border-radius: 10px;  
+        padding: 10px;  
+        border: 1px solid gray;  
+    }  
+}  
+
+.passwordDiv {  
+    height: 15%;  
+    width: 100%;  
+    border: 1px solid gray;  
+    border-radius: 10px;  
+    display: flex;  
+    padding: 10px;  
+    align-items: center;  
+
+    & input {  
+        border: none;  
+        outline: none;  
+        width: 95%; 
+        height: 100%; 
+        background-color: transparent;  
+    }  
+}  
+
+.termsdiv {  
+    height: 5%;  
+    width: 75%;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+
+    h6 {  
+        font-weight: lighter;  
+        font-size: 14px;  
+    }  
+}  
+
+.buttonDiv {  
+    height: 12%;  
+    width: 75%;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    margin-bottom: 10px;  
+    gap: 5px;  
+
+    button {  
+        height: 60%;  
+    }  
+
+    P {  
+        margin-block-start: 0px;  
+    }  
+} 
+
+
+/* Large desktops and laptops */
+@media (max-width: 1200px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 80%;
+    width: 50%;
+  }
+  
+  .logo {
+    height: 12%;
+  }
+  
+  .formText {
+    height: 20%;
+  }
+  
+  .inputDiv {
+    height: 40%;
+  }
+  
+  .date-and-gender-div {
+    height: 15%;
+  }
+  
+  .passwordDiv {
+    height: 14%;
+  }
+  
+  .termsdiv {
+    height: 6%;
+  }
+  
+  .buttonDiv {
+    height: 15%;
+  }
+}
+
+/* Medium desktops and tablets */
+@media (max-width: 768px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 75%;
+    width: 60%;
+  }
+  
+  .logo {
+    height: 15%;
+  }
+  
+  .formText {
+    height: 25%;
+  }
+  
+  .inputDiv {
+    height: 45%;
+  }
+  
+  .date-and-gender-div {
+    height: 18%;
+  }
+  
+  .passwordDiv {
+    height: 16%;
+  }
+  
+  .termsdiv {
+    height: 8%;
+  }
+  
+  .buttonDiv {
+    height: 20%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 428px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 70%;
+    width: 80%;
+  }
+  
+  .logo {
+    height: 20%;
+  }
+  
+  .formText {
+    height: 30%;
+  }
+  
+  .inputDiv {
+    height: 50%;
+  }
+  
+  .date-and-gender-div {
+    height: 20%;
+  }
+  
+  .passwordDiv {
+    height: 18%;
+  }
+  
+  .termsdiv {
+    height: 10%;
+  }
+  
+  .buttonDiv {
+    height: 25%;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 390px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 65%;
+    width: 85%;
+  }
+  
+  .logo {
+    height: 25%;
+  }
+  
+  .formText {
+    height: 35%;
+  }
+  
+  .inputDiv {
+    height: 55%;
+  }
+  
+  .date-and-gender-div {
+    height: 22%;
+  }
+  
+  .passwordDiv {
+    height: 20%;
+  }
+  
+  .termsdiv {
+    height: 12%;
+  }
+  
+  .buttonDiv {
+    height: 30%;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 376px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 60%;
+    width: 90%;
+  }
+  
+  .logo {
+    height: 30%;
+  }
+  
+  .formText {
+    height: 40%;
+  }
+  
+  .inputDiv {
+    height: 60%;
+  }
+  
+  .date-and-gender-div {
+    height: 25%;
+  }
+  
+  .passwordDiv {
+    height: 22%;
+  }
+  
+  .termsdiv {
+    height: 15%;
+  }
+  
+  .buttonDiv {
+    height: 35%;
+  }
+}
+
+/* Extremely small mobile devices */
+@media (max-width: 360px) {
+  .SignUp {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .Signup-FormHolder {
+    height: 85%;
+    width: 95%;
+  }
+  
+  .logo {
+    height: 35%;
+  }
+  
+  .formText {
+    height: 45%;
+  }
+  
+  .inputDiv {
+    height: 65%;
+  }
+  
+  .date-and-gender-div {
+    height: 28%;
+  }
+  
+  .passwordDiv {
+    height: 25%;
+  }
+  
+  .termsdiv {
+    height: 18%;
+  }
+  
+  .buttonDiv {
+    height: 40%;
+  }
+}
+

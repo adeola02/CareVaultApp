@@ -1,0 +1,259 @@
+.recordsBody{
+    width: 100%;
+    height: 88vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #5c9ae5;
+    background: #fafafa;
+}
+.recordsBody > input{
+    width: 50%;
+    height: 3rem;
+    background: #efefef;
+    border: none;
+    border-radius: 1rem;
+    color: #5c9ae5;
+    padding-left: 3rem;
+    /* position: relative; */
+}
+::placeholder{
+    color: #5c9ae5;
+}
+.search{
+    position: absolute;
+    left: 19rem;
+    top: 6.6rem;
+    cursor: pointer;
+}
+.recordsBody > .section{
+    width: 100%;
+    height: 50%;
+    background: #ffffff;
+    color: #5c9ae5;
+    padding: 1rem;
+
+    & .sectionMenu{
+    width: 80% !important;
+    height: 15%;
+   display: flex;
+   /* background: #000; */
+   justify-content: space-between;
+
+   & nav{
+   width: 25%;
+   }
+    }
+    
+}
+.recordsBody > .recordsCategory{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+
+
+    & div{
+    width: 30%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+
+    & div{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & span{
+            font-size: 1.5rm;
+        }
+    }
+    }
+}
+.section > span{
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+aside{
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: aqua; */
+}
+aside > .recordHolder{
+    /* background: #f00a0a; */
+    width: 100%;
+    display: flex;
+    /* height: 3rem !important; */
+    justify-content: space-between;
+}
+aside > .recordHolder > .record{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    /* height: 100%; */
+    /* background: #000; */
+}
+.record > nav{
+    width: 25%;
+    font-size: 1rem;
+    font-weight: lighter;
+  
+}
+.recordBtn{
+    width: 20%;
+    height: 3rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    /* padding: 0 10px; */
+    /* align-items: center; */
+    /* background: #000; */
+}
+.recordBtn > button{
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    color: #5c9ae5;
+    cursor: pointer;
+    background: #dbdbdb;
+    font-size: 1rem;
+}
+button:hover{
+    background: #dbdbdbc2;
+    transition: all 350ms ease-in-out;
+    color: #5c9ae7;
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1200px) {
+    .recordsBody > input {
+        width: 40%; /* Reduce input width slightly on large screens */
+    }
+
+    .recordsBody > .section .sectionMenu {
+        width: 60%; /* Slightly adjust section menu width */
+    }
+
+    .recordsBody > .recordsCategory div {
+        width: 28%; /* Adjust category widths for better alignment */
+    }
+}
+
+/* For tablets (768px to 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .recordsBody {
+        height: 80vh; /* Adjust height for tablet screens */
+    }
+
+    .recordsBody > input {
+        width: 60%; /* Increase input width for tablet view */
+        height: 2.8rem; /* Adjust input height */
+    }
+
+    .recordsBody > .section .sectionMenu {
+        width: 70%; /* Adjust section menu width for tablets */
+    }
+
+    .recordsBody > .recordsCategory div {
+        width: 45%; /* Categories take more space for tablet view */
+    }
+
+    .recordBtn {
+        width: fit-content; /* Adjust width of the record buttons */
+    }
+
+    aside > .recordHolder > .record {
+        width: 80%; /* Make records take more width on tablets */
+    }
+    .record > nav{
+      width: 27%;
+    }
+  
+}
+
+/* For mobile devices (less than 768px) */
+@media (max-width: 768px) {
+    .recordsBody {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 0.5rem; /* Reduce padding on mobile */
+    }
+
+    .recordsBody > input {
+        width: 80%; /* Input takes more width on mobile */
+        height: 2.5rem; /* Reduce input height for smaller screens */
+        padding-left: 1.5rem; /* Adjust padding */
+    }
+
+    .search {
+        left: 85%; /* Move search icon closer to the input */
+        top: 7.2rem; /* Adjust position */
+    }
+
+    .recordsBody > .section {
+        height: auto; /* Adjust section height dynamically */
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .recordsBody > .section .sectionMenu {
+        flex-direction: column; /* Stack menu items vertically */
+        width: 100%;
+        gap: 0.5rem; /* Add a small gap between items */
+    }
+
+    .recordsBody > .recordsCategory {
+        flex-direction: column; /* Stack categories vertically */
+        gap: 1rem;
+        height: auto;
+    }
+
+    .recordsBody > .recordsCategory div {
+        width: 100%; /* Each category takes full width */
+        height: auto;
+    }
+
+    .recordBtn {
+        width: 100%; /* Buttons take full width */
+        justify-content: center;
+        gap: 5px;
+    }
+
+    aside {
+        height: auto;
+        max-height: 40vh; /* Limit height for better scrolling */
+    }
+
+    aside > .recordHolder > .record {
+        width: 100%; /* Full width for record items */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sectionMenu{
+        display: none !important;
+    }
+}
+
+/* For small mobile devices (less than 480px) */
+@media (max-width: 480px) {
+    .recordsBody > input {
+        width: 90%; /* Almost full width input */
+        height: 2.5rem; /* Maintain reduced height */
+    }
+
+    .search {
+        left: 90%; /* Adjust search icon position */
+        top: 7.5rem;
+    }
+
+    .recordBtn > button {
+        width: 100%; /* Buttons take full width */
+        font-size: 0.9rem; /* Reduce button text size */
+    }
+}

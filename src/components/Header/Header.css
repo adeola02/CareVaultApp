@@ -1,0 +1,147 @@
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  position: fixed;
+  top: 0;
+  margin-bottom: 20rem;
+  inline-size: 100%;
+  background-color: white;
+
+  z-index: 99;
+
+  img {
+    margin: 0;
+  }
+  & .hamburger {
+    display: none;
+  }
+}
+
+nav {
+  font-weight: 600;
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 32px;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  & .log-in:hover,
+  & .sign-up:hover {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 5px;
+  }
+}
+
+/* Styling the tablet view */
+
+@media (width <= 830px) {
+  header {
+    justify-content: space-between;
+
+    & img {
+      flex-basis: 100%;
+    }
+    & .hamburger {
+      display: none;
+    }
+  }
+}
+
+/* Styling the mobile view */
+
+@media (width <= 640px) {
+  header {
+    justify-content: space-between;
+    padding-inline: initial;
+    overflow: hidden;
+
+    & img {
+      flex: 1;
+    }
+
+    & .hamburger {
+      display: block;
+    }
+
+    & .nav {
+      display: none;
+      position: relative;
+    }
+
+    & .nav.open {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      z-index: 99;
+      /* position: absolute; */
+      /* top: 10%; */
+      inline-size: 100vw;
+      block-size: 90svh;
+      background: rgba(199, 191, 191, 0.17);
+      border-radius: 2px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      animation: slide-in 0.7s ease-out;
+
+      & ul {
+        display: grid;
+        line-height: 3.5;
+        font-size: 1.3rem;
+      }
+    }
+
+    /* & .nav.close {
+      animation: slide-out 0.7s ease-out;
+    } */
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* @keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+/* Styling the watch view */
+@media (width <= 230px) {
+  .company-logo {
+    inline-size: 70px;
+  }
+
+  .nav.open {
+    background: initial;
+    /* margin-block-start: 3rem; */
+    opacity: initial;
+
+    & ul li {
+      line-height: initial;
+      display: flex;
+      margin-block-end: -10px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

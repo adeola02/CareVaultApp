@@ -1,0 +1,40 @@
+.userPageBody{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.outlets{
+    width: 85vw;
+    height: 100vh;
+    background:#c4dbf6;
+    background: #fafafa;
+}
+.userProfile{
+    width: 100%;
+    height: 12%;
+    background: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+}
+.userProfile > nav{
+    width: 3rem;
+    height: 3rem;
+    background: #5c9ae5;
+    border-radius: 50%;
+}
+.outLetsLayout{
+    width: 85vw;
+    min-height: 88%;
+    height: max-content;
+}
+
+@media   (max-width: 768px)  {
+    .outLetsLayout{
+        height: auto;
+        overflow: scroll !important;
+    }
+}

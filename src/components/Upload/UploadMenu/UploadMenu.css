@@ -1,0 +1,37 @@
+.UploadMenuBody{
+    width: 7rem;
+    height: 7rem;
+    background: #5c9ae5;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    left: 16rem;
+    color: #fff;
+    top: 12rem;
+    padding: 10px;
+}
+.UploadMenuBody > nav{
+    /* cursor: pointer; */
+    color: #f10c0c;
+    /* background: #000; */
+    display: flex;
+}
+
+.UploadMenuBody > .triangle{
+    border-top: 15px solid transparent;
+	border-right: 50px solid #5c9ae5;
+	border-bottom: 15px solid transparent;
+    position: absolute;
+    left: -3rem;
+}
+ .uploadMenuList{
+  width: 40%;
+  height: 100%;
+  background: #000;
+ }
+ .link{
+    color: #fff;
+    text-decoration: none;
+ }

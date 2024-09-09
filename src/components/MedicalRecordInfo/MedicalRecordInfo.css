@@ -1,0 +1,61 @@
+.medical-record-wrapper {
+  margin-block-start: 100px;
+  margin-block-end: 50px;
+  padding-inline: 1rem;
+
+  & .medical-record-image {
+    block-size: 400px;
+    inline-size: 100%;
+    padding: 20px;
+    border-radius: var(--radius);
+
+    & img {
+      block-size: 100%;
+      inline-size: 100%;
+    }
+  }
+
+  & .medical-record-text {
+    padding: 20px;
+    inline-size: 100%;
+
+    & h1 {
+      font-size: 2rem;
+      color: var(--blue);
+    }
+    & p {
+      font-size: 1.3rem;
+      text-wrap: balance;
+    }
+  }
+}
+
+@media (width <= 200px) {
+  .medical-record-wrapper {
+    & .medical-record-image {
+      block-size: 200px;
+
+      & img {
+        block-size: 100%;
+        inline-size: 100%;
+      }
+    }
+  }
+}
+
+@media (width >= 800px) {
+  .medical-record-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    & .medical-record-image {
+      inline-size: 50%;
+    }
+
+    & .medical-record-text {
+      inline-size: 50%;
+    }
+  }
+}

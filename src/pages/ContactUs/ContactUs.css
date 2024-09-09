@@ -1,0 +1,83 @@
+.contact-section {
+  max-block-size: 100svh;
+  & .contact-main {
+    inline-size: 100%;
+    block-size: 60svh;
+    position: relative;
+    top: 90px;
+    background: url("../../assets/ContactUs.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+
+    & h1 {
+      font-size: var(--h1);
+      margin-block-start: -30px;
+    }
+    & p {
+      max-inline-size: 450px;
+      margin-block-start: -30px;
+    }
+  }
+
+  & .contact-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: auto;
+    padding: 50px;
+    max-inline-size: 900px;
+    margin-top: 5rem;
+
+    & .contact-single-card {
+      border: 1px solid #3f3a3a;
+      inline-size: 200px;
+      block-size: 150px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 0.5;
+      border-radius: var(--radius);
+
+      & img {
+        margin-block-end: 20px;
+      }
+    }
+  }
+}
+
+/* Styling for wristwatch */
+@media (width <= 230px) {
+  .contact-section {
+    & .contact-main {
+      padding-top: 3rem;
+      display: grid;
+      min-block-size: 130px;
+
+      & h1 {
+        font-size: var(--h3);
+      }
+    }
+  }
+
+  .contact-cards-wrapper {
+    & .contact-single-card {
+      min-inline-size: 120px;
+      max-block-size: 135px;
+
+      & img {
+        inline-size: 30px;
+      }
+    }
+  }
+}

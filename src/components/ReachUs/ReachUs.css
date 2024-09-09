@@ -1,0 +1,69 @@
+.reach-us {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  block-size: auto;
+  inline-size: 80%;
+  background-color: var(--blue);
+  color: var(--white);
+  margin: auto;
+  padding-inline: 30px;
+  border-radius: var(--radius);
+  margin-block-end: -4rem;
+  position: relative;
+
+  & h1 {
+    flex: 1;
+  }
+  & .reachus-form {
+    border-radius: 5px;
+    display: flex;
+
+    & input {
+      outline: none;
+      border: 0;
+      padding: 10px;
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    & .btn {
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 0px 10px 10px 0px;
+      background-color: var(--blue);
+    }
+  }
+}
+
+@media (width >= 700px) {
+  .reach-us {
+    display: flex;
+    /* padding-inline: 5rem; */
+    & input {
+      inline-size: 300px;
+    }
+  }
+}
+
+@media (width <= 200px) {
+  .reach-us {
+    display: flex;
+    padding-inline: 2px;
+    & .reachus-form {
+      & input {
+        inline-size: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        margin-block-end: 5px;
+      }
+
+      & .btn {
+        padding: 10px;
+        inline-size: 100%;
+        border-radius: 5px;
+        background-color: var(--blue);
+      }
+    }
+  }
+}

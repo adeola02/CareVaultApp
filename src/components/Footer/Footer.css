@@ -1,0 +1,87 @@
+.footer {
+  padding-block-start: 80px;
+  padding-inline: 2rem;
+  color: var(--blue);
+  inline-size: 100%;
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+
+  & .footer-content {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+    align-items: flex-start;
+
+    & .footer-about {
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      & .footer-ul {
+        list-style-type: none;
+      }
+
+      & .footer-ul li:first-child {
+        font-size: 15px;
+        font-weight: 600;
+        margin-block-end: 5px;
+      }
+
+      & .footer-ul li {
+        font-size: 12px;
+      }
+    }
+  }
+
+  & .footer-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  & .company-socials {
+    & ul {
+      display: flex;
+      gap: 5px;
+      & li {
+        cursor: pointer;
+        list-style-type: none;
+      }
+    }
+  }
+
+  small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+  }
+
+  @media (width <= 200px) {
+    .footer {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+
+      & .footer-content {
+        & .footer-logo {
+          margin-inline-start: -140px;
+          inline-size: 100px;
+          display: grid;
+          place-items: center;
+          & img {
+            inline-size: 100%;
+          }
+        }
+        & .footer-about {
+          margin-inline-start: -19px;
+        }
+      }
+      & small {
+        margin-inline-start: -130px;
+      }
+    }
+  }
+}
