@@ -2,7 +2,7 @@ import "./MedicalRecordInfo.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import MedicalRecord from "../../assets/medicalrecord.png";
+import MedicalRecord from "../../assets/medicalRecord.png";
 
 const MedicalRecordInfo = () => {
   useEffect(() => {
