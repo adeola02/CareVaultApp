@@ -18,7 +18,19 @@
     justify-content: space-around;  
     border-radius: 10px;  
 }  
-
+.company-logo-holder{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+}
+.custom-input::placeholder{
+color: black;
+}
+select > option{
+  color: black;
+}
 /* Logo */  
 /* .logo {  
     height: 80px;  
