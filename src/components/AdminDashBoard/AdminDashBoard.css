@@ -1,7 +1,28 @@
 .adminMain{
     width: 100%;
-    height: 50vh;
+    height: 70%;
     background-color: white;
     padding: 1rem;
-    color: #e5ac5c;
+    color: #5c9ae5;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+.adminMain > div{
+    width: 100%;
+    height: 20%;
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+}
+.adminMain > div > nav{
+    width: 25%;
+}
+.adminMain > div > button{
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    color: #5c9ae5;
+    cursor: pointer;
+    background: #dbdbdb;
+    font-size: 1rem;
 }

@@ -6,6 +6,7 @@
   gap: 30px;
   margin: auto;
   margin-block-end: 50px;
+  justify-content: center;
 
   & li {
     list-style-type: none;

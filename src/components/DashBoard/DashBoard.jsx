@@ -31,7 +31,16 @@ const DashBoard = () => {
         </div>
       </section>
       <aside>
-        <div></div>
+        <div className="infoDiv">
+          <nav></nav>
+          <nav className="infoNav">
+           <div><span>Fullnmae</span><p>djdkdh</p></div>
+           <div>jfkfhf</div>
+           <div>jfkfhf</div>
+           <div>jfkfhf</div>
+           <div>jfkfhf</div>
+          </nav>
+        </div>
         <div className="quickUploadDiv">
           Quick upload
           {/* <button>Quick Upload</button> */}

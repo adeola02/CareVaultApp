@@ -21,6 +21,10 @@
 }
 .company-logo{
     margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    align-items: center;
 }
 .logo {  
     height: 10%;  

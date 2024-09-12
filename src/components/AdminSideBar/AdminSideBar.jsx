@@ -14,7 +14,7 @@ const AdminSideBar = () => {
       <div>
         <img src={careVault} alt="" />
       </div>
-      <section>
+      <section className="sideBarSection">
           <NavLink
             to={"/admindashBoard"}
             className={({ isActive }) => (isActive ? "isActive" : "notActive")}

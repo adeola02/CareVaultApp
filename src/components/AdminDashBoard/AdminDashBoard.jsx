@@ -1,5 +1,5 @@
 import React from 'react';
-import "./AdminDashBoard.css"
+import "./AdminDashBoard.css";
 
 
 const AdminDashBoard = () => {
@@ -28,7 +28,7 @@ const AdminDashBoard = () => {
           <div><span>Storage used</span></div>
         </div>
       </section>
-      <main className='adminMain'>
+      <div className='adminMain'>
         <div>
           <h3>Recently uploaded</h3>
         </div>
@@ -46,8 +46,8 @@ const AdminDashBoard = () => {
               <span>2024,august</span>
             </div>
             <div className="articleButton">
-              <button>View</button>
-              <button>Download</button>
+             
+              <button>Delte</button>
             </div>
           </div>
           <div>
@@ -57,8 +57,8 @@ const AdminDashBoard = () => {
               <span>2024,august</span>
             </div>
             <div className="articleButton">
-              <button>View</button>
-              <button>Download</button>
+             
+              <button>Delete</button>
             </div>
           </div>
           <div>
@@ -68,12 +68,12 @@ const AdminDashBoard = () => {
               <span>2024,august</span>
             </div>
             <div className="articleButton">
-              <button>View</button>
-              <button>Download</button>
+             
+              <button>Delete</button>
             </div>
           </div>
         </article>
-      </main>
+      </div>
     </div>
   )
 }
