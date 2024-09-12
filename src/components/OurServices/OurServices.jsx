@@ -6,21 +6,21 @@ import "aos/dist/aos.css";
 export const services = [
   {
     id: 118836,
-    image:
-      "https://www.beyondceliac.org/wp-content/uploads/2021/02/celiac-disease-covid-vaccine-768x512.png",
-    text: "CareVault makes patients to have access to the medical records kept by to anytime and anywhere. ",
+    number: "01",
+    header: "Accessibility",
+    text: "CareVault makes your medical records easy to access in time of need.",
   },
   {
     id: 933372,
-    image:
-      "https://t4.ftcdn.net/jpg/01/22/55/81/240_F_122558130_bmc27X1wYDEFxPZPEu8isc0ilwLMmZFD.jpg",
-    text: "CareVault makes patients medical records more secured in order to prevent any misconduct to the patient’s medical record.",
+    number: "02",
+    header: "Security",
+    text: "CareVault makes your medical records secured for future references.",
   },
   {
     id: 499476,
-    image:
-      "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/9721/live/6309d680-3e23-11ed-9ae9-959994b8a64c.jpg.webp",
-    text: "CareVault helps patients to sort out any problem concerning their medical record in time of need.",
+    number: "03",
+    header: "Reliability",
+    text: "CareVault validate data, preventing errors and ensuring data accuracy.",
   },
 ];
 
@@ -34,10 +34,13 @@ const OurServices = () => {
       className="our-services"
       aria-label="A section that consisted of service list on vaccinations"
     >
-      <ul className="service-list" data-aos="fade-up">
-        {services.map((service) => (
-          <Service service={service} key={service.id} />
-        ))}
+      <h1 className="ourservice-header">WHAT WE OFFER</h1>
+      <ul className="service-list-wrapper" data-aos="fade-up">
+        <div className="service-list">
+          {services.map((service) => (
+            <Service service={service} key={service.id} />
+          ))}
+        </div>
       </ul>
     </section>
   );
@@ -46,12 +49,9 @@ const OurServices = () => {
 const Service = ({ service }) => {
   return (
     <li className="single-service-wrapper">
-      <div className="service-image">
-        <img src={service.image} alt={service.text} />
-      </div>
-      <div className="service-text">
-        <p className="text">{service.text}</p>
-      </div>
+      <h1>{service.number}</h1>
+      <h2>{service.header}</h2>
+      <p className="text">{service.text}</p>
     </li>
   );
 };

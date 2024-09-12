@@ -5,7 +5,7 @@
     /* colors */
     --white: #ffffff;
     --black: #000;
-    --blue: #0000ff;
+    --blue: #5c9ae5;
     --lightgreen: #00f8c4;
     --border-color: #5d9be6;
 
@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     inline-size: 100%;
-    font-family: "Rubik", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: calc(0.6em + 1vmin);
   }
 
