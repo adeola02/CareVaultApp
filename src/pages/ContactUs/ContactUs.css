@@ -51,6 +51,8 @@
 
       & img {
         margin-block-end: 20px;
+        filter: invert(57%) sepia(68%) saturate(648%) hue-rotate(171deg)
+          brightness(80%) contrast(97%);
       }
     }
   }

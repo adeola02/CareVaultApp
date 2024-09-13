@@ -38,6 +38,7 @@
     padding-inline: 10px;
     text-wrap: balance;
     text-align: center;
+    color: var(--blue);
   }
 
   & a {

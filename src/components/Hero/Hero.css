@@ -24,12 +24,8 @@
     }
     & p {
       max-inline-size: 450px;
-      margin-block-start: -30px;
-    }
-
-    & .hero-btn {
-      height: 40px;
-      width: 150px;
+      margin-block-start: -20px;
+      margin-block-end: 40px;
     }
   }
 }

@@ -2,7 +2,7 @@ import "./Goals.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Story from "../../../assets//story.png";
+import Objective from "../../../assets/goals.png";
 
 const Goals = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const Goals = () => {
   return (
     <section className="goals-info-wrapper" data-aos="fade-up">
       <div className="goals-info-image">
-        <img src={Story} alt="A health professional injecting a baby" />
+        <img src={Objective} alt="A health professional injecting a baby" />
       </div>
       <div className="goals-info-text" data-aos="fade-up">
         <h1 className="goals-info-header">GOALS AND OBJECTIVES </h1>

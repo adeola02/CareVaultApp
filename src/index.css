@@ -48,6 +48,7 @@
   /*Allow percentage-based heights in the applicationand also remover browser padding and margin*/
   html,
   body {
+    overflow-x: clip;
     block-size: 100%;
     margin: 0;
     padding: 0;
