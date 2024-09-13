@@ -3,7 +3,7 @@ header {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 1rem;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   margin-bottom: 20rem;
@@ -34,13 +34,29 @@ nav {
 
   & a {
     text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s ease-in-out;
+    padding: 5px 15px;
+    /* box-sizing: border-box; */
+    border-radius: var(--radius);
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & .log-in {
+    margin-inline-start: 5rem;
   }
 
   & .log-in:hover,
   & .sign-up:hover {
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    padding: 5px;
+    text-decoration: none;
+    background-color: var(--blue);
+    color: var(--white);
+    /* padding: 5px 15px; */
+    border: 2px solid var(--blue);
+    /* transition: background-color 0.3s ease; */
   }
 }
 
@@ -48,13 +64,20 @@ nav {
 
 @media (width <= 830px) {
   header {
-    justify-content: space-between;
+    justify-content: center;
 
     & img {
       flex-basis: 100%;
     }
     & .hamburger {
       display: none;
+    }
+    & ul {
+      justify-content: center;
+    }
+
+    & .log-in {
+      margin: 0;
     }
   }
 }
@@ -98,6 +121,10 @@ nav {
         display: grid;
         line-height: 3.5;
         font-size: 1.3rem;
+
+        & .log-in {
+          margin: 0;
+        }
       }
     }
 

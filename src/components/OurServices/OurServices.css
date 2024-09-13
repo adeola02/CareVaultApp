@@ -5,6 +5,7 @@
   margin: auto;
   background-color: #fafafa;
   padding: 40px;
+  margin-block-end: -4rem;
 }
 
 .service-list li {

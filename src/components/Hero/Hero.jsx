@@ -2,6 +2,7 @@ import "./Hero.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Button from "../../Utils/Button/Button";
 
 const Hero = () => {
   useEffect(() => {
@@ -16,7 +17,8 @@ const Hero = () => {
           <p>
             Securely access and manage your medical records anytime, anywhere.
           </p>
-          <button className="hero-btn">Get Started</button>
+          <Button className="hero-btn">Get Started</Button>
+          {/* <button className="hero-btn">Get Started</button> */}
         </section>
       </main>
     </>

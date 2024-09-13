@@ -59,7 +59,7 @@ const Header = () => {
             <NavLink
               to="/"
               style={({ isActive }) =>
-                isActive ? { color: "#0000ff" } : { color: "#000" }
+                isActive ? { color: "#5E9DEA" } : { color: "#000" }
               }
             >
               Home
@@ -69,7 +69,7 @@ const Header = () => {
             <NavLink
               to="/about-us"
               style={({ isActive }) =>
-                isActive ? { color: "#0000ff" } : { color: "#000" }
+                isActive ? { color: "#5E9DEA" } : { color: "#000" }
               }
             >
               About Us
@@ -79,18 +79,18 @@ const Header = () => {
             <NavLink
               to="/contact-us"
               style={({ isActive }) =>
-                isActive ? { color: "#0000ff" } : { color: "#000" }
+                isActive ? { color: "#5E9DEA" } : { color: "#000" }
               }
             >
               Contact Us
             </NavLink>
           </li>
-          <li onClick={handleNavLinkClick} role="button">
+          <li onClick={handleNavLinkClick}>
             <NavLink to="/log-in" className="log-in">
               Log In
             </NavLink>
           </li>
-          <li onClick={handleNavLinkClick} role="button">
+          <li onClick={handleNavLinkClick}>
             <NavLink to="/sign-up" className="sign-up">
               Sign Up
             </NavLink>
