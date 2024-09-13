@@ -1,4 +1,3 @@
-import React from "react";
 import "../AuthCss/Login.css";
 import { useNavigate } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
@@ -17,7 +16,7 @@ const Login = () => {
         <div className="company-logo-holder">
           <div className="company-logo">
             <img src={logo} alt="" />
-            <MdCancel size={30} cursor="pointer" onClick={()=>nav("/")} />
+            <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
           </div>
         </div>
         <div className="login-header-text">

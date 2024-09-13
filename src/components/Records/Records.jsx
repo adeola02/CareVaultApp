@@ -1,12 +1,15 @@
-import React from "react";
 import "./Records.css";
-import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch, IoIosClose } from "react-icons/io";
 
 const Records = () => {
   return (
     <div className="recordsBody">
-      <IoIosSearch size={30} className="search"/>
-      <input type="search" name="" id=""placeholder="Search"/>
+      <div className="input">
+        <IoIosSearch size={25} className="search" />
+        <input type="search" name="" id="" placeholder="Search" />
+        {/* <IoIosClose size={25} className="cancel" /> */}
+      </div>
+
       <div className="section">
         <span>All records</span>
         <div className="sectionMenu">
@@ -36,20 +39,25 @@ const Records = () => {
           <div>
             <h2>7</h2>
           </div>
-          <div><span>Lab test</span></div>
+          <div>
+            <span>Lab test</span>
+          </div>
         </div>
         <div>
           <div>
-
-          <h2>3</h2>
+            <h2>3</h2>
           </div>
           <div>
             <span>Drug Prescription</span>
           </div>
         </div>
         <div>
-          <div><h2>6</h2></div>
-          <div><span>Reports</span></div>
+          <div>
+            <h2>6</h2>
+          </div>
+          <div>
+            <span>Reports</span>
+          </div>
         </div>
       </div>
     </div>

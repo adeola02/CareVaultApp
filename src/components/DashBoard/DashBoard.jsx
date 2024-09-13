@@ -1,12 +1,11 @@
-import React from "react";
 import "./DashBoard.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DashBoard = () => {
   return (
     <div className="dashBoardBody">
-      <ToastContainer/>
+      <ToastContainer />
       <section>
         <div>
           <div>
@@ -21,24 +20,30 @@ const DashBoard = () => {
             <h2>Blood test result</h2>
           </div>
           <div>
-          <span>  last update</span></div>
+            <span> last update</span>
+          </div>
         </div>
         <div>
           <div>
             <h2>1.2gb of 2gb</h2>
           </div>
-          <div><span>Storage used</span></div>
+          <div>
+            <span>Storage used</span>
+          </div>
         </div>
       </section>
       <aside>
         <div className="infoDiv">
           <nav></nav>
           <nav className="infoNav">
-           <div><span>Fullnmae</span><p>djdkdh</p></div>
-           <div>jfkfhf</div>
-           <div>jfkfhf</div>
-           <div>jfkfhf</div>
-           <div>jfkfhf</div>
+            <div>
+              <span>Fullnmae</span>
+              <p>djdkdh</p>
+            </div>
+            <div>jfkfhf</div>
+            <div>jfkfhf</div>
+            <div>jfkfhf</div>
+            <div>jfkfhf</div>
           </nav>
         </div>
         <div className="quickUploadDiv">
@@ -65,12 +70,18 @@ const DashBoard = () => {
             </div>
             <div className="articleButton">
               <button>View</button>
-              <button onClick={()=>toast("you've successfully downloaded your file")}>Download</button>
+              <button
+                onClick={() =>
+                  toast("you've successfully downloaded your file")
+                }
+              >
+                Download
+              </button>
             </div>
           </div>
           <div>
             <div className="records">
-            <nav>Bload test</nav>
+              <nav>Bload test</nav>
               <nav>Lab test</nav>
               <nav>2024,august</nav>
             </div>
@@ -81,7 +92,7 @@ const DashBoard = () => {
           </div>
           <div>
             <div className="records">
-            <nav>Bload test</nav>
+              <nav>Bload test</nav>
               <nav>Lab test</nav>
               <nav>2024,august</nav>
             </div>
