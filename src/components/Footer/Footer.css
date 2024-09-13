@@ -4,7 +4,7 @@
   color: var(--blue);
   inline-size: 100%;
   margin-top: auto;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--blue);
 
   & .footer-content {
     display: flex;
@@ -51,14 +51,24 @@
     }
   }
 
+  & .line-through {
+    border: 1px solid var(--blue);
+  }
+
   small {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3px;
     font-size: 12px;
+    padding-block-end: 20px;
   }
 
+  @media (width >= 767px) {
+    & .line-through {
+      display: none;
+    }
+  }
   @media (width <= 200px) {
     .footer {
       display: grid;
