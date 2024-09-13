@@ -9,9 +9,9 @@ const ReachUs = () => {
   }, []);
   return (
     <section className="reach-us" data-aos="zoom-out-down">
-      <h1>
+      <h3>
         Need Help in keeping records? <br /> Yes, We can!
-      </h1>
+      </h3>
       <form className="reachus-form">
         <label htmlFor="text">
           <input id="text" placeholder="Enter your mail" />

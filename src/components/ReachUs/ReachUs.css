@@ -2,44 +2,47 @@
   display: none;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  block-size: auto;
-  inline-size: 80%;
+  justify-content: space-between;
+  /* block-size: 100px; */
+  inline-size: 90%;
   background-color: var(--blue);
   color: var(--white);
   margin: auto;
   padding-inline: 30px;
   border-radius: var(--radius);
-  margin-block-end: -4rem;
+  margin-block-end: -3rem;
   position: relative;
 
-  & h1 {
+  & h3 {
     flex: 1;
+    max-inline-size: 50%;
   }
   & .reachus-form {
     border-radius: 5px;
     display: flex;
+    /* max-inline-size: 50%; */
 
     & input {
       outline: none;
       border: 0;
-      padding: 10px;
       border-radius: 10px 0px 0px 10px;
+      block-size: 50px;
     }
 
     & .btn {
-      padding: 10px;
       font-size: 14px;
       border-radius: 0px 10px 10px 0px;
-      background-color: var(--blue);
+      background-color: blue;
+      block-size: 50px;
+      padding-inline: 10px;
     }
   }
 }
 
-@media (width >= 700px) {
+@media (width >= 767px) {
   .reach-us {
     display: flex;
-    /* padding-inline: 5rem; */
+    padding-inline: 5rem;
     & input {
       inline-size: 300px;
     }

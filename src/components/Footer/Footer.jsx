@@ -45,6 +45,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <hr className="line-through" />
       <small>
         <span>&#169;</span>2024 CareVault, All Rights Reserves
       </small>
