@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import "./DashBoard.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaUserLarge } from "react-icons/fa6";
 
 const DashBoard = () => {
   const user=useSelector((state)=>state.app?.user)
@@ -37,16 +38,23 @@ const DashBoard = () => {
       </section>
       <aside>
         <div className="infoDiv">
-          <nav></nav>
+          <nav><FaUserLarge size={150}/></nav>
           <nav className="infoNav">
-            <div>
-              <span>Fullnmae</span>
-              <p>djdkdh</p>
-            </div>
-            <div>jfkfhf</div>
-            <div>jfkfhf</div>
-            <div>jfkfhf</div>
-            <div>jfkfhf</div>
+          <div>
+            <h3>Fullname:</h3><h5>{user.fullName}</h5>
+          </div>
+          <div>
+            <h3>Email:</h3><h5>{user.email}</h5>
+          </div>
+          <div>
+            <h3>Phone number:</h3><h5>{user.phoneNumber}</h5>
+          </div>
+          <div>
+            <h3>Date of birth:</h3><h5>{user.dateOfBirth}</h5>
+          </div>
+          <div>
+            <h3>Gender:</h3><h5>{user.gender}</h5>
+          </div>
           </nav>
         </div>
         <div className="quickUploadDiv">
