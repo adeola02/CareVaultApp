@@ -5,8 +5,11 @@ import logo from "../assets/CareVault.png";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { appUser } from "../Global/slice";
 
 const Login = () => {
+  const dispatch=useDispatch();
   const nav = useNavigate();
   const [isLoading,setIsLoading]=useState(false);
   const [email,setEmail]=useState("");
@@ -47,7 +50,7 @@ console.log(passWord)
       .post(url,data)
       .then((res)=>{
         setIsLoading(false);
-        console.log(res);
+      console.log(res?.data?.data?.user);
         nav("/otp")
       })
       .catch((err)=>{

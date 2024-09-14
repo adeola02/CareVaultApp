@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "../AuthCss/Otp.css";
 import OtpInput from "react-otp-input";
-
 import logo from "../assets/CareVault.png";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { appUser } from "../Global/slice";
 
 export const Otp = () => {
   const [otp, setOtp] = useState("");
   const [isLoading,setIsLoading]=useState(false);
+  const dispatch=useDispatch();
   console.log(otp);
   const nav = useNavigate();
   const handleOtp = () => {
@@ -23,7 +25,7 @@ export const Otp = () => {
       axios.post(url, data)
       .then((res)=>{
           setIsLoading(false);
-          console.log(res)
+          dispatch(appUser(res?.data?.user))
           nav("/dashBoard")
       })
       .catch((error)=>{

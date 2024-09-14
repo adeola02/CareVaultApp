@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import "./DashBoard.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const DashBoard = () => {
+  const user=useSelector((state)=>state.app?.user)
+  console.log(user)
   return (
     <div className="dashBoardBody">
       <ToastContainer />
