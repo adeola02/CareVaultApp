@@ -3,7 +3,7 @@
   background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
   display: grid;
   place-items: center;
-  block-size: 100%;
+  block-size: 100svh;
 
   & input,
   & select {
@@ -100,17 +100,21 @@
   }
 }
 
-@media (width <= 767px) {
+@media (width <= 768px) {
   .signup-wrapper {
     width: 90%;
+
     & .signup-form {
       width: 90%;
     }
   }
+  .signup-page {
+    block-size: 100svh;
+  }
 }
 
-@media (width <= 450px) {
+@media (width <= 500px) {
   .signup-page {
-    block-size: 100%;
+    block-size: 100svh;
   }
 }

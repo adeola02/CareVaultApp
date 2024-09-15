@@ -28,10 +28,6 @@
       font-size: 1.3rem;
     }
   }
-
-  .lg-none {
-    display: none;
-  }
 }
 
 @media (width <= 200px) {
@@ -50,7 +46,6 @@
 @media (width >= 800px) {
   .our-team-info-wrapper {
     display: flex;
-    flex-direction: row-reverse;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;

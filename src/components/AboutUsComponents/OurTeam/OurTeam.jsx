@@ -10,10 +10,6 @@ const OurTeam = () => {
   }, []);
   return (
     <section className="our-team-info-wrapper" data-aos="fade-up">
-      <h2 className="our-team-info-header sm-block">OUR TEAM</h2>
-      <div className="our-team-info-image">
-        <img src={Team} alt="A health professional injecting a baby" />
-      </div>
       <div className="our-team-info-text" data-aos="fade-up">
         <h2 className="our-team-info-header lg-none">OUR TEAM </h2>
         <p>
@@ -24,6 +20,9 @@ const OurTeam = () => {
           patient’s misplacement of record at any time. Let’s see the CareVault
           team below:
         </p>
+      </div>
+      <div className="our-team-info-image">
+        <img src={Team} alt="A health professional injecting a baby" />
       </div>
     </section>
   );

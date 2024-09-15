@@ -23,8 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* justify-content: space-around; */
+  padding-bottom: 20px;
   border-radius: 10px;
   padding-top: 20px;
 }
@@ -77,20 +76,24 @@
 .forgot-password {
   display: flex;
   justify-content: flex-end;
+  padding: 10px 0px;
 }
 
-@media (width <= 767px) {
+@media (width <= 900px) {
   .login-wrapper {
     width: 90%;
     & .login-form {
       width: 90%;
     }
   }
+  .login-page {
+    block-size: 100svh;
+  }
 }
 
 @media (width <= 500px) {
   .login-page {
-    block-size: 100%;
+    block-size: 100svh;
   }
 }
 
