@@ -98,6 +98,9 @@ export const router = createHashRouter([
       {
         path:"uploadManual",
         element:<ManualUpload/>
+      },
+      {
+        
       }
     ]
   },
