@@ -153,7 +153,7 @@ const SignUp = () => {
               <input
                 id="email"
                 type="email"
-                placeholder="Email"
+                placeholder="E-mail"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}

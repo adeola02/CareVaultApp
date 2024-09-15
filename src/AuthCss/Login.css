@@ -4,10 +4,14 @@
   display: grid;
   place-items: center;
   block-size: 100svh;
-
   & input,
   & select {
     height: 40px;
+  }
+
+  ::placeholder {
+    color: #000;
+    padding: 0;
   }
 }
 
@@ -84,7 +88,7 @@
   }
 }
 
-@media (width <= 400px) {
+@media (width <= 430px) {
   .login-page {
     block-size: 100%;
   }
