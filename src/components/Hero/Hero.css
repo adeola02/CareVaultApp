@@ -37,7 +37,8 @@
   font-size: 20px;
   font-weight: 600;
   overflow: clip;
-  width: 40%;
+  width: fit-content;
+  padding-inline: 20px;
   position: relative;
   text-decoration: none;
   transition: 0.2s transform ease-in-out;

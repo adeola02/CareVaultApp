@@ -11,7 +11,7 @@ const MedicalRecordInfo = () => {
   return (
     <section className="medical-record-wrapper" data-aos="fade-up">
       <div className="medical-record-text" data-aos="fade-up">
-        <h1 className="medical-record-header">UPLOAD AND DOWNLOAD</h1>
+        <h2 className="medical-record-header">UPLOAD AND DOWNLOAD</h2>
         <p>
           CareVault as a medical record platform makes it easier for patients to
           upload their medical records in three ways, which are as

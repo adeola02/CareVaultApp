@@ -9,6 +9,11 @@
   & select {
     height: 40px;
   }
+
+  ::placeholder {
+    color: #000;
+    padding: 0;
+  }
 }
 
 .signup-wrapper {
@@ -27,7 +32,6 @@
   justify-content: space-between;
   align-items: center;
   inline-size: 90%;
-  /* margin-block-start: -30px; */
 }
 
 /* Signup Form */
@@ -51,14 +55,16 @@
     display: flex;
     justify-content: space-between;
     & label:first-child {
-      inline-size: 45%;
+      background-color: transparent;
+      inline-size: 48%;
       & input {
         inline-size: 100%;
       }
     }
 
     & label:last-child {
-      inline-size: 45%;
+      background-color: transparent;
+      inline-size: 48%;
       & select {
         inline-size: 100%;
       }
@@ -81,7 +87,7 @@
 .terms-wrapper {
   margin-block-end: 20px;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   & input {
     block-size: 20px;
@@ -90,6 +96,7 @@
 
   & span {
     color: #000;
+    text-align: start;
   }
 }
 
@@ -102,7 +109,7 @@
   }
 }
 
-@media (width <= 400px) {
+@media (width <= 450px) {
   .signup-page {
     block-size: 100%;
   }
