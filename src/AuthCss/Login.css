@@ -63,7 +63,7 @@
     position: relative;
     & .password-icon {
       position: absolute;
-      top: 30%;
+      top: 25%;
       right: 20px;
       cursor: pointer;
     }
@@ -73,12 +73,6 @@
 .forgot-password {
   display: flex;
   justify-content: flex-end;
-}
-
-Button {
-  margin: auto;
-  margin-block-end: 20px;
-  inline-size: 100%;
 }
 
 @media (width <= 767px) {
@@ -92,11 +86,13 @@ Button {
 
 @media (width <= 400px) {
   .login-page {
-    block-size: 100svh;
+    block-size: 100%;
   }
 }
 
-Button {
-  margin-top: 1rem;
-  min-inline-size: 100%;
+.btn1:hover {
+  cursor: pointer;
+  font-size: bold;
+  background-color: blue;
+  color: white;
 }

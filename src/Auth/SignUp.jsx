@@ -6,7 +6,6 @@ import { MdCancel } from "react-icons/md";
 import logo from "../assets/CareVault.png";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
-import Button from "../Utils/Button/Button";
 
 const SignUp = () => {
   const nav = useNavigate();
@@ -221,12 +220,17 @@ const SignUp = () => {
               </span>
             </div>
 
-            <Button onClick={handleSubmit}>
+            <button className="btn1" onClick={handleSubmit}>
               {isLoading ? "Loading..." : "Sign Up"}
-            </Button>
+            </button>
             <p>
               Already have an account?{" "}
-              <span onClick={() => nav("/log-in")}>Log in</span>
+              <span
+                onClick={() => nav("/log-in")}
+                style={{ cursor: "pointer" }}
+              >
+                Log in
+              </span>
             </p>
           </form>
           <ToastContainer />

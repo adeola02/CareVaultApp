@@ -3,6 +3,7 @@
   background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
   display: grid;
   place-items: center;
+  block-size: 100%;
 
   & input,
   & select {
@@ -92,11 +93,6 @@
   }
 }
 
-Button {
-  margin: auto;
-  margin-block-end: 20px;
-}
-
 @media (width <= 767px) {
   .signup-wrapper {
     width: 90%;
@@ -108,6 +104,6 @@ Button {
 
 @media (width <= 400px) {
   .signup-page {
-    block-size: 100svh;
+    block-size: 100%;
   }
 }
