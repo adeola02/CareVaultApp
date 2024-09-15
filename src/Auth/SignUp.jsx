@@ -90,14 +90,12 @@ const SignUp = () => {
         .post(url, formData)
         .then((res) => {
           setIsLoading(false);
-          console.log(res);
           toast.success("Sign up successful! Redirecting...");
-          nav("/dashboard");
+          nav("/verification");
         })
         .catch((err) => {
           setIsLoading(false);
-          console.log(err);
-          toast.error("Sign up failed. Please try again.");
+         toast.error(err.response.data);
         });
     }
   };

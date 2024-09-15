@@ -1,0 +1,29 @@
+.viewPageBody{
+   
+    width: 100%;
+    height:88vh;
+}
+.viewTop{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.viewTopContent{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.viewedObject{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+.viewedObject > div{
+    background: #000;
+    width: 50%;
+    height: 100%;
+}

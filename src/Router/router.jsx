@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {  createHashRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import Error from "../pages/Error";
 import SignUp from "../Auth/SignUp";
@@ -20,9 +20,10 @@ import ManualUpload from "../components/Upload/Manual/ManualUpload";
 import AdminLayout from "../Layouts/AdminLayout/AdminLayout";
 import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 import AdminRecords from "../components/AdminRecordList/AdminRecords";
+import View from "../components/View/View";
 // import Header from "../components/Header/Header";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "sign-up",
     element: <SignUp />,
@@ -98,6 +99,10 @@ export const router = createBrowserRouter([
       {
         path:"uploadManual",
         element:<ManualUpload/>
+      },
+      {
+        path:"/view",
+        element:<View/>
       }
     ]
   },
