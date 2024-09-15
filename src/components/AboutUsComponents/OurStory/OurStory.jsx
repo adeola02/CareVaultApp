@@ -1,4 +1,4 @@
-import "./OurStory.css"
+import "./OurStory.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,7 +11,7 @@ const Ourstory = () => {
   return (
     <section className="carevault-info-wrapper" data-aos="fade-up">
       <div className="carevault-info-text" data-aos="fade-up">
-        <h1 className="carevault-info-header">OUR STORY </h1>
+        <h2 className="carevault-info-header">OUR STORY </h2>
         <p>
           CareVault team has played a big role in fetching out a problem that
           patients do face and also bring out a simplified solution to it in

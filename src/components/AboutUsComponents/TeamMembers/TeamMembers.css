@@ -1,6 +1,7 @@
 .team-members-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 0;
   flex-wrap: wrap;
   max-inline-size: 80%;
   gap: 30px;
@@ -30,7 +31,7 @@
       border-top-left-radius: var(--radius);
       border-top-right-radius: var(--radius);
       display: inline-block;
-      animation: roll-in 2s ease-in-out;
+      animation: roll-in 3s ease-in-out 1 forwards;
     }
   }
 
@@ -49,7 +50,7 @@
 
 @media (width <= 300px) {
   .single-member-wrapper {
-    & .service-image {
+    & .member-image {
       block-size: 100px;
       inline-size: 100px;
 
