@@ -1,48 +1,70 @@
-import React from 'react'
-import '../AuthCss/ForgetPassword.css'
-import { useNavigate } from 'react-router-dom'
-import logo from '../assets/Logo.svg'
+import "../AuthCss/ForgetPassword.css";
+import { useNavigate } from "react-router-dom";
+
+import logo from "../assets/CareVault.png";
+import { toast, ToastContainer } from "react-toastify";
+import { MdCancel } from "react-icons/md";
+import { useState } from "react";
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+  const nav = useNavigate();
 
-    const nav = useNavigate()
+  const handleResendPasssword = () => {
+    console.log("Check your email");
+  };
+
+  const handleEmail = (event) => {
+    const data = event.target.value;
+    setEmail(data);
+
+    if (data.trim() === "") {
+      toast.error("email is required");
+    }
+  };
   return (
-    <div className='forgotPassword'>
-        <div className='formDiv'>
-            <div className="logo">
-                <img src={logo} alt="" />
-            </div>
-            <div className="form-Text">
-                <h2>Forgot Password?</h2>
-                <p>Enter your email, an email will be sent for security purpses</p>
-            </div>
-            <div className="forgotPassword-inputDiv">
-                <input type="email" placeholder='Email' />
-                <button>Send Code</button>  
-                <h5>Remember Password? <span onClick={()=>nav('/login')}>Login</span></h5>              
-            </div>
+    <div className="forget-password-page">
+      <ToastContainer />
+      <section action="" className="forget-password-wrapper">
+        <div className="forget-password-header">
+          <div className="company-logo">
+            <img src={logo} alt="" />
+          </div>
+          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
         </div>
-     
+        <form
+          action=""
+          className="forget-password-form"
+          onSubmit={handleResendPasssword}
+        >
+          <div className="formText">
+            <h3>Forgot password?</h3>
+            <p>Please enter the email associated with you account.</p>
+          </div>
 
-        
+          <label htmlFor="email">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleEmail}
+              value={email}
+              required
+              className="custom-input"
+            />
+          </label>
+
+          <button className="btn1" onClick={handleResendPasssword}>
+            Send code
+          </button>
+          <p>
+            Remember password? <span onClick={() => nav("/login")}>Log in</span>
+          </p>
+        </form>
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default ForgotPassword
-
-//    {/* <form action="" className='forgotPassword-form'>
-//             <div className='logo'>
-//             <img src={logo} alt="" />
-//             <img src={img} alt='' className='cancel'/>
-//             </div>
-//             <div className='form-text'>
-//                 <h2>Forgot Password?</h2>
-//             </div>
-
-//             <div className="forgotPassword-input-div">
-//                 <input type="email"  placeholder='Email' required/>
-//                 <button>Send Code</button>
-//                 <p>Remember Password? <span onClick={()=>nav('/login')}>Login</span></p>
-//             </div>
-//         </form> */}
+export default ForgotPassword;

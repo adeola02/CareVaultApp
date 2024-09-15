@@ -7,91 +7,139 @@ import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { appUser } from "../Global/slice";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const nav = useNavigate();
-  const [isLoading,setIsLoading]=useState(false);
-  const [email,setEmail]=useState("");
-  const [passWord,setPassWord]=useState("");
-  
+  const [showPassword, setShowPassword] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [passWord, setPassWord] = useState("");
 
-  const handleEmail=(event)=>{
-     const data=event.target.value;
+  const handleEmail = (event) => {
+    const data = event.target.value;
     setEmail(data);
 
-    if(data.trim()=== ""){
-      toast.error("email is required")
+    if (data.trim() === "") {
+      toast.error("email is required");
     }
     // else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data)){
     //   toast.error("invalid email format")
     // }
-  }
-  const handlePassWord=(event)=>{
-    const data=event.target.value;
+  };
+  const handlePassWord = (event) => {
+    const data = event.target.value;
     setPassWord(data);
 
-    if(data.trim()===""){
-      toast.error("password is required")
-    }
-  }
-
-  
-console.log(passWord)
-  const handleLogin = (event) => {
-    event.preventDefault();
-    if(!email || !passWord){
-      toast.error("input all datas")
-    }else {
-      setIsLoading(true);
-      const data={email,passWord};
-      const url= "https://medical-record-project.onrender.com/api/v1/patient/login";
-      axios
-      .post(url,data)
-      .then((res)=>{
-        setIsLoading(false);
-      console.log(res?.data?.data?.user);
-        nav("/otp")
-      })
-      .catch((err)=>{
-        setIsLoading(false)
-        console.log(err)
-      })
+    if (data.trim() === "") {
+      toast.error("password is required");
     }
   };
 
+  console.log(passWord);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    if (!email || !passWord) {
+      toast.error("input all datas");
+    } else {
+      setIsLoading(true);
+      const data = { email, passWord };
+      const url =
+        "https://medical-record-project.onrender.com/api/v1/patient/login";
+      axios
+        .post(url, data)
+        .then((res) => {
+          setIsLoading(false);
+          console.log(res?.data?.data?.user);
+          nav("/otp");
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          console.log(err);
+        });
+    }
+  };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  //   console.log(formData);
+  // };
   return (
-    <div className="Login">
-      <ToastContainer/>
-      <form action="" className="login-form">
-        <div className="company-logo-holder">
+    <div className="login-page">
+      <ToastContainer />
+      <section action="" className="login-wrapper">
+        <div className="login-header">
           <div className="company-logo">
             <img src={logo} alt="" />
-            <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
           </div>
+          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
         </div>
-        <div className="login-header-text">
-          <h3>Welcome back</h3>
-          <p>
-            Log in to view, manage and access your secured medical information
-            all the time
-          </p>
-        </div>
-        <div className="login-input-div">
-          <input type="email" placeholder="Email" required onChange={handleEmail} value={email} />
-          <input type="password" placeholder="Password" required  onChange={handlePassWord} value={passWord}/>
+        <form action="" className="login-form" onSubmit={handleLogin}>
+          <div className="formText">
+            <h3>Welcome back</h3>
+            <p>
+              Log in to view, manage and access your secured medical information
+              all the time
+            </p>
+          </div>
+
+          <label htmlFor="email">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleEmail}
+              value={email}
+              required
+              className="custom-input"
+            />
+          </label>
+          <label htmlFor="password" className="password-input">
+            <div className="password-input-wrapper">
+              <input
+                id="password"
+                type={showPassword ? "passWord" : "text"}
+                placeholder="Password"
+                name="passWord"
+                onChange={handlePassWord}
+                value={passWord}
+                required
+                className="custom-input"
+              />
+              {showPassword ? (
+                <FaRegEyeSlash
+                  onClick={() => setShowPassword(false)}
+                  className="password-icon"
+                />
+              ) : (
+                <FaRegEye
+                  onClick={() => setShowPassword(true)}
+                  className="password-icon"
+                />
+              )}
+            </div>
+          </label>
+
           <span
-            style={{ alignSelf: "flex-end" }}
+            className="forgot-password"
             onClick={() => nav("/forgotpassword")}
           >
             Forgot Password?
           </span>
-          <button onClick={handleLogin}>{isLoading ? "Loading...":"Login"}</button>
+          <button className="btn1" onClick={handleLogin}>
+            Login
+          </button>
           <p>
-            Dont have an account <span onClick={() => nav("/")}>Sign Up</span>
+            Dont have an account{" "}
+            <span onClick={() => nav("/sign-up")} style={{ cursor: "pointer" }}>
+              Sign Up
+            </span>
           </p>
-        </div>
-      </form>
+        </form>
+      </section>
     </div>
   );
 };

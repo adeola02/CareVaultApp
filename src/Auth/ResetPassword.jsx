@@ -1,32 +1,82 @@
-import React from 'react'
-import '../AuthCss/ResetPassword.css'
-import { useNavigate } from 'react-router-dom'
-
-import logo from '../assets/Logo.svg'
+import "../AuthCss/ResetPassword.css";
+import { useNavigate } from "react-router-dom";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { MdCancel } from "react-icons/md";
+import logo from "../assets/CareVault.png";
+import { useState } from "react";
 
 const ResetPassword = () => {
-
-    const nav = useNavigate()
+  const [showPassword, setShowPassword] = useState(true);
+  const nav = useNavigate();
   return (
-    <div className='ResetPassword'>
-        <form action="" className='resetPassword-form'>
-        <div className='logo'>
-        <img src={logo} alt="" />
-        
+    <section className="reset-password-page">
+      <div className="reset-password-wrapper">
+        <div className="reset-password-header">
+          <img src={logo} alt="CareVault Logo" />
+          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+        </div>
+        <form className="reset-password-form">
+          <div className="formText">
+            <h2>Reset Password?</h2>
+            <p>Create a new secured password</p>
+          </div>
+          <label htmlFor="password" className="password-input">
+            <div className="password-input-wrapper">
+              <input
+                id="password"
+                type={showPassword ? "passWord" : "text"}
+                placeholder="Password"
+                name="passWord"
+                //   value={formData.passWord}
+                //   onChange={handleChange}
+                required
+                className="custom-input"
+              />
+              {showPassword ? (
+                <FaRegEyeSlash
+                  onClick={() => setShowPassword(false)}
+                  className="password-icon"
+                />
+              ) : (
+                <FaRegEye
+                  onClick={() => setShowPassword(true)}
+                  className="password-icon"
+                />
+              )}
             </div>
-            <div className='form-Text'>
-                <h2>Reset Password?</h2>
-                <p>Create a new secured password</p>
+          </label>
+          <label htmlFor="password" className="password-input">
+            <div className="password-input-wrapper">
+              <input
+                id="password"
+                type={showPassword ? "passWord" : "text"}
+                placeholder="Confirm password"
+                name="passWord"
+                //   value={formData.passWord}
+                //   onChange={handleChange}
+                required
+                className="custom-input"
+              />
+              {showPassword ? (
+                <FaRegEyeSlash
+                  onClick={() => setShowPassword(false)}
+                  className="password-icon"
+                />
+              ) : (
+                <FaRegEye
+                  onClick={() => setShowPassword(true)}
+                  className="password-icon"
+                />
+              )}
             </div>
-            <div className="resetPassword-input-div">
-                <input type="paasword"  placeholder='NewPassword'/>
-                <input type="paasword"  placeholder='Confirm NewPassword'/>
-                <button onClick={()=>nav('/successpage')}>Reset Password</button>
-            </div>
+          </label>
+          <button className="btn1 reset" onClick={() => nav("/successpage")}>
+            Reset Password
+          </button>
         </form>
+      </div>
+    </section>
+  );
+};
 
-    </div>
-  )
-}
-
-export default ResetPassword
+export default ResetPassword;

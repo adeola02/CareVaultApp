@@ -1,391 +1,98 @@
-.Login{
-        height: 100vh;
-        width: 100%;
-        background: linear-gradient(#5F9EEB,#315682);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;  
+.login-page {
+  width: 100%;
+  background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
+  display: grid;
+  place-items: center;
+  block-size: 100svh;
+
+  & input,
+  & select {
+    height: 40px;
+  }
 }
 
-.login-form{
-    height: 70%;
-    width: 35%;
-    background: white;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 12px;
+.login-wrapper {
+  width: 80%;
+  margin: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  /* justify-content: space-around; */
+  border-radius: 10px;
+  padding-top: 20px;
 }
-.company-logo{
-    margin-right: auto;
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    align-items: center;
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  inline-size: 90%;
 }
-.logo {  
-    height: 10%;  
-    width: 90%; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
 
-    & img {  
-        object-fit: contain;  
-        height: 77%;  
-    } 
-    
-    .cancel{
-        height: 34%;
-        object-fit: contain;
-    }
-}  
+/* login Form */
 
+.login-form {
+  width: 60%;
+  text-align: center;
 
-.login-header-text{
-    width: 70%;
-display: flex;
-flex-direction: column;
-gap: 7px;
+  & .formText {
+    margin-block-end: 20px;
+    text-align: start;
 
-
- & h3{
-    color: #5F9EEB;
-    margin-block-start: -10px;
-    font-weight: 300;
-
-    @media (max-width:390px) {
-        font-size: 23px;
+    & h3 {
+      color: var(--blue);
     }
 
-    @media (max-width:768px) {
-        font-size:1.8rem;
+    & p {
+      max-width: 400px;
     }
- }
+  }
 
-& p {
-    margin-block-start: -25px;
-    color:rgba(0, 0, 0, 0.966);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-
-    @media (max-width:768px) {
-        font-size:1.2rem;
-        /* margin-block-start: -35px; */
+  & label {
+    & input {
+      inline-size: 100%;
+      margin-block-end: 10px;
     }
-}
+  }
 }
 
-.login-input-div{
-    height: 42%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-
-    & input{
-    height: 20%;
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid gray;
-    padding: 10px;
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
+.password-input {
+  & .password-input-wrapper {
+    position: relative;
+    & .password-icon {
+      position: absolute;
+      top: 25%;
+      right: 20px;
+      cursor: pointer;
     }
+  }
 }
 
-
-button{
-    border: none;
-    width: 100%;
-    border-radius: 8px;
-    padding: 7px;
-    color: white;
-    background-color: #5F9EEB;
-    cursor: pointer;
-    transition: all 350ms ease-in-out;
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
 }
 
-
-& button:hover{
-    background-color: #1059b3;
-}
-
- & p{
-    font-size: 15px;
-    margin-block-start: -8px;
-}
-
- span{
-    color: #5F9EEB;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 550;
-    transition: all 350ms ease-in-out;
-}
-
-
-& span:hover{
-    color: #1059b3;
-} 
-  
-
-/* Media Queries */  
-@media (max-width: 1200px) {  
-    .login-form {  
-        width: 50%;  
-    }  
-}  
-
-@media (max-width: 992px) {  
-    .login-form {  
-        width: 60%;  
-    }  
-}  
-
-@media (max-width: 768px) {  
-    .login-form {  
-        width: 70%;  
-        height: 65%; 
-        gap: 15px;
-    }  
-
-    .logo {  
-        height: 15%; 
-        & img {  
-            height: 90%;  
-        }  
-
-        .cancel {  
-            height: 50%;
-            /* object-fit: contain;   */
-        }  
-    }  
-
-    button {  
-        height: 30%;  
-        font-size: 25px;  
-    }  
-
-    .login-input-div{
-        height: 55%;
-        gap: 17px;
+@media (width <= 767px) {
+  .login-wrapper {
+    width: 90%;
+    & .login-form {
+      width: 90%;
     }
-
-    .login-input-div input{
-        height: 30%;
-    }
-
-    
-    .login-input-div p, span{
-       font-size: 1.3rem;
-    }
-}  
-
-@media (max-width: 576px) {  
-    .login-form {  
-        width: 90%;  
-    }  
-
-    .logo {  
-        height: 15%; 
-        & img {  
-            height: 60%;  
-        }  
-
-        .cancel {  
-            height: 30%;
-            /* object-fit: contain;   */
-        }  
-    }  
-
-    .login-header-text {  
-        width: 90%;  
-
-        & h3 {  
-            font-size: 23px;  
-        }  
-
-        & p {  
-            margin-block-start: -20px;  
-        }  
-    }  
-
-    .login-input-div {  
-        width: 100%; 
-    }  
-
-    span {  
-        font-size: 14px; 
-    }  
-}  
-
-.login-header-text {  
-    width: 70%;  
-    display: flex;  
-    flex-direction: column;  
-    gap: 7px;  
-
-    & h3 {  
-        color: #5F9EEB;  
-        margin-block-start: -10px;  
-        font-weight: 300;  
-
-        @media (max-width: 390px) {  
-            font-size: 23px;  
-        }  
-    }  
-
-    & p {  
-        margin-block-start: -25px;  
-        color: rgba(0, 0, 0, 0.966);  
-        font-family: Arial, Helvetica, sans-serif;  
-        font-weight: 400;  
-    }  
-}  
-
-@media (max-width: 425px) {  
-    .login-form {  
-        width: 95%;  
-        height: auto;  
-        gap: 10px;  
-    }  
-
-    .logo {  
-        height: 12%;   
-        & img {  
-            height: 50%;  
-        }  
-    }  
-
-    .login-header-text {  
-        width: 90%;  
-
-        & h3 {  
-            font-size: 22px;  
-        }  
-
-        & p {  
-            margin-block-start: -15px;  
-            font-size: 14px;  
-        }  
-    }  
-
-    button {  
-        height: 25%;  
-        font-size: 22px;  
-    }  
-
-    .login-input-div {  
-        width: 100%;   
-        height: 60%;  
-    }  
-
-    .login-input-div input {  
-        height: 25%;  
-    }  
-
-    .login-input-div p,   
-    .login-input-div span {  
-        font-size: 12px;  
-    }  
-}  
-
-@media (max-width: 390px) {  
-    .login-form {  
-        width: 100%;  
-        height: auto;  
-        gap: 8px;  
-    }  
-
-    .logo {  
-        height: 10%;   
-        & img {  
-            height: 40%;  
-        }  
-    }  
-
-    .login-header-text {  
-        width: 95%;  
-
-        & h3 {  
-            font-size: 20px;  
-        }  
-
-        & p {  
-            margin-block-start: -10px;  
-            font-size: 12px;  
-        }  
-    }  
-
-    button {  
-        height: 20%;  
-        font-size: 20px;  
-    }  
-
-    .login-input-div {  
-        width: 100%;   
-        height: 55%;  
-    }  
-
-    .login-input-div input {  
-        height: 22%;  
-    }  
-
-    .login-input-div p,   
-    .login-input-div span {  
-        font-size: 11px;  
-    }  
+  }
 }
 
-@media (max-width: 845px) {  
-    .login-form {  
-        width: 80%;  
-        height: auto;  
-        gap: 12px;  
-    }  
-/* 
-    .logo {  
-        height: 15%;  
-        & img {  
-            height: 75%;  
-        }  
-    }   */
+@media (width <= 400px) {
+  .login-page {
+    block-size: 100%;
+  }
+}
 
-    .login-header-text {  
-        width: 90%;  
-
-        & h3 {  
-            font-size: 24px;  
-        }  
-
-        & p {  
-            margin-block-start: -15px;  
-            font-size: 15px;  
-        }  
-    }  
-
-    button {  
-        height: 30%;  
-        font-size: 22px;  
-    }  
-
-    .login-input-div {  
-        width: 100%;  
-        height: 55%;  
-    }  
-
-    .login-input-div input {  
-        height: 25%;  
-    }  
-
-    .login-input-div p,   
-    .login-input-div span {  
-        font-size: 13px;  
-    }  
+.btn1:hover {
+  cursor: pointer;
+  font-size: bold;
+  background-color: blue;
+  color: white;
 }

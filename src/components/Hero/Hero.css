@@ -30,6 +30,51 @@
   }
 }
 
+.hero-btn {
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 600;
+  overflow: clip;
+  width: 40%;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.hero-btn::after {
+  background-color: var(--blue);
+  border-radius: 10px;
+  content: "";
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.hero-btn:hover::after {
+  transform: translate(0, 0);
+}
+
+.hero-btn:hover {
+  border: 2px solid transparent;
+  color: var(--white);
+  transform: scale(1.05);
+  will-change: transform;
+}
+
 /* Styling for wristwatch */
 @media (width <= 230px) {
   .hero-main-wrapper {
