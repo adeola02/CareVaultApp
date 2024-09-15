@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {  createHashRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import Error from "../pages/Error";
 import SignUp from "../Auth/SignUp";
@@ -22,7 +22,7 @@ import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 import AdminRecords from "../components/AdminRecordList/AdminRecords";
 // import Header from "../components/Header/Header";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "sign-up",
     element: <SignUp />,
