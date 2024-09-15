@@ -6,6 +6,7 @@ import { MdCancel } from "react-icons/md";
 import logo from "../assets/CareVault.png";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import Button from "../Utils/Button/Button";
 
 const SignUp = () => {
   const nav = useNavigate();
@@ -105,106 +106,133 @@ const SignUp = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log(formData);
   };
 
   return (
-    <div className="SignUp">
-      <div className="Signup-FormHolder">
-        <div className="company-logo-holder">
-          <div className="company-logo">
-            <img src={logo} alt="CareVault Logo" />
-            <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
-          </div>
+    <section className="signup-page">
+      <div className="signup-wrapper">
+        <div className="signup-header">
+          <img src={logo} alt="CareVault Logo" />
+          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
         </div>
-        <div className="formText">
-          <h2>Sign Up</h2>
-          <p>
-            Join CareVault, experience the benefit of a personalized medical
-            record platform
-          </p>
-        </div>
-        <form onSubmit={handleSubmit} className="inputDiv">
-          <input
-            type="text"
-            placeholder="Full Name"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="custom-input"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="custom-input"
-          />
-          <input
-            placeholder="Phone Number"
-            type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            required
-            className="custom-input"
-          />
-          <div className="date-and-gender-div">
-            <input
-              type="date"
-              placeholder="Date of birth"
-              name="dateOfBirth"
-              value={formData.dateOfBirth}
-              onChange={handleChange}
-              required
-            />
-            <select
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-              required
-              style={{ color: "black" }}
-            >
-              <option value="">--Gender--</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
+        <section className="signup-form">
+          <div className="formText">
+            <h2>Sign Up</h2>
+            <p>
+              Join CareVault, experience the benefit of a personalized medical
+              record platform
+            </p>
           </div>
-          <div className="passwordDiv">
-            <input
-              type={showPassword ? "passWord" : "text"}
-              placeholder="Password"
-              name="passWord"
-              value={formData.passWord}
-              onChange={handleChange}
-              required
-              className="custom-input"
-            />
-            {showPassword ? (
-              <FaRegEyeSlash onClick={() => setShowPassword(false)} />
-            ) : (
-              <FaRegEye onClick={() => setShowPassword(true)} />
-            )}
-          </div>
-          <div className="termsdiv">
-            <input type="checkbox" required style={{ width: "20px" }} />
-            <h6>I agree to the terms & conditions set out by this site</h6>
-          </div>
-          <div className="buttonDiv">
-            <button onClick={handleSubmit}>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="name">
+              <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                className="custom-input"
+              />
+            </label>
+            <label htmlFor="tel">
+              <input
+                id="tel"
+                placeholder="Phone Number"
+                type="text"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                required
+                className="custom-input"
+              />
+            </label>
+
+            <label htmlFor="email">
+              <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="custom-input"
+              />
+            </label>
+            <div className="date-gender">
+              <label htmlFor="dob">
+                <input
+                  id="dob"
+                  type="date"
+                  placeholder="Date of birth"
+                  name="dateOfBirth"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label htmlFor="gender">
+                <select
+                  id="gender"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  required
+                  style={{ color: "black" }}
+                >
+                  <option value="">Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+            </div>
+            <label htmlFor="password" className="password-input">
+              <div className="password-input-wrapper">
+                <input
+                  id="password"
+                  type={showPassword ? "passWord" : "text"}
+                  placeholder="Password"
+                  name="passWord"
+                  value={formData.passWord}
+                  onChange={handleChange}
+                  required
+                  className="custom-input"
+                />
+                {showPassword ? (
+                  <FaRegEyeSlash
+                    onClick={() => setShowPassword(false)}
+                    className="password-icon"
+                  />
+                ) : (
+                  <FaRegEye
+                    onClick={() => setShowPassword(true)}
+                    className="password-icon"
+                  />
+                )}
+              </div>
+            </label>
+            <div className="terms-wrapper">
+              <input type="checkbox" required />
+              <span>
+                I agree to the terms & conditions set out by this site
+              </span>
+            </div>
+
+            <Button onClick={handleSubmit}>
               {isLoading ? "Loading..." : "Sign Up"}
-            </button>
+            </Button>
             <p>
               Already have an account?{" "}
               <span onClick={() => nav("/log-in")}>Log in</span>
             </p>
-          </div>
-        </form>
+          </form>
+          <ToastContainer />
+        </section>
       </div>
-      <ToastContainer />
-    </div>
+    </section>
   );
 };
 
