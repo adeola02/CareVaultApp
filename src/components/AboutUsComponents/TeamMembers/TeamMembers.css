@@ -21,7 +21,6 @@
   & .member-image {
     block-size: 200px;
     inline-size: 200px;
-
     border-radius: 50%;
 
     & img {
@@ -30,6 +29,8 @@
       border-radius: 50%;
       border-top-left-radius: var(--radius);
       border-top-right-radius: var(--radius);
+      display: inline-block;
+      animation: roll-in 2s ease-in-out;
     }
   }
 
@@ -57,5 +58,16 @@
         inline-size: 100%;
       }
     }
+  }
+}
+
+@keyframes roll-in {
+  0% {
+    transform: translateX(-100%) rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
   }
 }

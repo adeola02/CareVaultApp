@@ -3,6 +3,11 @@
   margin-block-end: 50px;
   padding-inline: 1rem;
 
+  & h2 {
+    font-size: 2rem;
+    color: var(--blue);
+  }
+
   & .our-team-info-image {
     block-size: 400px;
     inline-size: 100%;
@@ -19,14 +24,13 @@
     padding: 20px;
     inline-size: 100%;
 
-    & h1 {
-      font-size: 2rem;
-      color: var(--blue);
-    }
-
     & p {
       font-size: 1.3rem;
     }
+  }
+
+  .lg-none {
+    display: none;
   }
 }
 
@@ -46,6 +50,7 @@
 @media (width >= 800px) {
   .our-team-info-wrapper {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -56,6 +61,13 @@
 
     & .our-team-info-text {
       inline-size: 50%;
+    }
+    .lg-none {
+      display: block;
+    }
+
+    .sm-block {
+      display: none;
     }
   }
 }
