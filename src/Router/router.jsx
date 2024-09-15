@@ -20,6 +20,7 @@ import ManualUpload from "../components/Upload/Manual/ManualUpload";
 import AdminLayout from "../Layouts/AdminLayout/AdminLayout";
 import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 import AdminRecords from "../components/AdminRecordList/AdminRecords";
+import View from "../components/View/View";
 // import Header from "../components/Header/Header";
 
 export const router = createHashRouter([
@@ -100,7 +101,8 @@ export const router = createHashRouter([
         element:<ManualUpload/>
       },
       {
-        
+        path:"/view",
+        element:<View/>
       }
     ]
   },

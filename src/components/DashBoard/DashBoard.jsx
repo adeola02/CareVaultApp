@@ -3,9 +3,11 @@ import "./DashBoard.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUserLarge } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
   const user=useSelector((state)=>state.app?.user)
+  const nav=useNavigate();
   console.log(user)
   return (
     <div className="dashBoardBody">
@@ -80,7 +82,7 @@ const DashBoard = () => {
               <nav>2024,august</nav>
             </div>
             <div className="articleButton">
-              <button>View</button>
+              <button onClick={()=>nav("/view")}>View</button>
               <button
                 onClick={() =>
                   toast("you've successfully downloaded your file")
