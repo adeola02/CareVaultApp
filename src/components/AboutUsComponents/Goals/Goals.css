@@ -19,7 +19,7 @@
     padding: 20px;
     inline-size: 100%;
 
-    & h1 {
+    & h2 {
       font-size: 2rem;
       color: var(--blue);
     }
@@ -27,6 +27,9 @@
     & p {
       font-size: 1.3rem;
     }
+  }
+  .lg-none {
+    display: none;
   }
 }
 
@@ -46,6 +49,7 @@
 @media (width >= 800px) {
   .goals-info-wrapper {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -56,6 +60,9 @@
 
     & .goals-info-text {
       inline-size: 50%;
+    }
+    .lg-none {
+      display: none;
     }
   }
 }
