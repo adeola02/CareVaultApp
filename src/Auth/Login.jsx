@@ -130,7 +130,7 @@ const Login = () => {
           >
             Forgot Password?
           </span>
-          <button className="btn login-btn" onClick={handleLogin}>
+          <button className="btn1" onClick={handleLogin}>
       {
         isLoading? "loading..." : "Login"
       }
