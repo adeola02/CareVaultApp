@@ -1,146 +1,153 @@
-.sideBarBody{
-    width: 20vw;
-    height: 100vh;
-    background: #315682;
-    padding: 10px;
+.sideBarBody {
+  width: 20vw;
+  height: 100vh;
+  background: #315682;
+  padding: 10px;
 }
-.sideBarBody > div{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background: #000; */
+.sideBarBody > div {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  /* background: #000; */
 
-    & img{
-        width: 80%;
-        height: 80%;
-    }
+  & img {
+    width: 80%;
+    height: 80%;
+  }
 }
-.sideBarSection{
-    width: 100%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    color: white;
+.sideBarSection {
+  /* border: 3px solid red; */
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: start;
+  color: white;
 }
-section > nav{
-    width:70%;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+section > nav {
+  width: 70%;
+  /* height: 3rem; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
-section > nav:hover{
-    cursor: pointer;
-    background-color: #d0d4d8;
+section > nav:hover {
+  cursor: pointer;
 }
-.isActive{
-    width: 100%;
-    height: 3rem;
-    background: #5c9ae5;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+.isActive {
+  width: 100%;
+  height: 3rem;
+  background: #5c9ae5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-decoration: none;
 }
-.notActive{
-    text-decoration: none;
+.notActive {
+  text-decoration: none;
 }
-.sideBarBody > nav{
-    width:100%;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: white;
+.sideBarBody > nav {
+  /* width: 100%; */
+  /* height: 3rem; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  color: white;
+  padding: 10px 0px;
 }
-.sideBarBody > nav:hover{
-    background-color: #388231;
-    cursor: pointer;
+.sideBarBody > nav:hover {
+  /* cursor: pointer; */
+  border-bottom: 2px solid var(--white);
+  border-radius: var(--radius);
 }
 
 /* Styles for large screens (desktops) */
 @media (min-width: 1200px) {
-    .sideBarBody {
-        width: 15vw; /* Slightly reduce width for large screens */
-    }
+  .sideBarBody {
+    width: 15vw; /* Slightly reduce width for large screens */
+  }
 }
 
 /* Styles for tablets (768px to 1200px) */
 @media (max-width: 1200px) and (min-width: 768px) {
-    .sideBarBody {
-        width: 25vw; /* Increase sidebar width for tablet view */
-    }
+  .sideBarBody {
+    width: 25vw; /* Increase sidebar width for tablet view */
+  }
 
-    .sideBarBody > div img {
-        width: 70%; /* Adjust logo size for tablets */
-        height: 70%;
-    }
+  .sideBarBody > div img {
+    width: 70%; /* Adjust logo size for tablets */
+    height: 70%;
+  }
 
-    section > nav {
-        width: 80%; /* Adjust nav width for tablets */
-    }
+  section > nav {
+    width: 80%; /* Adjust nav width for tablets */
+  }
 }
 
 /* Styles for mobile devices (less than 768px) */
 @media (max-width: 768px) {
-    .sideBarBody {
-        width: 35vw; /* Sidebar becomes wider on small screens */
-        height: auto; /* Allow sidebar height to adjust */
-        padding: 5px; /* Reduce padding */
-    }
+  .sideBarBody {
+    width: 35vw; /* Sidebar becomes wider on small screens */
+    height: auto; /* Allow sidebar height to adjust */
+    padding: 5px; /* Reduce padding */
+  }
 
-    .sideBarBody > div {
-        height: 15%; /* Adjust the height for logo container */
-    }
+  .sideBarBody > div {
+    height: 15%; /* Adjust the height for logo container */
+  }
 
-    .sideBarBody > div img {
-        width: 60%;
-        height: 60%; /* Smaller logo for mobile */
-    }
+  .sideBarBody > div img {
+    width: 60%;
+    height: 60%; /* Smaller logo for mobile */
+  }
 
-    section {
-        gap: 0.3rem; /* Reduce gaps between nav items */
-    }
+  section {
+    gap: 0.3rem; /* Reduce gaps between nav items */
+  }
 
-    section > nav {
-        width: 90%; /* Full-width nav items */
-    }
+  section > nav {
+    width: 90%; /* Full-width nav items */
+  }
 
-    section > nav:hover {
-        background-color: #5c9ae5; /* Slightly different hover color for mobile */
-    }
+  section > nav:hover {
+    background-color: #5c9ae5; /* Slightly different hover color for mobile */
+  }
 }
 
 /* Styles for small mobile devices (less than 480px) */
 @media (max-width: 480px) {
-    .sideBarBody {
-        width: 50vw; /* Sidebar takes half the screen on small phones */
-    }
+  .sideBarBody {
+    width: 50vw; /* Sidebar takes half the screen on small phones */
+  }
 
-    .sideBarBody > div img {
-        width: 50%;
-        height: 50%; /* Smaller logo for very small screens */
-    }
+  .sideBarBody > div img {
+    width: 50%;
+    height: 50%; /* Smaller logo for very small screens */
+  }
 
-    section > nav {
-        width: 100%; /* Make nav items take full width */
-        font-size: 0.9rem; /* Slightly smaller text for nav items */
-    }
+  section > nav {
+    width: 100%; /* Make nav items take full width */
+    font-size: 0.9rem; /* Slightly smaller text for nav items */
+  }
 
-    .isActive {
-        width: 100%;
-        height: 2.5rem; /* Adjust active item height */
-        border-radius: 5px; /* Reduce border-radius */
-    }
+  .isActive {
+    width: 100%;
+    height: 2.5rem; /* Adjust active item height */
+    border-radius: 5px; /* Reduce border-radius */
+  }
 
-    .sideBarBody > nav {
-        height: 2.5rem; /* Adjust the height of other nav items */
-    }
+  .sideBarBody > nav {
+    height: 2.5rem; /* Adjust the height of other nav items */
+  }
 }
+
+/* nav:nth-child(3) {
+  border: 3px solid red;
+  p-bottom: 20px;
+} */
