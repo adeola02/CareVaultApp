@@ -45,13 +45,16 @@
 
 @media (width >= 800px) {
   .carevault-info-wrapper {
+    padding-inline: 5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
     & .carevault-info-image {
-      inline-size: 50%;
+      & img {
+        object-fit: cover;
+      }
     }
 
     & .carevault-info-text {

@@ -6,6 +6,19 @@
   margin-top: auto;
   border-top: 1px solid var(--blue);
 
+  & a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & a:active {
+    color: var(--blue);
+  }
+
   & .footer-content {
     display: flex;
     justify-content: space-between;
