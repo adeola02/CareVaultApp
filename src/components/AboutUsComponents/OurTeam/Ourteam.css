@@ -52,6 +52,9 @@
 
     & .our-team-info-image {
       inline-size: 50%;
+      & img {
+        object-fit: cover;
+      }
     }
 
     & .our-team-info-text {

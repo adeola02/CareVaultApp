@@ -51,6 +51,10 @@
 
     & .medical-record-image {
       inline-size: 50%;
+
+      & img {
+        object-fit: cover;
+      }
     }
 
     & .medical-record-text {

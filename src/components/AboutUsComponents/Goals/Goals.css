@@ -56,6 +56,10 @@
 
     & .goals-info-image {
       inline-size: 50%;
+
+      & img {
+        object-fit: cover;
+      }
     }
 
     & .goals-info-text {

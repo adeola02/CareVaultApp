@@ -16,7 +16,7 @@ const Hero = () => {
           <p>
             Securely access and manage your medical records anytime, anywhere.
           </p>
-          <button className="hero-btn">Get Started</button>
+          <button className="btn">Get Started</button>
         </section>
       </main>
     </>
