@@ -222,7 +222,7 @@ const SignUp = () => {
               {isLoading ? "Loading..." : "Sign Up"}
             </button>
             <p>
-              Already have an account?{" "}
+              Already have an account?
               <span
                 onClick={() => nav("/log-in")}
                 style={{ cursor: "pointer", color:"#5f9eeb", fontWeight:"600" }}
