@@ -126,15 +126,18 @@ const Login = () => {
           <span
             className="forgot-password"
             onClick={() => nav("/forgotpassword")}
+            style={{ cursor: "pointer" }}
           >
             Forgot Password?
           </span>
-          <button className="btn1" onClick={handleLogin}>
-            Login
+          <button className="btn login-btn" onClick={handleLogin}>
+      {
+        isLoading? "loading..." : "Login"
+      }
           </button>
           <p>
             Dont have an account{" "}
-            <span onClick={() => nav("/sign-up")} style={{ cursor: "pointer" }}>
+            <span onClick={() => nav("/sign-up")} style={{ cursor: "pointer", color:"#5f9eeb", fontWeight:"600" }}>
               Sign Up
             </span>
           </p>

@@ -96,10 +96,13 @@
     block-size: 100svh;
   }
 }
+.login-btn{
+  width: 100%;
+}
 
-.btn1:hover {
+.login-btn:hover {
   cursor: pointer;
   font-size: bold;
-  background-color: blue;
+  background-color:#013d86;
   color: white;
 }
