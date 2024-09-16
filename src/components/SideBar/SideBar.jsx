@@ -9,44 +9,51 @@ import { MdOutlineSimCardDownload } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
 
 const SideBar = () => {
-  const [isActive,setIsActive]=useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const handleCloseNav = () => {
+    setIsActive(false);
+  };
   return (
     <div className="sideBarBody">
       <div>
         <img src={careVault} alt="" />
       </div>
       <section className="sideBarSection">
-          <NavLink
-            to={"/dashBoard"}
-            className={({ isActive }) => (isActive ? "isActive" : "notActive")}
-           style={{color:"white"}}
-          >
-        <nav style={{display:"flex",gap:"10px"}}>
-        <RxDashboard size={25} />
+        <NavLink
+          to={"/dashBoard"}
+          className={({ isActive }) => (isActive ? "isActive" : "notActive")}
+          style={{ color: "white" }}
+          onClick={handleCloseNav}
+        >
+          <nav style={{ display: "flex", gap: "10px" }}>
+            <RxDashboard size={25} />
             Overview
-        </nav>
-          </NavLink>
-          <NavLink
-            to="/records"
-            className={({ isActive }) => (isActive ? "isActive" : "notActive")}
-            style={{color:"white"}}
-          >
-        <nav style={{display:"flex",gap:"10px"}}>
-        <MdOutlineSimCardDownload size={25} />
+          </nav>
+        </NavLink>
+        <NavLink
+          to="/records"
+          className={({ isActive }) => (isActive ? "isActive" : "notActive")}
+          style={{ color: "white" }}
+          onClick={handleCloseNav}
+        >
+          <nav style={{ display: "flex", gap: "10px" }}>
+            <MdOutlineSimCardDownload size={25} />
             My records
-        </nav>
-          </NavLink>
-        <nav className={isActive ? "isActive":"notActive"} onClick={()=>setIsActive(true)}>
-        <LuUpload size={25}/>
+          </nav>
+        </NavLink>
+        <nav
+          className={isActive ? "isActive" : "notActive"}
+          onClick={() => setIsActive(!isActive)}
+        >
+          <LuUpload size={25} />
           Upload
         </nav>
-        {
-          isActive ?  <UploadMenu setIsActive={setIsActive}/> :null
-        }
+        {isActive ? <UploadMenu setIsActive={setIsActive} /> : null}
       </section>
-        <nav>
+      <nav>
         <TbLogout size={25} />
-          Logout</nav>
+        Logout
+      </nav>
     </div>
   );
 };

@@ -1,37 +1,47 @@
-.UploadMenuBody{
-    width: 7rem;
-    height: 7rem;
-    background: #5c9ae5;
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    left: 16rem;
-    color: #fff;
-    top: 12rem;
-    padding: 10px;
+.UploadMenuBody {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  top: 350px;
+  color: #fff;
+  padding: 10px 30px;
 }
-.UploadMenuBody > nav{
-    /* cursor: pointer; */
-    color: #f10c0c;
-    /* background: #000; */
-    display: flex;
+.UploadMenuBody > nav {
+  color: #f10c0c;
 }
 
-.UploadMenuBody > .triangle{
-    border-top: 15px solid transparent;
-	border-right: 50px solid #5c9ae5;
-	border-bottom: 15px solid transparent;
-    position: absolute;
-    left: -3rem;
+.UploadMenuBody > .triangle {
+  border-top: 15px solid transparent;
+  border-right: 50px solid #5c9ae5;
+  border-bottom: 15px solid transparent;
+  position: absolute;
+  left: -3rem;
 }
- .uploadMenuList{
+.image-upload-div {
+  width: 400px;
+  height: 400px;
+  border: 2px dashed black;
+  border-radius: 10px;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+}
+.uploadMenuList {
   width: 40%;
   height: 100%;
   background: #000;
- }
- .link{
-    color: #fff;
-    text-decoration: none;
- }
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  margin-block-end: 20px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
