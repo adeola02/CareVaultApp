@@ -1,293 +1,285 @@
-.dashBoardBody{
-    width: 100%;
-    height: 88vh;
-    background-color: #fafafa;
-    padding: 1rem; 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.dashBoardBody {
+  width: 100%;
+  height: 88vh;
+  background-color: #fafafa;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.dashBoardBody > section{
-    width:100%;
-    height: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #5c9ae5;
+.dashBoardBody > section {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #5c9ae5;
 
-    & div{
-        width: 30%;
-        height: 100%;
-        background: #ffffff;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-        & div{
-            width: 100%;
-            height: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 0px 0px 0px;
-            
-            
-            & span{
-                font-size: 1.5rem;
-            }
-        }
-    }
-}
+  & div {
+    width: 30%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    & div {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 0px 0px;
 
-.dashBoardBody > aside{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    & div{
-        width: 60%;
-        background: #ffffff;
-        height: 100%;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-    }
-
-    & .quickUploadDiv{
-        width: 35%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #5c9ae5;
-        cursor: pointer;
+      & span {
         font-size: 1.5rem;
-        font-weight: 550;
+      }
     }
-   & .infoDiv{
+  }
+}
+
+.dashBoardBody > aside {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  & div {
+    width: 60%;
+    background: #ffffff;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  }
+
+  & .quickUploadDiv {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5c9ae5;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 550;
+  }
+  & .infoDiv {
     padding: 10px;
     display: flex;
     gap: 10px;
-   }
+  }
 }
-.dashBoardBody > aside > .infoDiv > nav{
-   width: 25%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+.dashBoardBody > aside > .infoDiv > nav {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.dashBoardBody > aside > .infoDiv > .infoNav{
-    width: 75%;
+.dashBoardBody > aside > .infoDiv > .infoNav {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & div {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-
-    & div{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        box-shadow: 0px 0px 0px 0px;
-        height: 20%;
-        gap: 5px;
-        & h5{
-            color:#5c9ae5;
-        }
-
-        
-    }
-    & h3{
-        font-size: 15px;
-        font-weight: lighter;
-    }
-}
-
-.dashBoardBody > main{
-    width: 100%;
-    height: 40%;
-    background-color: white;
-    padding: 1rem;
-    color: #5c9ae5;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-}
-main > div{
-    width: 100%;
-    height: 20%;
-   display: flex;
-   justify-content: space-between;
     align-items: center;
-}
-main > div > nav{
-    width: 25%;
-
-}
-main > div >button{
-    width: 6rem;
-    height: 2rem;
-    border: none;
-    border-radius: 5px;
-    color: #5c9ae5;
-    cursor: pointer;
-    background: #dbdbdb;
-    font-size: 1rem;
-}
-article{
-    width: 100%;
-    height:60%;
-   display: flex;
-   justify-content: space-between;
-   flex-direction: column;
-   gap: 10px;
-}
-article > div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    height: 20px;
-   
-}
-article > div > .records{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    /* background-color: aqua; */
-
-}
-article > div > .records > nav{
-    width: 25%;
-    font-size: 1rem;
+    box-shadow: 0px 0px 0px 0px;
+    height: 20%;
+    gap: 5px;
+    & h5 {
+      color: #5c9ae5;
+    }
+  }
+  & h3 {
+    font-size: 15px;
     font-weight: lighter;
-
-}
-article > div >.articleButton{
-    width: 20%;
-    height: 3rem;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-}
-.articleButton > button{
-    width: 6rem;
-    height: 2rem;
-    border: none;
-    border-radius: 5px;
-    color: #5c9ae5;
-    cursor: pointer;
-    background: #dbdbdb;
-    font-size: 1rem;
-}
-button:hover{
-    background: #dbdbdbc2;
-    transition: all 350ms ease-in-out;
-    color: #5c9ae7;
+  }
 }
 
+.dashBoardBody > main {
+  width: 100%;
+  height: 40%;
+  background-color: white;
+  padding: 1rem;
+  color: #5c9ae5;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+main > div {
+  width: 100%;
+  /* height: 20%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main > div > nav {
+  width: 25%;
+}
+main > div > button {
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #5c9ae5;
+  cursor: pointer;
+  background: #dbdbdb;
+  font-size: 1rem;
+}
+article {
+  width: 100%;
+  /* height: 60%; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+article > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+}
+article > div > .records {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  /* background-color: aqua; */
+}
+article > div > .records > nav {
+  width: 25%;
+  font-size: 1rem;
+  font-weight: light;
+}
+article > div > .articleButton {
+  width: 20%;
+  height: 3rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.articleButton > button {
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #5c9ae5;
+  cursor: pointer;
+  background: #dbdbdb;
+  font-size: 1rem;
+}
+button:hover {
+  background: #dbdbdbc2;
+  transition: all 350ms ease-in-out;
+  color: #5c9ae7;
+}
 
 /* Styles for screens larger than 1200px (desktops) */
 @media (min-width: 1200px) {
-    /* You can make specific adjustments here for larger screens */
+  /* You can make specific adjustments here for larger screens */
 }
 
-
 @media (max-width: 1200px) and (min-width: 768px) {
-    .dashBoardBody > section div {
-        width: 45%; 
-    }
+  .dashBoardBody > section div {
+    width: 45%;
+  }
 
-    .dashBoardBody > aside div {
-        width: 55%; 
-    }
+  .dashBoardBody > aside div {
+    width: 55%;
+  }
 
-    .dashBoardBody > aside .quickUploadDiv {
-        width: 40%;
-    }
-    .records > nav{
-        width: 27% !important;
-    }
-    .articleButton > button{
-        width: fit-content;
-    }
+  .dashBoardBody > aside .quickUploadDiv {
+    width: 40%;
+  }
+  .records > nav {
+    width: 27% !important;
+  }
+  .articleButton > button {
+    width: fit-content;
+  }
 }
 
 /* Styles for mobile devices (less than 768px) */
 @media (max-width: 768px) {
-    .dashBoardBody {
-        flex-direction: column;
-        padding: 0.5rem;
-    }
+  .dashBoardBody {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 
-    .dashBoardBody > section {
-        flex-direction: column;
-        height: auto;
-    }
+  .dashBoardBody > section {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .dashBoardBody > section div {
-        width: 100%;
-        margin-bottom: 1rem; /* Stack the sections vertically */
-    }
+  .dashBoardBody > section div {
+    width: 100%;
+    margin-bottom: 1rem; /* Stack the sections vertically */
+  }
 
-    .dashBoardBody > aside {
-        flex-direction: column;
-        height: auto;
-    }
+  .dashBoardBody > aside {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .dashBoardBody > aside div, .dashBoardBody > aside .quickUploadDiv {
-        width: 100%;
-        margin-bottom: 1rem; /* Full width and stack them vertically */
-    }
+  .dashBoardBody > aside div,
+  .dashBoardBody > aside .quickUploadDiv {
+    width: 100%;
+    margin-bottom: 1rem; /* Full width and stack them vertically */
+  }
 
-    .dashBoardBody > main {
-        height: auto;
-        margin-top: 10px;
-    }
-    main > div > nav{
-        display:none;
-    }
-    main > div {
-        flex-direction: column;
-    }
-    main > .div{
-       justify-content: flex-end;
-       align-items: end;
-    }
-    article > div {
-        flex-direction: column;
-        height: max-content;
-    }
+  .dashBoardBody > main {
+    height: auto;
+    margin-top: 10px;
+  }
+  main > div > nav {
+    display: none;
+  }
+  main > div {
+    flex-direction: column;
+  }
+  main > .div {
+    justify-content: flex-end;
+    align-items: end;
+  }
+  article > div {
+    flex-direction: column;
+    height: max-content;
+  }
 
-    article > div > .records {
-        width: 100%;
-        flex-direction: column;
-    }
+  article > div > .records {
+    width: 100%;
+    flex-direction: column;
+  }
 
-    article > div > .articleButton {
-        width: 100%;
-        justify-content: center;
-    }
+  article > div > .articleButton {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Styles for small mobile devices (less than 480px) */
 @media (max-width: 480px) {
-    .dashBoardBody > section div {
-        width: 100%; /* Make the section fill the entire width */
-    }
+  .dashBoardBody > section div {
+    width: 100%; /* Make the section fill the entire width */
+  }
 
-    .dashBoardBody > aside div {
-        width: 100%; /* Full width for aside sections */
-    }
+  .dashBoardBody > aside div {
+    width: 100%; /* Full width for aside sections */
+  }
 
-    .dashBoardBody > aside .quickUploadDiv button {
-        width: 100%;
-        
-    }
+  .dashBoardBody > aside .quickUploadDiv button {
+    width: 100%;
+  }
 
-    main > div > button {
-        width: 100%; /* Full width for main buttons */
-    }
+  main > div > button {
+    width: 100%; /* Full width for main buttons */
+  }
 
-    .articleButton > button {
-        width: 100%; /* Full width for buttons inside the article section */
-    }
+  .articleButton > button {
+    width: 100%; /* Full width for buttons inside the article section */
+  }
 
-    .dashBoardBody > section, .dashBoardBody > aside, article {
-        padding: 0.5rem;
-    }
+  .dashBoardBody > section,
+  .dashBoardBody > aside,
+  article {
+    padding: 0.5rem;
+  }
 }
