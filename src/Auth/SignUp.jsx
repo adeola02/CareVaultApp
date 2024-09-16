@@ -13,16 +13,16 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
+    fullName: "",
+    phoneNumber: "",
     email: "",
     passWord: "",
-    fullName: "",
     dateOfBirth: "",
     gender: "",
-    phoneNumber: "",
   });
 
   const validate = () => {
-    const { email, passWord, fullName, dateOfBirth, gender, phoneNumber } =
+    const {fullName , passWord, email, dateOfBirth, gender, phoneNumber } =
       formData;
 
     // Validate email
@@ -225,7 +225,7 @@ const SignUp = () => {
               Already have an account?{" "}
               <span
                 onClick={() => nav("/log-in")}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", color:"#5f9eeb", fontWeight:"600" }}
               >
                 Log in
               </span>

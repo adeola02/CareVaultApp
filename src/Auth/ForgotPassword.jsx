@@ -39,7 +39,7 @@ const ForgotPassword = () => {
         >
           <div className="formText">
             <h3>Forgot password?</h3>
-            <p>Please enter the email associated with you account.</p>
+            <p>Please enter the email associated with your account.</p>
           </div>
 
           <label htmlFor="email">
@@ -59,7 +59,8 @@ const ForgotPassword = () => {
             Send code
           </button>
           <p>
-            Remember password? <span onClick={() => nav("/login")}>Log in</span>
+            Remember password? <span onClick={() => nav("/log-in")}  
+            style={{ cursor: "pointer", color:"#5f9eeb", fontWeight:"600" }}>Log in</span>
           </p>
         </form>
       </section>
