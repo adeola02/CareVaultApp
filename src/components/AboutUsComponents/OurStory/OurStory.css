@@ -63,3 +63,15 @@
     }
   }
 }
+
+@media screen and (width >= 1520px) {
+  .carevault-info-wrapper {
+    & .carevault-info-image {
+      display: flex;
+      justify-content: flex-end;
+      & img {
+        width: 85%;
+      }
+    }
+  }
+}
