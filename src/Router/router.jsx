@@ -21,6 +21,7 @@ import AdminLayout from "../Layouts/AdminLayout/AdminLayout";
 import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 import AdminRecords from "../components/AdminRecordList/AdminRecords";
 import View from "../components/View/View";
+import { VerifyResetCode } from "../Auth/VerifyResetCode";
 // import Header from "../components/Header/Header";
 
 export const router = createHashRouter([
@@ -57,6 +58,11 @@ export const router = createHashRouter([
   {
     path: "otp",
     element: <Otp />,
+  },
+
+  {
+    path: "verifyresetcode",
+    element: <VerifyResetCode />,
   },
 
   {
