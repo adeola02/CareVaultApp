@@ -49,6 +49,30 @@
   }
 }
 
+@media (width <= 500px) {
+  .aboutus-hero-main-wrapper {
+    border: 3px solid red;
+    & .aboutus-hero-main {
+      max-height: 100%;
+      /* background-position: 90%; */
+      & h1 {
+        font-size: var(--h3);
+      }
+    }
+  }
+
+  .contact-cards-wrapper {
+    & .contact-single-card {
+      min-inline-size: 120px;
+      max-block-size: 135px;
+
+      & img {
+        inline-size: 30px;
+      }
+    }
+  }
+}
+
 @media (width >= 1024px) {
   .aboutus-hero-main {
     & p {

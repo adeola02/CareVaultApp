@@ -1,10 +1,10 @@
 .hero-main-wrapper {
   inline-size: 100%;
-  block-size: 800px;
+  block-size: 500px;
 
   & .hero-main {
     inline-size: 100%;
-    block-size: 50%;
+    block-size: 100%;
     position: relative;
     top: 80px;
     background: url("../../assets/Home.png");
@@ -54,14 +54,9 @@
   border: 2px solid #5f9eeb;
 }
 
-/* Styling for wristwatch */
-@media (width <= 230px) {
+@media (width <= 500px) {
   .hero-main-wrapper {
     & .hero-main {
-      padding-top: 3rem;
-      display: grid;
-      min-block-size: 130px;
-
       & h1 {
         font-size: var(--h3);
       }
@@ -97,10 +92,6 @@
     inline-size: 100%;
     min-block-size: 80%;
 
-    /* border: 3px solid red; */
-    /* height: 50svh; */
-    /* padding-top: 5rem; */
-
     & p {
       font-size: 25px;
       min-inline-size: 800px;
@@ -108,15 +99,18 @@
     }
 
     & button {
-      /* border: 3px solid red; */
       margin-block-end: 20px;
     }
   }
 }
 
 @media (width >= 2000px) {
-  .hero-main {
+  .hero-main-wrapper {
     inline-size: 100%;
-    min-block-size: 100%;
+    block-size: 900px;
+    & .hero-main {
+      inline-size: 100%;
+      min-block-size: 100%;
+    }
   }
 }
