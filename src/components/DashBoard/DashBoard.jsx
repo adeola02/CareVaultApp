@@ -65,7 +65,7 @@ const DashBoard = () => {
         </div>
       </aside>
       <main>
-        <div>
+        <div className="text-top">
           <h3>Recently uploaded</h3>
         </div>
         <div className="div">

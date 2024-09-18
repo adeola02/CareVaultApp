@@ -5,9 +5,6 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
-  /* display: grid;
-  place-items: center;
-  block-size: 100svh; */
 
   & input,
   & select {
@@ -21,15 +18,18 @@
 }
 
 .signup-wrapper {
-  width: 80%;
+  max-width: 80%;
   margin: 40px;
+  height: 97svh;
   background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
+
+  /* border: 3px solid red; */
 }
 .signup-header {
   display: flex;
@@ -42,11 +42,7 @@
 .signup-form {
   width: 60%;
   text-align: center;
-
-  /* & .formText {
-    margin-block-end: 20px;
-    text-align: start;
-  } */
+  margin-top: -40px;
 
   & label {
     & input {
@@ -79,10 +75,9 @@
 .password-input {
   & .password-input-wrapper {
     position: relative;
+
     & .password-icon {
       position: absolute;
-      top: 30%;
-      right: 20px;
       cursor: pointer;
     }
   }
@@ -106,7 +101,7 @@
 
 @media (width <= 768px) {
   .signup-wrapper {
-    width: 90%;
+    max-width: 90%;
 
     & .signup-form {
       width: 90%;
@@ -123,7 +118,12 @@
   }
 }
 
-.errorDiv{
+.errorDiv {
   margin-block-start: -10px;
-  color: rgba(255, 0, 0, 0.534);
+  text-align: start;
+
+  & small {
+    margin: 0;
+    color: rgba(255, 0, 0, 0.534);
+  }
 }

@@ -1,11 +1,11 @@
 .contact-section {
-  max-block-size: 100svh;
+  block-size: 100%;
   & .contact-main {
     inline-size: 100%;
-    block-size: 60svh;
+    block-size: 80svh;
     position: relative;
     top: 90px;
-    background: url("../../assets/ContactUs.png");
+    background: url("https://res.cloudinary.com/dzjlqmjht/image/upload/v1726498970/users_dp/uzvyinqcfemkxfilavlz.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: overlay;
@@ -15,6 +15,7 @@
     justify-content: center;
     text-align: center;
     color: var(--white);
+    padding-top: 150px;
 
     & h1 {
       font-size: var(--h1);
@@ -39,8 +40,10 @@
 
     & .contact-single-card {
       border: 1px solid #3f3a3a;
-      inline-size: 200px;
+      /* inline-size: 200px; */
+      width: fit-content;
       block-size: 150px;
+      padding: 40px;
       margin: auto;
       display: flex;
       flex-direction: column;

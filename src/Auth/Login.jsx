@@ -1,6 +1,6 @@
 import "../AuthCss/Login.css";
 import { useNavigate } from "react-router-dom";
-import { MdCancel } from "react-icons/md";
+import { FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
@@ -51,7 +51,8 @@ const Login = () => {
         .post(url, data)
         .then((res) => {
           setIsLoading(false);
-          console.log(res?.data?.data?.user);
+          console.log(res);
+          // console.log(res?.data?.data?.user);
           nav("/otp");
         })
         .catch((err) => {
@@ -74,7 +75,11 @@ const Login = () => {
           <div className="company-logo">
             <img src={logo} alt="" />
           </div>
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <form action="" className="login-form" onSubmit={handleLogin}>
           <div className="formText">
@@ -131,13 +136,15 @@ const Login = () => {
             Forgot Password?
           </span>
           <button className="btn1" onClick={handleLogin}>
-      {
-        isLoading? "loading..." : "Login"
-      }
+            {isLoading ? "loading..." : "Login"}
           </button>
           <p>
             Dont have an account{" "}
-            <span onClick={() => nav("/sign-up")} style={{ cursor: "pointer", color:"#5f9eeb", fontWeight:"600" }}>
+            <span
+              className="dont-have-an-acc"
+              onClick={() => nav("/sign-up")}
+              style={{ cursor: "pointer", color: "#5f9eeb", fontWeight: "600" }}
+            >
               Sign Up
             </span>
           </p>

@@ -5,33 +5,55 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setMedicalRecords } from "../../../Global/slice";
 
 const ImageUpload = () => {
-  const [image, setImage] = useState("");
+  const [file, setFile] = useState(null);
+  const [imageUrl,setImageUrl]=useState("")
+  const [entryType,setEntryType]=useState("");
+  const [recordType,setRecordType]=useState("");
+  
+  const token=useSelector((state)=>state.app?.token)
+ const dispatch=useDispatch();
 
   const uploadImage = (event) => {
-    const file = event.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setImage(imageUrl);
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+    const imageUrl = URL.createObjectURL(selectedFile);
+    setImageUrl(imageUrl);
   };
-  console.log(image);
+  // console.log(image);
 
   const addImageRecord = () => {
-    if (!image) {
-      toast.error("please choose image to upload");
+    if (!file) {
+      toast.error("Please choose an image to upload");
     } else {
-      const url =
-        "https://medical-record-project.onrender.com/api/v1/addRecord ";
+      const url = "https://medical-record-project.onrender.com/api/v1/addRecord";
+      
+      // Create FormData object
+      const formData = new FormData();
+      formData.append('recordType', recordType);
+      formData.append('entryType', entryType);
+      formData.append('file', file); // Append the file itself
+  // console.log(formData)
       axios
-        .post(url, image)
+        .post(url, formData, {
+          headers: {
+            // 'Content-Type' is automatically set when sending FormData
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((res) => {
-          console.log(res);
+          dispatch(setMedicalRecords(res?.data?.datas));
+          // console.log(res?.data?.data)
         })
         .catch((error) => {
           console.log(error);
         });
     }
   };
+  
 
   useEffect(() => {
     Aos.init();
@@ -41,10 +63,11 @@ const ImageUpload = () => {
       <ToastContainer />
       <h3>Image upload</h3>
       <div className="image-upload-div">
-        <img src={image} alt="" />
+      {imageUrl ? <img src={imageUrl} alt="Selected" /> : <p>No image selected</p>}
+
       </div>
       <label htmlFor="file-upload" className="custom-file-upload">
-        Choose image
+        Browse image
       </label>
       <input
         type="file"
@@ -53,10 +76,15 @@ const ImageUpload = () => {
         onChange={uploadImage}
       />
       <label htmlFor="">Record Type</label>
-      <select name="" id="">
-        <option value="">Lab Test</option>
-        <option value="">Report</option>
-        <option value="">Drug prescription</option>
+      <select name="" id="" onChange={(e)=>setRecordType(e.target.value)}>
+          <option value="file">File</option>
+          <option value="image">Image</option>
+      </select>
+      <label htmlFor="">Entry Type</label>
+      <select name="" id="" onChange={(e)=>setEntryType(e.target.value)}>
+        <option value="lab test">Lab Test</option>
+        <option value="report">Report</option>
+        <option value="drug prescription">Drug prescription</option>
       </select>
       <button onClick={addImageRecord}>
         <LuUpload />

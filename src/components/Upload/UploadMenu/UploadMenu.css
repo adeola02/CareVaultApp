@@ -6,6 +6,7 @@
   flex-direction: column;
   top: 350px;
   color: #fff;
+  left: 0;
   padding: 10px 30px;
 }
 .UploadMenuBody > nav {
@@ -20,8 +21,8 @@
   left: -3rem;
 }
 .image-upload-div {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   border: 2px dashed black;
   border-radius: 10px;
 

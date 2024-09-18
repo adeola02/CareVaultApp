@@ -1,5 +1,5 @@
-import { MdCancel } from "react-icons/md";
 import logo from "../assets/CareVault.png";
+import { FaXmark } from "react-icons/fa6";
 import CheckMark from "../assets/CheckMark.png";
 import "../AuthCss/SuccessPage.css";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,11 @@ const SuccessPage = () => {
       <div className="success-wrapper">
         <div className="success-header">
           <img src={logo} alt="CareVault Logo" />
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="success-main">
           <div className="success-main-first">

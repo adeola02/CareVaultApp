@@ -1,6 +1,5 @@
-import { MdCancel } from "react-icons/md";
+import { FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
-
 import "../AuthCss/Verification.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +10,11 @@ const Verification = () => {
       <div className="verification-wrapper">
         <div className="verification-header">
           <img src={logo} alt="CareVault Logo" />
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="verification-main">
           <h3>Dear Mustapha Shehu,</h3>
