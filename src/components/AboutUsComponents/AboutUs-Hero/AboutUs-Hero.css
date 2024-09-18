@@ -8,8 +8,7 @@
     top: 80px;
     background: url(../../../assets/AboutUs.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 90%;
+    background-size: fill;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +24,7 @@
     & p {
       max-inline-size: 450px;
       margin-block-start: -30px;
+      font-weight: 500;
     }
 
     & .hero-btn {
@@ -45,6 +45,16 @@
       & h1 {
         font-size: var(--h3);
       }
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .aboutus-hero-main {
+    & p {
+      font-size: 25px;
+      min-inline-size: 800px;
+      font-weight: 500;
     }
   }
 }

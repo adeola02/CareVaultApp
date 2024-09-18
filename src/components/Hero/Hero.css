@@ -1,14 +1,15 @@
 .hero-main-wrapper {
   inline-size: 100%;
+  block-size: 800px;
 
   & .hero-main {
     inline-size: 100%;
-    block-size: 400px;
+    block-size: 50%;
     position: relative;
     top: 80px;
     background: url("../../assets/Home.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
     background-position: 50%;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,7 @@
   color: white;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: transparent;
   border: 2px solid #5f9eeb;
 }
@@ -84,7 +85,38 @@
     inline-size: 100%;
 
     & .hero-main {
+      min-block-size: 60%;
       background-size: cover;
+      margin-bottom: -50rem;
     }
+  }
+}
+
+@media (width >= 1400px) {
+  .hero-main {
+    inline-size: 100%;
+    min-block-size: 80%;
+
+    /* border: 3px solid red; */
+    /* height: 50svh; */
+    /* padding-top: 5rem; */
+
+    & p {
+      font-size: 25px;
+      min-inline-size: 800px;
+      font-weight: 500;
+    }
+
+    & button {
+      /* border: 3px solid red; */
+      margin-block-end: 20px;
+    }
+  }
+}
+
+@media (width >= 2000px) {
+  .hero-main {
+    inline-size: 100%;
+    min-block-size: 100%;
   }
 }
