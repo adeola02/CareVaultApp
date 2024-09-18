@@ -20,7 +20,7 @@
     inline-size: 100%;
     order: 2;
 
-    & h2 {
+    & h1 {
       color: var(--blue);
     }
 

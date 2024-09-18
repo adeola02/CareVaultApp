@@ -11,7 +11,7 @@ const CarevaultInfo = () => {
   return (
     <section className="carevault-info-wrapper" data-aos="fade-up">
       <div className="carevault-info-text" data-aos="fade-up">
-        <h2 className="carevault-info-header">CAREVAULT </h2>
+        <h1 className="carevault-info-header">CAREVAULT </h1>
         <p>
           CareVault is a medical record platform that tends to provide a means
           where patients can easily keep any of their medical record and have
