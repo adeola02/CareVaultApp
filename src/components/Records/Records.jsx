@@ -31,6 +31,61 @@ const Records = () => {
               <button>Download</button>
             </div>
           </div>
+          <div className="recordHolder">
+            <div className="record" style={{ height: "3rem" }}>
+              <nav>Blood Test</nav>
+              <nav>Lab test</nav>
+              <nav>2024,August</nav>
+            </div>
+            <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
+              <button>View</button>
+              <button>Download</button>
+            </div>
+          </div>
+          <div className="recordHolder">
+            <div className="record" style={{ height: "3rem" }}>
+              <nav>Blood Test</nav>
+              <nav>Lab test</nav>
+              <nav>2024,August</nav>
+            </div>
+            <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
+              <button>View</button>
+              <button>Download</button>
+            </div>
+          </div>
+          <div className="recordHolder">
+            <div className="record" style={{ height: "3rem" }}>
+              <nav>Blood Test</nav>
+              <nav>Lab test</nav>
+              <nav>2024,August</nav>
+            </div>
+            <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
+              <button>View</button>
+              <button>Download</button>
+            </div>
+          </div>
+          <div className="recordHolder">
+            <div className="record" style={{ height: "3rem" }}>
+              <nav>Blood Test</nav>
+              <nav>Lab test</nav>
+              <nav>2024,August</nav>
+            </div>
+            <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
+              <button>View</button>
+              <button>Download</button>
+            </div>
+          </div>
+          <div className="recordHolder">
+            <div className="record" style={{ height: "3rem" }}>
+              <nav>Blood Test</nav>
+              <nav>Lab test</nav>
+              <nav>2024,August</nav>
+            </div>
+            <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
+              <button>View</button>
+              <button>Download</button>
+            </div>
+          </div>
         </aside>
       </div>
       <h2>Records Categories</h2>

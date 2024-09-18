@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { appUser } from "../Global/slice";
+import { appUser,setToken } from "../Global/slice";
 import { useState } from "react";
 import { MdCancel } from "react-icons/md";
 
@@ -27,7 +27,9 @@ export const Otp = () => {
         .post(url, data)
         .then((res) => {
           setIsLoading(false);
+          console.log(res)
           dispatch(appUser(res?.data?.user));
+          dispatch(setToken(res?.data?.user?.token))
           nav("/dashBoard");
         })
         .catch((error) => {
@@ -36,6 +38,11 @@ export const Otp = () => {
         });
     }
   };
+
+
+  // const getOneUser=()=>{
+  //   const url=`https://medical-record-project.onrender.com/api/v1/patient/${id}`
+  // }
   return (
     <div className="otp-page">
       <ToastContainer />

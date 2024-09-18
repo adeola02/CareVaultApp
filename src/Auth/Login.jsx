@@ -51,7 +51,8 @@ const Login = () => {
         .post(url, data)
         .then((res) => {
           setIsLoading(false);
-          console.log(res?.data?.data?.user);
+          console.log(res)
+          // console.log(res?.data?.data?.user);
           nav("/otp");
         })
         .catch((err) => {
