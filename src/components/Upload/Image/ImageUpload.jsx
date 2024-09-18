@@ -45,11 +45,12 @@ const ImageUpload = () => {
           },
         })
         .then((res) => {
-          dispatch(setMedicalRecords(res?.data?.datas));
-          // console.log(res?.data?.data)
+          console.log(res?.data)
+          console.log(res?.data?.data)
+          dispatch(setMedicalRecords(res?.data?.data));
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(error?.response?.data?.error);
         });
     }
   };
@@ -90,6 +91,7 @@ const ImageUpload = () => {
         <LuUpload />
         Upload
       </button>
+
     </div>
   );
 };

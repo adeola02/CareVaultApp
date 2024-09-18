@@ -16,8 +16,10 @@ export const recordApp=createSlice({
             state.token=action.payload
         },
         setMedicalRecords:(state,action)=>{
-            state.user.medicalRecords=action.payload
-        }
+            state?.user?.medicalRecords.push(action.payload)
+        },
+        
+       
     }
 })
 

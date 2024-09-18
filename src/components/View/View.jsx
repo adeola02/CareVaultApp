@@ -1,9 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./View.css";
 import { MdArrowBack } from "react-icons/md";
 
 const View = () => {
     const nav=useNavigate();
+    const location = useLocation()
+    const url = location.state
   return (
     <div className='viewPageBody'>
         <div className="viewTop">
@@ -15,7 +17,9 @@ const View = () => {
             </div>
         </div>
         <div className="viewedObject">
-            <div></div>
+            <div>
+                <img src={url} alt="FILE" />
+            </div>
         </div>
     </div>
   )

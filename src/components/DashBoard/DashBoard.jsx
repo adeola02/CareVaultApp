@@ -4,9 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUserLarge } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { setMedicalRecords } from "../../Global/slice";
 
 const DashBoard = () => {
   const user=useSelector((state)=>state.app?.user)
+  const medicalRecords=useSelector((state)=>state?.app?.user?.medicalRecords)
+  console.log(medicalRecords)
   const nav=useNavigate();
   console.log(user)
   return (

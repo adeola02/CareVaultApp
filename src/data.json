@@ -1,0 +1,27 @@
+[
+    {
+        "entryType":"lab test",
+        "repcordType":"image",
+        "date":"24th august,2024"
+    },
+    {
+        "entryType":"drug prescription",
+        "repcordType":"file",
+        "date":"24th august,2024"
+    },
+    {
+        "entryType":"report",
+        "repcordType":"image",
+        "date":"24th august,2024"
+    },
+    {
+        "entryType":"lab test",
+        "repcordType":"file",
+        "date":"24th august,2024"
+    },
+    {
+        "entryType":"report",
+        "repcordType":"file",
+        "date":"24th august,2024"
+    }
+]

@@ -266,10 +266,10 @@ button:hover {
 
 /* For small mobile devices (less than 480px) */
 @media (max-width: 480px) {
-  .recordsBody{
-    /* background: #000; */
-    /* width: 100vw; */
-  }
+  /* .recordsBody{
+    background: #000; 
+     width: 100vw;
+  } */
   .recordsBody > input {
     width: 90%; /* Almost full width input */
     height: 2.5rem; /* Maintain reduced height */
