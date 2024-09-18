@@ -34,7 +34,7 @@ export const Otp = () => {
         })
         .catch((error) => {
           setIsLoading(false);
-          console.log(error);
+          toast.error(error.response.data.message);
         });
     }
   };
@@ -80,7 +80,7 @@ export const Otp = () => {
           <button className="btn1" onClick={handleOtp}>
             {isLoading ? "Loading..." : "Verify"}
           </button>
-          <p>Send code again in 00.59</p>
+          {/* <p>Send code again in 00.59</p> */}
         </div>
       </div>
     </div>

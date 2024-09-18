@@ -69,3 +69,15 @@
     }
   }
 }
+
+@media screen and (width >= 1520px) {
+  .our-team-info-wrapper {
+    & .our-team-info-image {
+      display: flex;
+      justify-content: flex-end;
+      & img {
+        width: 85%;
+      }
+    }
+  }
+}

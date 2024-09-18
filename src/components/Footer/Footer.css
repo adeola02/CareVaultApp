@@ -43,6 +43,9 @@
 
       & .footer-ul li {
         font-size: 12px;
+        filter: invert(57%) sepia(68%) saturate(648%) hue-rotate(171deg)
+          brightness(80%) contrast(97%);
+        color: var(--blue);
       }
     }
   }
@@ -60,6 +63,9 @@
       & li {
         cursor: pointer;
         list-style-type: none;
+        filter: invert(57%) sepia(68%) saturate(648%) hue-rotate(171deg)
+          brightness(80%) contrast(97%);
+        color: var(--blue);
       }
     }
   }
@@ -75,6 +81,8 @@
     gap: 3px;
     font-size: 12px;
     padding-block-end: 20px;
+    filter: invert(57%) sepia(68%) saturate(648%) hue-rotate(171deg)
+      brightness(80%) contrast(97%);
   }
 
   @media (width >= 767px) {
@@ -106,5 +114,12 @@
         margin-inline-start: -130px;
       }
     }
+  }
+}
+
+@media screen and (width >= 1000px) {
+  .footer-about {
+    gap: 3rem;
+    inline-size: 50%;
   }
 }

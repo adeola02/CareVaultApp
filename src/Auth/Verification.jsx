@@ -20,9 +20,9 @@ const Verification = () => {
             Your CareVault account has been successfully created. Please check
             your email(mustaphasidi2005@gmail.com) to verify your account.
           </p>
-          <button className="btn1" onClick={() => nav("/log-in")}>
+          {/* <button className="btn1" onClick={() => nav("/log-in")}>
             Verify
-          </button>
+          </button> */}
         </div>
       </div>
     </section>
