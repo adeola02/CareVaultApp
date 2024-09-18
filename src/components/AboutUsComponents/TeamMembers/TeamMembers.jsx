@@ -13,7 +13,7 @@ const members = [
   {
     id: 9372,
     image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQG9dE_TxzyeeA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1711295259490?e=1730937600&v=beta&t=YTGzL9A2R89eEoDQU2uwYdoAK6XIfz6E-vi4F2W4lhw",
+      "https://res.cloudinary.com/dzjlqmjht/image/upload/v1726684156/users_dp/as3y4tjqowewa4ir2oqb.jpg",
     name: "Ridwan Adebosin",
   },
   {
@@ -23,13 +23,13 @@ const members = [
     name: "Akintunde Quadri",
   },
   {
-    id: 4476,
+    id: 44767,
     image: "",
 
     name: "Esther Raji",
   },
   {
-    id: 4476,
+    id: 48476,
     image:
       "https://res.cloudinary.com/dzjlqmjht/image/upload/v1725887128/users_dp/qznphvhsdggsdbsotukp.jpg ",
     name: "Okoro Miracle ",

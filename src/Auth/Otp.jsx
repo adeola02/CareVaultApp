@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { appUser,setToken } from "../Global/slice";
+import { appUser, setToken } from "../Global/slice";
 import { useState } from "react";
-import { MdCancel } from "react-icons/md";
+import { FaXmark } from "react-icons/fa6";
 
 export const Otp = () => {
   const [otp, setOtp] = useState("");
@@ -27,9 +27,9 @@ export const Otp = () => {
         .post(url, data)
         .then((res) => {
           setIsLoading(false);
-          console.log(res)
+          console.log(res);
           dispatch(appUser(res?.data?.user));
-          dispatch(setToken(res?.data?.user?.token))
+          dispatch(setToken(res?.data?.user?.token));
           nav("/dashBoard");
         })
         .catch((error) => {
@@ -38,7 +38,6 @@ export const Otp = () => {
         });
     }
   };
-
 
   // const getOneUser=()=>{
   //   const url=`https://medical-record-project.onrender.com/api/v1/patient/${id}`
@@ -51,7 +50,11 @@ export const Otp = () => {
           <div className="company-logo">
             <img src={logo} alt="" />
           </div>
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="otp-form">
           <div className="formText">

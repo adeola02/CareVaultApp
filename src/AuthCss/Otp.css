@@ -1,8 +1,9 @@
 .otp-page {
   width: 100%;
   background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   block-size: 100%;
 
   & input,
@@ -12,7 +13,7 @@
 }
 
 .otp-wrapper {
-  width: 80%;
+  width: 50%;
   margin: 40px;
   background: white;
   display: flex;

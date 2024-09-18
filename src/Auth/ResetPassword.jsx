@@ -1,7 +1,6 @@
 import "../AuthCss/ResetPassword.css";
 import { useNavigate } from "react-router-dom";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import { MdCancel } from "react-icons/md";
+import { FaRegEye, FaRegEyeSlash, FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
 import { useState } from "react";
 
@@ -13,7 +12,11 @@ const ResetPassword = () => {
       <div className="reset-password-wrapper">
         <div className="reset-password-header">
           <img src={logo} alt="CareVault Logo" />
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <form className="reset-password-form">
           <div className="formText">
