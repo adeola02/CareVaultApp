@@ -62,6 +62,34 @@
   }
 }
 
+@media (width >= 1500px) {
+  .single-member-wrapper {
+    inline-size: 400px;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+    & .member-image {
+      block-size: 400px;
+      inline-size: inherit;
+
+
+      & img {
+        block-size: 100%;
+        inline-size: 100%;
+      }
+    }
+
+    & .member-name {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    min-inline-size: 400px;
+
+    }
+  }
+}
+
 @keyframes roll-in {
   0% {
     transform: translateX(-100%) rotate(-360deg);
