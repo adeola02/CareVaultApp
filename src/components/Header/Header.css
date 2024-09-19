@@ -37,8 +37,9 @@ nav {
     color: inherit;
     transition: background-color 0.3s ease-in-out;
     padding: 5px 15px;
-    /* box-sizing: border-box; */
     border-radius: var(--radius);
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
   }
 
   & a:hover {
@@ -47,6 +48,11 @@ nav {
 
   & .log-in {
     margin-inline-start: 5rem;
+    border: 2px solid var(--blue);
+  }
+
+  & .sign-up {
+    border: 2px solid var(--blue);
   }
 
   & .log-in:hover,
@@ -54,8 +60,8 @@ nav {
     text-decoration: none;
     background-color: var(--blue);
     color: var(--white);
+
     /* padding: 5px 15px; */
-    border: 2px solid var(--blue);
     /* transition: background-color 0.3s ease; */
   }
 }

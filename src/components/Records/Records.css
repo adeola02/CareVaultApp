@@ -80,6 +80,7 @@
     height: 100%;
     background: #ffffff;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 
     & div {
       width: 100%;
@@ -124,7 +125,7 @@ aside > .recordHolder > .record {
 .record > nav {
   width: 25%;
   font-size: 1rem;
-  font-weight: lighter;
+  font-weight: light;
 }
 .recordBtn {
   width: 20%;
@@ -246,13 +247,17 @@ button:hover {
 
   aside {
     height: auto;
-    max-height: 40vh; /* Limit height for better scrolling */
+    max-height: 40vh;
+    width: 100%; /* Limit height for better scrolling */
   }
 
   aside > .recordHolder > .record {
     width: 100%; /* Full width for record items */
     flex-direction: column;
     align-items: flex-start;
+  }
+  .recordHolder{
+   margin-top: 15px;
   }
   .sectionMenu {
     display: none !important;
@@ -261,6 +266,10 @@ button:hover {
 
 /* For small mobile devices (less than 480px) */
 @media (max-width: 480px) {
+  /* .recordsBody{
+    background: #000; 
+     width: 100vw;
+  } */
   .recordsBody > input {
     width: 90%; /* Almost full width input */
     height: 2.5rem; /* Maintain reduced height */

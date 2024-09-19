@@ -7,7 +7,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { appUser } from "../Global/slice";
 import { useState } from "react";
-import { MdCancel } from "react-icons/md";
+import { FaXmark } from "react-icons/fa6";
 
 export const VerifyResetCode = () => {
   const [otp, setOtp] = useState("");
@@ -44,7 +44,11 @@ export const VerifyResetCode = () => {
           <div className="company-logo">
             <img src={logo} alt="" />
           </div>
-          <MdCancel size={30} cursor="pointer" onClick={() => nav("/")} />
+          <FaXmark
+            size={30}
+            onClick={() => nav("/")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="otp-form">
           <div className="formText">

@@ -32,9 +32,19 @@
     height: max-content;
 }
 
+
 @media   (max-width: 768px)  {
     .outLetsLayout{
         height: auto;
         overflow: scroll !important;
+    }
+}
+@media (max-width:480px){
+    .outlets{
+        /* background: #000; */
+        width: 480px;
+    }
+    .userProfile{
+        display: none;
     }
 }

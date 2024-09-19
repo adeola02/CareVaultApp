@@ -1,8 +1,9 @@
 .login-page {
   width: 100%;
   background: linear-gradient(180deg, #5f9eeb 0%, #315682 100%);
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   block-size: 100svh;
   & input,
   & select {
@@ -16,7 +17,7 @@
 }
 
 .login-wrapper {
-  width: 80%;
+  width: 60%;
   margin: 40px;
   background: white;
   display: flex;
@@ -77,6 +78,17 @@
   display: flex;
   justify-content: flex-end;
   padding: 10px 0px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.dont-have-an-acc {
+  text-decoration: none;
+}
+
+.forgot-password:hover,
+.dont-have-an-acc:hover {
+  text-decoration: underline;
 }
 
 @media (width <= 900px) {
@@ -96,13 +108,3 @@
     block-size: 100svh;
   }
 }
-/* .login-btn{
-  width: 100%;
-}
-
-.login-btn:hover {
-  cursor: pointer;
-  font-size: bold;
-  background-color:#013d86;
-  color: white;
-} */
