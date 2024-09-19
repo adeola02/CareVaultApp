@@ -52,12 +52,12 @@ const Login = () => {
         .then((res) => {
           setIsLoading(false);
           console.log(res);
-          // console.log(res?.data?.data?.user);
+          
           nav("/otp");
         })
         .catch((err) => {
           setIsLoading(false);
-          console.log(err);
+         toast.error(err.response?.data?.message);
         });
     }
   };

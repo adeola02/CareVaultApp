@@ -22,6 +22,8 @@ import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 import AdminRecords from "../components/AdminRecordList/AdminRecords";
 import View from "../components/View/View";
 import { VerifyResetCode } from "../Auth/VerifyResetCode";
+import UserRoute from "./UserRoute";
+import AdminRoute from "./AdminRoute";
 // import Header from "../components/Header/Header";
 
 export const router = createHashRouter([
@@ -84,22 +86,23 @@ export const router = createHashRouter([
     ],
   },
   {
-    element: <DashBoardLayout/>,
+    element: <UserRoute element={<DashBoardLayout/>}></UserRoute>,
+    path:"/dashBoard",
     children:[
       {
-        path:"/dashBoard",
+        path:"",
         element:<DashBoard/>
       },
       {
-        path:"/records",
+        path:"dashBoard/records",
         element:<Records/>
       },
       {
-        path:"/uploadImage",
+        path:"uploadImage",
         element:<ImageUpload/>
       },
       {
-        path:"/uploadPdf",
+        path:"uploadPdf",
         element:<PdfUpload/>
       },
       {
@@ -107,22 +110,38 @@ export const router = createHashRouter([
         element:<ManualUpload/>
       },
       {
-        path:"/view",
+        path:"view",
         element:<View/>
       }
     ]
   },
   {
-    element:<AdminLayout/>,
-    children:[
+    element: <AdminRoute><AdminLayout /></AdminRoute>,
+    path: "adminDashBoard",
+    children: [
       {
-        path:"adminDashBoard",
-        element:<AdminDashBoard/>
+        path: "",
+        element: <AdminDashBoard />,
       },
       {
-        path:"adminRecords",
-        element:<AdminRecords/>
-      }
-    ]
+        path: "adminRecords",
+        element: <AdminRecords />,
+      },
+    ],
   }
+  
+  // {
+  //   element:<AdminRoute element={<AdminLayout/>}></AdminRoute>,
+  //   path:"adminDashBoard",
+  //   children:[
+  //     {
+  //       path:"",
+  //       element:<AdminDashBoard/>
+  //     },
+  //     {
+  //       path:"adminRecords",
+  //       element:<AdminRecords/>
+  //     }
+  //   ]
+  // }
 ]);

@@ -13,7 +13,7 @@ const ImageUpload = () => {
   const [imageUrl,setImageUrl]=useState("")
   const [entryType,setEntryType]=useState("");
   const [recordType,setRecordType]=useState("");
-  
+  const [isLoading,setIsLoading]=useState(false);
   const token=useSelector((state)=>state.app?.token)
  const dispatch=useDispatch();
 
@@ -23,12 +23,13 @@ const ImageUpload = () => {
     const imageUrl = URL.createObjectURL(selectedFile);
     setImageUrl(imageUrl);
   };
-  // console.log(image);
+ 
 
   const addImageRecord = () => {
     if (!file) {
       toast.error("Please choose an image to upload");
     } else {
+      setIsLoading(true)
       const url = "https://medical-record-project.onrender.com/api/v1/addRecord";
       
       // Create FormData object
@@ -45,11 +46,13 @@ const ImageUpload = () => {
           },
         })
         .then((res) => {
+          setIsLoading(false)
           console.log(res?.data)
           console.log(res?.data?.data)
           dispatch(setMedicalRecords(res?.data?.data));
         })
         .catch((error) => {
+          setIsLoading(false)
           toast.error(error?.response?.data?.error);
         });
     }
@@ -88,8 +91,15 @@ const ImageUpload = () => {
         <option value="drug prescription">Drug prescription</option>
       </select>
       <button onClick={addImageRecord}>
-        <LuUpload />
-        Upload
+        {
+          isLoading ?
+          "Loading...":
+          <>
+          
+           <LuUpload />
+          Upload
+          </>
+        }
       </button>
 
     </div>

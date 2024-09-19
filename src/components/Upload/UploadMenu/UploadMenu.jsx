@@ -5,7 +5,7 @@ const UploadMenu = ({ setIsActive }) => {
   return (
     <div className="UploadMenuBody">
       {/* <div className="triangle"></div> */}
-      <NavLink to={"/uploadImage"} className="link">
+      <NavLink to={"/dashBoard/uploadImage"} className="link">
         <nav style={{ fontSize: "15px" }} onClick={() => setIsActive(false)}>
           As Image
         </nav>

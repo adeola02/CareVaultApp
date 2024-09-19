@@ -30,7 +30,12 @@ export const Otp = () => {
           console.log(res);
           dispatch(appUser(res?.data?.user));
           dispatch(setToken(res?.data?.user?.token));
-          nav("/dashBoard");
+          console.log(res?.data?.user?.isAdmin)
+          if(res?.data?.user?.isAdmin){
+            nav("/adminDashBoard")
+          }else{
+            nav("/dashBoard")
+          }
         })
         .catch((error) => {
           setIsLoading(false);

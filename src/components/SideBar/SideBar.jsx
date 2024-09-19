@@ -7,12 +7,37 @@ import { RxDashboard } from "react-icons/rx";
 import { LuUpload } from "react-icons/lu";
 import { MdOutlineSimCardDownload } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
+  const token=useSelector((state)=>state?.app?.token)
+  console.log(token)
   const [isActive, setIsActive] = useState(false);
   const handleCloseNav = () => {
     setIsActive(false);
   };
+
+  const handleLogOut = () => {  
+    const url = "https://medical-record-project.onrender.com/api/v1/patients/signOut";  
+    if (!token) {  
+      console.log("Token is not provided");  
+      return;  
+    }  
+  
+    axios.patch(url, null, {  
+      headers: {  
+        Authorization: `Bearer ${token}`,  
+      },  
+    })  
+    .then((res) => {  
+      console.log(res);
+      nav("/")  
+    })  
+    .catch((err) => {  
+      console.log(err);  
+    });  
+  };  
   return (
     <div className="sideBarBody">
       <div>
@@ -31,7 +56,7 @@ const SideBar = () => {
           </nav>
         </NavLink>
         <NavLink
-          to="/records"
+          to="dashBoard/records"
           className={({ isActive }) => (isActive ? "isActive" : "notActive")}
           style={{ color: "white" }}
           onClick={handleCloseNav}
@@ -50,7 +75,7 @@ const SideBar = () => {
         </nav>
         {isActive ? <UploadMenu setIsActive={setIsActive} /> : null}
       </section>
-      <nav>
+      <nav onClick={handleLogOut} >
         <TbLogout size={25} />
         Logout
       </nav>

@@ -9,7 +9,9 @@ import { setMedicalRecords } from "../../Global/slice";
 const DashBoard = () => {
   const user=useSelector((state)=>state.app?.user)
   const medicalRecords=useSelector((state)=>state?.app?.user?.medicalRecords)
-  console.log(medicalRecords)
+  console.log(medicalRecords);
+  const recentUploads=medicalRecords.slice(0,3)
+  console.log(recentUploads)
   const nav=useNavigate();
   console.log(user)
   return (
@@ -18,7 +20,7 @@ const DashBoard = () => {
       <section>
         <div>
           <div>
-            <h2>7</h2>
+            <h2>{medicalRecords.length}</h2>
           </div>
           <div>
             <span> Total records</span>
@@ -26,7 +28,7 @@ const DashBoard = () => {
         </div>
         <div>
           <div>
-            <h2>Blood test result</h2>
+            <h2>{medicalRecords[0].entryType}</h2>
           </div>
           <div>
             <span> last update</span>
@@ -34,7 +36,7 @@ const DashBoard = () => {
         </div>
         <div>
           <div>
-            <h2>1.2gb of 2gb</h2>
+            <h2>100mb of {user?.totalStorage}mb</h2>
           </div>
           <div>
             <span>Storage used</span>
@@ -75,48 +77,32 @@ const DashBoard = () => {
           <nav>Name</nav>
           <nav>Category</nav>
           <nav>Date</nav>
-          <button>View all</button>
+          <button onClick={()=>nav("dashBoard/records")}>View all</button>
         </div>
         <article>
-          <div>
-            <div className="records">
-              <nav>Bload test</nav>
-              <nav>Lab test</nav>
-              <nav>2024,august</nav>
+          {
+            recentUploads.map((item,index)=>(
+              <div>
+              <div className="records">
+                <nav>{item?.entryType}</nav>
+                <nav>{item?.recordType}</nav>
+                <nav>2024,august</nav>
+              </div>
+              <div className="articleButton">
+                <button onClick={()=>nav("/view")}>View</button>
+                <button
+                  onClick={() =>
+                    toast("you've successfully downloaded your file")
+                  }
+                >
+                  Download
+                </button>
+              </div>
             </div>
-            <div className="articleButton">
-              <button onClick={()=>nav("/view")}>View</button>
-              <button
-                onClick={() =>
-                  toast("you've successfully downloaded your file")
-                }
-              >
-                Download
-              </button>
-            </div>
-          </div>
-          <div>
-            <div className="records">
-              <nav>Bload test</nav>
-              <nav>Lab test</nav>
-              <nav>2024,august</nav>
-            </div>
-            <div className="articleButton">
-              <button>View</button>
-              <button>Download</button>
-            </div>
-          </div>
-          <div>
-            <div className="records">
-              <nav>Bload test</nav>
-              <nav>Lab test</nav>
-              <nav>2024,august</nav>
-            </div>
-            <div className="articleButton">
-              <button>View</button>
-              <button>Download</button>
-            </div>
-          </div>
+            ))
+           
+          }
+          
         </article>
       </main>
     </div>
