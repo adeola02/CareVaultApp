@@ -113,8 +113,8 @@ main > div {
 main > div > nav {
   width: 25%;
 }
-main > .div{
- margin-bottom: 10px;
+main > .div {
+  margin-bottom: 10px;
 }
 main > div > button {
   width: 6rem;
@@ -126,7 +126,7 @@ main > div > button {
   background: #dbdbdb;
   font-size: 1rem;
 }
-main > .text-top{
+main > .text-top {
   height: 3rem;
 }
 article {
@@ -263,12 +263,11 @@ button:hover {
 
 /* Styles for small mobile devices (less than 480px) */
 @media (max-width: 480px) {
-  .dashBoardBody{
+  .dashBoardBody {
     width: 480px;
   }
   .dashBoardBody > section div {
     width: 100%; /* Make the section fill the entire width */
-   
   }
 
   .dashBoardBody > aside div {
@@ -292,4 +291,51 @@ button:hover {
   article {
     padding: 0.5rem;
   }
+}
+
+.dashboard-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: transform 3s ease-in-out;
+}
+
+.dashboard-box:hover {
+  transform: translateY(10%);
+}
+
+.top-bar {
+  margin-top: -150px;
+}
+.bottom-bar {
+  /* height: auto; */
+
+  & button {
+    background-color: var(--blue);
+    color: white;
+    border: 2px solid var(--blue);
+  }
+
+  & button:hover {
+    background-color: transparent;
+    color: black;
+    border-radius: 10px;
+  }
+}
+
+.viewall-btn {
+  background-color: var(--blue);
+  color: white;
+  border: 2px solid var(--blue);
+}
+
+.viewall-btn:hover {
+  background-color: transparent;
+  color: black;
+  border-radius: 10px;
 }

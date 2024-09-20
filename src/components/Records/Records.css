@@ -26,15 +26,20 @@
 
   & input {
     border-radius: 20px;
-    height: 40px;
+    margin-inline-start: -2rem;
+    /* height: 40px; */
   }
 }
 
 .input .search {
   position: absolute;
-  left: 50px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+::placeholder {
+  /* border: 3px solid red; */
 }
 
 /* .input .cancel {
@@ -257,8 +262,8 @@ button:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-  .recordHolder{
-   margin-top: 15px;
+  .recordHolder {
+    margin-top: 15px;
   }
   .sectionMenu {
     display: none !important;
@@ -284,5 +289,35 @@ button:hover {
   .recordBtn > button {
     width: 100%; /* Buttons take full width */
     font-size: 0.9rem; /* Reduce button text size */
+  }
+}
+
+.record-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: transform 3s ease-in-out;
+}
+
+.record-box:hover {
+  transform: translateY(10%);
+}
+
+.recordBtn {
+  & .record-btn {
+    background-color: var(--blue);
+    color: white;
+    border: 2px solid var(--blue);
+  }
+
+  & .record-btn:hover {
+    background-color: transparent;
+    color: black;
+    border-radius: 10px;
   }
 }

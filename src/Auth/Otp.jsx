@@ -30,11 +30,11 @@ export const Otp = () => {
           console.log(res);
           dispatch(appUser(res?.data?.user));
           dispatch(setToken(res?.data?.user?.token));
-          console.log(res?.data?.user?.isAdmin)
-          if(res?.data?.user?.isAdmin){
-            nav("/adminDashBoard")
-          }else{
-            nav("/dashBoard")
+          console.log(res?.data?.user?.isAdmin);
+          if (res?.data?.user?.isAdmin) {
+            nav("/adminDashBoard");
+          } else {
+            nav("/dashBoard");
           }
         })
         .catch((error) => {
@@ -66,7 +66,7 @@ export const Otp = () => {
             <h2>Please check your email</h2>
             <p>
               We have sent a code to <br />
-              {appUser.email} <br /> for verification
+              your email <br /> for verification
             </p>
           </div>
           <div className="otp-container">

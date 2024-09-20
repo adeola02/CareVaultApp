@@ -27,7 +27,7 @@
   align-items: start;
   color: white;
 
-  & nav{
+  & nav {
     display: flex;
     align-items: center;
     /* background: #000; */
@@ -41,7 +41,6 @@ section > nav {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-
 }
 section > nav:hover {
   cursor: pointer;
@@ -69,7 +68,7 @@ section > nav:hover {
   color: white;
   /* background: #000; */
   padding: 10px 0px;
- cursor: pointer;
+  cursor: pointer;
 }
 .sideBarBody > nav:hover {
   /* cursor: pointer; */
@@ -163,4 +162,22 @@ section > nav:hover {
 /* nav:nth-child(3) {
   border: 3px solid red;
   p-bottom: 20px;
+} */
+/* @media (width <= 768px) {
+  .sideBarBody {
+    display: none;
+  }
+  .popover-btn {
+    display: block;
+  }
+}
+
+@media (width >= 768px) {
+  .sideBarBody {
+    display: block;
+  }
+
+  .popover-btn {
+    display: none;
+  }
 } */

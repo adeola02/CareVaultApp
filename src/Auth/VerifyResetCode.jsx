@@ -22,7 +22,7 @@ export const VerifyResetCode = () => {
       setIsLoading(true);
       const url =
         "https://medical-record-project.onrender.com/api/v1/verify-reset-code";
-      const data = {resetCode: otp };
+      const data = { resetCode: otp };
       axios
         .post(url, data)
         .then((res) => {
@@ -55,7 +55,7 @@ export const VerifyResetCode = () => {
             <h2>Please check your email</h2>
             <p>
               We have sent a code to <br />
-              {appUser.email} <br /> reset of your password
+              to your email for password reset verification.
             </p>
           </div>
           <div className="otp-container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SideBar.css";
 import careVault from "../../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
@@ -11,33 +11,35 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  const token=useSelector((state)=>state?.app?.token)
-  console.log(token)
+  const token = useSelector((state) => state?.app?.token);
+  console.log(token);
   const [isActive, setIsActive] = useState(false);
   const handleCloseNav = () => {
     setIsActive(false);
   };
 
-  const handleLogOut = () => {  
-    const url = "https://medical-record-project.onrender.com/api/v1/patients/signOut";  
-    if (!token) {  
-      console.log("Token is not provided");  
-      return;  
-    }  
-  
-    axios.patch(url, null, {  
-      headers: {  
-        Authorization: `Bearer ${token}`,  
-      },  
-    })  
-    .then((res) => {  
-      console.log(res);
-      nav("/")  
-    })  
-    .catch((err) => {  
-      console.log(err);  
-    });  
-  };  
+  const handleLogOut = () => {
+    const url =
+      "https://medical-record-project.onrender.com/api/v1/patients/signOut";
+    if (!token) {
+      console.log("Token is not provided");
+      return;
+    }
+
+    axios
+      .patch(url, null, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        nav("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="sideBarBody">
       <div>
@@ -71,18 +73,13 @@ const SideBar = () => {
           className={({ isActive }) => (isActive ? "isActive" : "notActive")}
           style={{ color: "white" }}
         >
-        <nav
-         
-         
-        >
-          <LuUpload size={25} />
-          Upload
-        </nav>
-
+          <nav>
+            <LuUpload size={25} />
+            Upload
+          </nav>
         </NavLink>
-        
       </section>
-      <nav onClick={handleLogOut} >
+      <nav onClick={handleLogOut}>
         <TbLogout size={25} />
         Logout
       </nav>
