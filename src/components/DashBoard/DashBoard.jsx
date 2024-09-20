@@ -13,6 +13,9 @@ const DashBoard = () => {
   const recentUploads=medicalRecords.slice(0,3)
   console.log(recentUploads)
   const nav=useNavigate();
+  const viewRecord = (url) => {
+    window.open(url, "_blank");
+  };
   console.log(user)
   return (
     <div className="dashBoardBody">
@@ -28,7 +31,7 @@ const DashBoard = () => {
         </div>
         <div>
           <div>
-            <h2>{medicalRecords[0].entryType}</h2>
+            <h2>report</h2>
           </div>
           <div>
             <span> last update</span>
@@ -36,7 +39,7 @@ const DashBoard = () => {
         </div>
         <div>
           <div>
-            <h2>100mb of {user?.totalStorage}mb</h2>
+            <h2>{user?.usedStorage}mb of {user?.totalStorage}mb</h2>
           </div>
           <div>
             <span>Storage used</span>
@@ -77,10 +80,13 @@ const DashBoard = () => {
           <nav>Name</nav>
           <nav>Category</nav>
           <nav>Date</nav>
-          <button onClick={()=>nav("dashBoard/records")}>View all</button>
+          <button onClick={()=>nav("/records")}>View all</button>
         </div>
         <article>
           {
+            recentUploads.length === 0 ?
+            <p>you're yet to make an upload</p>:
+         
             recentUploads.map((item,index)=>(
               <div>
               <div className="records">
@@ -89,7 +95,7 @@ const DashBoard = () => {
                 <nav>2024,august</nav>
               </div>
               <div className="articleButton">
-                <button onClick={()=>nav("/view")}>View</button>
+                <button onClick={() => viewRecord(item?.fileUrl)}>View</button>
                 <button
                   onClick={() =>
                     toast("you've successfully downloaded your file")

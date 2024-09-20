@@ -56,7 +56,7 @@ const SideBar = () => {
           </nav>
         </NavLink>
         <NavLink
-          to="dashBoard/records"
+          to="records"
           className={({ isActive }) => (isActive ? "isActive" : "notActive")}
           style={{ color: "white" }}
           onClick={handleCloseNav}
@@ -66,14 +66,21 @@ const SideBar = () => {
             My records
           </nav>
         </NavLink>
+        <NavLink
+          to="uploadImage"
+          className={({ isActive }) => (isActive ? "isActive" : "notActive")}
+          style={{ color: "white" }}
+        >
         <nav
-          className={isActive ? "isActive" : "notActive"}
-          onClick={() => setIsActive(!isActive)}
+         
+         
         >
           <LuUpload size={25} />
           Upload
         </nav>
-        {isActive ? <UploadMenu setIsActive={setIsActive} /> : null}
+
+        </NavLink>
+        
       </section>
       <nav onClick={handleLogOut} >
         <TbLogout size={25} />

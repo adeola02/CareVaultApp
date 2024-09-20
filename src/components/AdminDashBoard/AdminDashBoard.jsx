@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./AdminDashBoard.css";
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 
 const AdminDashBoard = () => {
+const token=useSelector((state)=>state.app?.token)
+  const getAllRecords=()=>{
+    const url="https://medical-record-project.onrender.com/api/v1/patient/all"
+    axios.get(url,{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+  useEffect(()=>{
+    getAllRecords();
+  },[]);
+
+  
   return (
     <div className="dashBoardBody">
          <section>
@@ -19,7 +41,7 @@ const AdminDashBoard = () => {
             <h2>Blood test result</h2>
           </div>
           <div>
-          <span>  last update</span></div>
+          <span>  last user</span></div>
         </div>
         <div>
           <div>
