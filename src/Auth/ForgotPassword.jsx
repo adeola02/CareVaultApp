@@ -35,7 +35,9 @@ const ForgotPassword = () => {
         );
         nav("/verifyresetcode");
       }
-    } catch (error) {
+      console.log(response)
+    }
+     catch (error) {
       console.error("Error occurred during password reset:", error);
       if (error.response && error.response.data) {
         toast.error(

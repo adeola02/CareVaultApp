@@ -87,14 +87,14 @@ export const router = createHashRouter([
   },
   {
     element: <UserRoute element={<DashBoardLayout/>}></UserRoute>,
-    path:"/dashBoard",
+    // path:"/dashBoard",
     children:[
       {
-        path:"",
+        path:"dashBoard",
         element:<DashBoard/>
       },
       {
-        path:"dashBoard/records",
+        path:"records",
         element:<Records/>
       },
       {

@@ -15,8 +15,10 @@ const DashBoard = () => {
   const recentUploads = medicalRecords.slice(0, 3);
   console.log(recentUploads);
   const nav = useNavigate();
+  const viewRecord = (url) => {
+    window.open(url, "_blank");
+  };
   console.log(user);
-
   return (
     <div className="dashBoardBody">
       <ToastContainer />
@@ -31,7 +33,7 @@ const DashBoard = () => {
         </div>
         <div className="dashboard-box">
           <div>
-            <h2>{medicalRecords[0].entryType}</h2>
+            <h2>report</h2>
           </div>
           <div>
             <span> last update</span>
@@ -39,7 +41,9 @@ const DashBoard = () => {
         </div>
         <div className="dashboard-box">
           <div>
-            <h2>100mb of {user?.totalStorage}mb</h2>
+            <h2>
+              {user?.usedStorage}mb of {user?.totalStorage}mb
+            </h2>
           </div>
           <div>
             <span>Storage used</span>
@@ -55,23 +59,22 @@ const DashBoard = () => {
           <nav>Name</nav>
           <nav>Category</nav>
           <nav>Date</nav>
-          <button
-            style={{ backgroundColor: "#5c9ae5", color: "white" }}
-            onClick={() => nav("dashBoard/records")}
-          >
+          <button className="viewall-btn" onClick={() => nav("/records")}>
             View all
           </button>
         </div>
-        <article>
+        <article className="">
           {recentUploads.map((item, index) => (
-            <div className="bottom-bar" key={index}>
+            <div key={item?.id || index}>
+              {" "}
+              {/* Replace 'item?.id' with your unique identifier */}
               <div className="records">
                 <nav>{item?.entryType}</nav>
                 <nav>{item?.recordType}</nav>
                 <nav>{new Date().toLocaleDateString()}</nav>
               </div>
-              <div className="articleButton">
-                <button onClick={() => nav("/view")}>View</button>
+              <div className="articleButton bottom-bar">
+                <button onClick={() => viewRecord(item?.fileUrl)}>View</button>
                 <button
                   onClick={() =>
                     toast("you've successfully downloaded your file")

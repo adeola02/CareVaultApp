@@ -67,7 +67,7 @@ const Records = () => {
         },
       })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -87,7 +87,7 @@ const Records = () => {
   return (
     <div className="recordsBody">
       <div className="input">
-        <IoIosSearch size={25} className="search" />
+        {/* <IoIosSearch size={25} className="search" /> */}
         <input
           type="search"
           placeholder="Search"
@@ -135,7 +135,16 @@ const Records = () => {
                     </button>
                     <button
                       className="record-btn"
-                      onClick={() => downloadFile(item?.fileUrl, fileName)}
+                      onClick={() => {
+                        const fileNameArr = item?.fileUrl
+                          ? item?.fileUrl.split("/")
+                          : [];
+                        const fileName =
+                          fileNameArr.length > 0
+                            ? fileNameArr[fileNameArr.length - 1]
+                            : "default-filename";
+                        downloadFile(item?.fileUrl, fileName);
+                      }}
                     >
                       Download
                     </button>
@@ -150,7 +159,7 @@ const Records = () => {
       <div className="recordsCategory">
         <div className="record-box">
           <div>
-            <h2>7</h2>
+            <h2>{medicalRecords.length}</h2>
           </div>
           <div>
             <span>Lab test</span>
@@ -158,7 +167,7 @@ const Records = () => {
         </div>
         <div className="record-box">
           <div>
-            <h2>3</h2>
+            <h2>0</h2>
           </div>
           <div>
             <span>Drug Prescription</span>
@@ -166,7 +175,7 @@ const Records = () => {
         </div>
         <div className="record-box">
           <div>
-            <h2>6</h2>
+            <h2>0</h2>
           </div>
           <div>
             <span>Reports</span>
