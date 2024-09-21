@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 const SideBar = () => {
   const token = useSelector((state) => state?.app?.token);
-  console.log(token);
+  // console.log(token);
   const [isActive, setIsActive] = useState(false);
   const handleCloseNav = () => {
     setIsActive(false);
