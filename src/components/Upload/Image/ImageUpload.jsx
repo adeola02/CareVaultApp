@@ -89,13 +89,23 @@ const ImageUpload = () => {
         onChange={uploadImage}
       />
       <label htmlFor="">Record Type</label>
-      <select name="" id="" onChange={(e) => setRecordType(e.target.value)}>
+      <select
+        className="image-upload-select"
+        name=""
+        id=""
+        onChange={(e) => setRecordType(e.target.value)}
+      >
         <option value="select">Select</option>
         <option value="file">File</option>
         <option value="image">Image</option>
       </select>
       <label htmlFor="">Entry Type</label>
-      <select name="" id="" onChange={(e) => setEntryType(e.target.value)}>
+      <select
+        className="image-upload-select"
+        name=""
+        id=""
+        onChange={(e) => setEntryType(e.target.value)}
+      >
         <option value="select">Select</option>
         <option value="lab test">Lab Test</option>
         <option value="report">Report</option>

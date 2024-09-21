@@ -91,6 +91,7 @@ const Records = () => {
           placeholder="Search"
           onChange={filterOnChange}
           value={searchValue}
+          className="record-input"
         />
       </div>
 
