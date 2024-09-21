@@ -11,8 +11,11 @@ const Records = () => {
   const [filteredData, setFilteredData] = useState(medicalRecords);
   const token = useSelector((state) => state.app?.token);
   const [searchValue, setSearchValue] = useState('');
+  const [labTest,setLabTest]=useState([]);
+  const [report,setReport]=useState([]);
+  const [drug,setDrug]=useState([]);
   
-
+console.log(labTest)
   const filterOnChange = (e) => {
     const filter = e.target.value;
     setSearchValue(filter);
@@ -21,6 +24,35 @@ const Records = () => {
     );
     setFilteredData(filtered);
   };
+
+  const handleDownload = (fileUrl) => {
+    const fileExtension = fileUrl.split(".").pop().toLowerCase();
+
+    if (["jpg", "jpeg", "png", "gif", "pdf"].includes(fileExtension)) {
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = true;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("File format not supported for download.");
+}
+};
+
+
+  const filteredType =()=>{
+    const data=filteredData.filter((e)=>e.entryType.toLowerCase() === "lab test")
+    setLabTest(data)
+    const reportData=filteredData.filter((e)=>e.entryType.toLowerCase() === "report")
+    setReport(reportData)
+    const drugData=filteredData.filter((e)=>e.entryType.toLowerCase() === "drug prescription")
+    setDrug(drugData)
+  }
+
+  useEffect(()=>{
+    filteredType()
+  },[])
   const downloadFile = (fileUrl) => {
     const fileName = fileUrl.split("/").pop(); // Get the file name from the URL
     const link = document.createElement("a"); // Create an anchor element
@@ -92,7 +124,7 @@ const Records = () => {
                 </div>
                 <div className="recordBtn" style={{ width: "20%", height: "3rem" }}>
                   <button onClick={() => viewRecord(item?.fileUrl)}>View</button>
-                  <button onClick={downloadFile}>Download</button>
+                  <button onClick={handleDownload}>Download</button>
                 </div>
               </div>
             ))
@@ -103,7 +135,7 @@ const Records = () => {
       <div className="recordsCategory">
         <div>
           <div>
-            <h2>7</h2>
+            <h2>{labTest.length}</h2>
           </div>
           <div>
             <span>Lab test</span>
@@ -111,7 +143,7 @@ const Records = () => {
         </div>
         <div>
           <div>
-            <h2>3</h2>
+            <h2>{drug.length}</h2>
           </div>
           <div>
             <span>Drug Prescription</span>
@@ -119,7 +151,7 @@ const Records = () => {
         </div>
         <div>
           <div>
-            <h2>6</h2>
+            <h2>{report.length}</h2>
           </div>
           <div>
             <span>Reports</span>

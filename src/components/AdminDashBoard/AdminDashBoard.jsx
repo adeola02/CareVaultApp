@@ -1,27 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./AdminDashBoard.css";
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 
 const AdminDashBoard = () => {
-const token=useSelector((state)=>state.app?.token)
+const token=useSelector((state)=>state.app?.token);
+const [allUsers,setAllUsers]=useState([]);
+const [recentUsers,setRecentUsers]=useState([]);
+console.log(recentUsers)
+
+const getRecentUsers=()=>{
+  setRecentUsers(allUsers)
+}
+
   const getAllRecords=()=>{
-    const url="https://medical-record-project.onrender.com/api/v1/patient/all"
+    const url="https://medical-record-project.onrender.com/api/v1/patient"
     axios.get(url,{
       headers:{
         Authorization:`Bearer ${token}`
       }
     })
     .then((res)=>{
-      console.log(res)
+      console.log(res?.data?.data)
+     setAllUsers(res?.data?.data)
     })
     .catch((err)=>{
       console.log(err)
     })
   }
   useEffect(()=>{
-    getAllRecords();
+    getAllRecords(),
+    getRecentUsers();
   },[]);
 
   
@@ -61,6 +71,9 @@ const token=useSelector((state)=>state.app?.token)
           <button>View all</button>
         </div>
         <article>
+          {
+            allUsers.map((user,id)=>(
+
           <div>
             <div className="records">
               <span>Bload test</span>
@@ -72,28 +85,9 @@ const token=useSelector((state)=>state.app?.token)
               <button>Delte</button>
             </div>
           </div>
-          <div>
-            <div className="records">
-              <span>Bload test</span>
-              <span>Lab test</span>
-              <span>2024,august</span>
-            </div>
-            <div className="articleButton">
-             
-              <button>Delete</button>
-            </div>
-          </div>
-          <div>
-            <div className="records">
-              <span>Bload test</span>
-              <span>Lab test</span>
-              <span>2024,august</span>
-            </div>
-            <div className="articleButton">
-             
-              <button>Delete</button>
-            </div>
-          </div>
+            ))
+          }
+          
         </article>
       </div>
     </div>
