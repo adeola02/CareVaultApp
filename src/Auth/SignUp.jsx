@@ -5,6 +5,7 @@ import { FaRegEye, FaRegEyeSlash, FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import { userInfo } from "../Global/slice";
 
 const SignUp = () => {
   const nav = useNavigate();
@@ -90,13 +91,14 @@ const SignUp = () => {
       axios
         .post(url, formData)
         .then((res) => {
+          // dispatch(userInfo(res?.data?.data))
+          nav("/verification")
           setIsLoading(false);
-          toast.success("Sign up successful! Redirecting...");
-          nav("/verification");
         })
         .catch((err) => {
           setIsLoading(false);
           toast.error(err.response.data);
+         
         });
     }
   };

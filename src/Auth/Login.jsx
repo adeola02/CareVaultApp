@@ -41,7 +41,7 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     if (!email || !passWord) {
-      toast.error("input all datas");
+      toast.error("input all fields");
     } else {
       setIsLoading(true);
       const data = { email, passWord };

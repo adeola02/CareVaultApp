@@ -12,13 +12,16 @@ const DashBoard = () => {
     (state) => state?.app?.user?.medicalRecords
   );
   console.log(medicalRecords);
-  const recentUploads = medicalRecords.slice(0, 3);
+  const recentUploads = medicalRecords.slice(-3);
   // console.log(recentUploads);
   const nav = useNavigate();
   const viewRecord = (url) => {
     window.open(url, "_blank");
   };
   console.log(user);
+
+ 
+    
   return (
     <div className="dashBoardBody">
       <ToastContainer />
@@ -75,13 +78,7 @@ const DashBoard = () => {
               </div>
               <div className="articleButton bottom-bar">
                 <button onClick={() => viewRecord(item?.fileUrl)}>View</button>
-                <button
-                  onClick={() =>
-                    toast("you've successfully downloaded your file")
-                  }
-                >
-                  Download
-                </button>
+                <button onClick={()=>nav("/records")}>Download</button>
               </div>
             </div>
           ))}

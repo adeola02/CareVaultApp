@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     user:{},
-    token:""
+    token:"",
+    userSignUp:{}
 }
 
 export const recordApp=createSlice({
@@ -18,11 +19,13 @@ export const recordApp=createSlice({
         setMedicalRecords:(state,action)=>{
             state?.user?.medicalRecords.push(action.payload)
         },
-        
+        userInfo:(state,action)=>{
+            state.userSignUp=action.payload
+        }
        
     }
 })
 
-export const {appUser,setToken,setMedicalRecords}=recordApp.actions;
+export const {appUser,setToken,setMedicalRecords,userInfo}=recordApp.actions;
 
 export default recordApp.reducer
