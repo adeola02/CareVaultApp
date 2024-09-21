@@ -2,23 +2,35 @@ select {
   width: 60%;
   height: 4rem;
   padding-left: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid #5c9ae5;
   color: #5c9ae5;
   outline: none;
 }
-.custom-file-upload {
-  display: flex;
-  /* padding:10px 10px 10px 10px; */
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  width: 15%;
-  height: 3rem;
-  justify-content: center;
-  align-items: center;
+
+.pdfUploadBody {
+  display: grid;
+  place-items: center;
+
+  & .custom-file-upload {
+    width: fit-content;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  & select {
+    height: 40px;
+    max-width: 300px;
+  }
+
+  & button {
+    margin-block-start: 1rem;
+    max-width: 300px;
+  }
 }

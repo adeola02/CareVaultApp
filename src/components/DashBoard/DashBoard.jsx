@@ -5,6 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaUserLarge } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { setMedicalRecords } from "../../Global/slice";
+import recordsLogo from "../../assets/mingcute_file-line.png";
+import reportLogo from "../../assets/carbon_result.png";
+import storageLogo from "../../assets/ic_outline-sd-storage.png";
 
 const DashBoard = () => {
   const user = useSelector((state) => state.app?.user);
@@ -22,9 +25,11 @@ const DashBoard = () => {
   return (
     <div className="dashBoardBody">
       <ToastContainer />
+
       <section className="top-bar">
         <div className="dashboard-box">
-          <div>
+          <div className="dashboard-inner-box">
+            <img src={recordsLogo} className="dashboard-box-icon" />
             <h2>{medicalRecords.length}</h2>
           </div>
           <div>
@@ -32,21 +37,23 @@ const DashBoard = () => {
           </div>
         </div>
         <div className="dashboard-box">
-          <div>
-            <h2>report</h2>
+          <div className="dashboard-inner-box">
+            <img src={reportLogo} className="dashboard-box-icon" />
+            <h2>Report</h2>
           </div>
           <div>
-            <span> last update</span>
+            <span> Last update</span>
           </div>
         </div>
         <div className="dashboard-box">
-          <div>
+          <div className="dashboard-inner-box">
+            <img src={storageLogo} className="dashboard-box-icon" />
             <h2>
               {user?.usedStorage}mb of {user?.totalStorage}mb
             </h2>
           </div>
           <div>
-            <span>Storage used</span>
+            <span>Storage Used</span>
           </div>
         </div>
       </section>
@@ -76,6 +83,7 @@ const DashBoard = () => {
               <div className="articleButton bottom-bar">
                 <button onClick={() => viewRecord(item?.fileUrl)}>View</button>
                 <button
+                  className="record-btn"
                   onClick={() =>
                     toast("you've successfully downloaded your file")
                   }
