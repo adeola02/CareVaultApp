@@ -26,6 +26,7 @@
   gap: 2rem;
   align-items: start;
   color: white;
+  /* border: 3px solid red; */
 
   & nav {
     display: flex;
@@ -159,25 +160,46 @@ section > nav:hover {
   }
 }
 
-/* nav:nth-child(3) {
+/* Styling the Dashboard Harmburger */
+/* .dashboard-hamburger {
+  display: none;
   border: 3px solid red;
-  p-bottom: 20px;
-} */
-/* @media (width <= 768px) {
-  .sideBarBody {
-    display: none;
-  }
-  .popover-btn {
-    display: block;
-  }
 }
 
-@media (width >= 768px) {
+@media (width <= 768px) {
+  .dashboard-hamburger {
+    display: block;
+  }
   .sideBarBody {
+    display: none;
+  }
+
+  .sidebar-dashboard {
+    /* display: block; */
+/* } */
+/* }  */
+
+@media (max-width: 768px) {
+  .sideBarBody {
+    display: none;
+    width: 35vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+  }
+
+  .sidebar-dashboard {
     display: block;
   }
 
-  .popover-btn {
-    display: none;
+  .dashboard-hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
   }
-} */
+}
