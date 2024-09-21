@@ -116,11 +116,10 @@ export const router = createHashRouter([
     ]
   },
   {
-    element: <AdminRoute><AdminLayout /></AdminRoute>,
-    path: "adminDashBoard",
+    element: <AdminRoute><AdminLayout /></AdminRoute>,    
     children: [
       {
-        path: "",
+        path: "admindashBoard",
         element: <AdminDashBoard />,
       },
       {

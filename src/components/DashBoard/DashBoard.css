@@ -171,6 +171,7 @@ article > div > .articleButton {
   cursor: pointer;
   background: #dbdbdb;
   font-size: 1rem;
+ 
 }
 button:hover {
   background: #dbdbdbc2;

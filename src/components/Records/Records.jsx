@@ -1,6 +1,6 @@
 import "./Records.css";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Records = () => {
@@ -8,9 +8,13 @@ const Records = () => {
     (state) => state?.app?.user?.medicalRecords
   );
   const [filteredData, setFilteredData] = useState(medicalRecords);
-  const [searchValue, setSearchValue] = useState("");
-
-  // Filter data on search input change
+  const token = useSelector((state) => state.app?.token);
+  const [searchValue, setSearchValue] = useState('');
+  const [labTest,setLabTest]=useState([]);
+  const [report,setReport]=useState([]);
+  const [drug,setDrug]=useState([]);
+  
+console.log(labTest)
   const filterOnChange = (e) => {
     const filter = e.target.value;
     setSearchValue(filter);
@@ -25,21 +29,56 @@ const Records = () => {
     window.open(url, "_blank");
   };
 
-  // Function to handle file downloads
+  const filteredType=()=>{
+    const labTest=filteredData.filter((e)=>e.entryType.toLowerCase() === "lab test")
+    setLabTest(labTest)
+    const drugType=filteredData.filter((e)=>e.entryType.toLowerCase() === "drug prescription")
+    setDrug(drugType)
+    const reportType=filteredData.filter((e)=>e.entryType.toLowerCase() === "report")
+    setReport(reportType)
+  }
+
+
+  useEffect(()=>{
+    filteredType();
+  },[])
+
+
+
   const handleDownload = (fileUrl) => {
     const fileExtension = fileUrl.split(".").pop().toLowerCase();
-
-    if (["jpg", "jpeg", "png", "gif", "pdf"].includes(fileExtension)) {
-      const link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = true;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+  
+    // Check if the file extension is supported
+    if (["jpg", "jpeg", "png", "gif", "pdf","txt"].includes(fileExtension)) {
+      fetch(fileUrl)
+        .then(response => response.blob()) // Convert to blob to handle it as a downloadable object
+        .then(blob => {
+          const link = document.createElement("a");
+          const url = window.URL.createObjectURL(blob);
+          link.href = url;
+          
+          // Extract the filename from the URL and set it as the download name
+          const fileName = fileUrl.split("/").pop();
+          link.download = fileName; 
+  
+          // Trigger the download
+          document.body.appendChild(link);
+          link.click();
+  
+          // Clean up by revoking the object URL and removing the link element
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(err => {
+          console.error("Failed to download file:", err);
+          alert("Failed to download file.");
+        });
     } else {
       alert("File format not supported for download.");
     }
   };
+  
+  
 
   const nav = useNavigate();
 
@@ -108,7 +147,7 @@ const Records = () => {
       <div className="recordsCategory">
         <div className="record-box">
           <div>
-            <h2>{medicalRecords.length}</h2>
+            <h2>{labTest.length}</h2>
           </div>
           <div>
             <span>Lab test</span>
@@ -116,7 +155,7 @@ const Records = () => {
         </div>
         <div className="record-box">
           <div>
-            <h2>0</h2>
+            <h2>{drug.length}</h2>
           </div>
           <div>
             <span>Drug Prescription</span>
@@ -124,7 +163,7 @@ const Records = () => {
         </div>
         <div className="record-box">
           <div>
-            <h2>0</h2>
+            <h2>{report.length}</h2>
           </div>
           <div>
             <span>Reports</span>

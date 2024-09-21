@@ -14,6 +14,7 @@ const ImageUpload = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [entryType, setEntryType] = useState("");
   const [recordType, setRecordType] = useState("");
+  console.log(recordType)
   const [isLoading, setIsLoading] = useState(false);
   const token = useSelector((state) => state.app?.token);
   const dispatch = useDispatch();
