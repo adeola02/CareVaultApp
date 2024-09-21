@@ -8,15 +8,6 @@
   color: #5c9ae5;
   background: #fafafa;
 }
-/* .recordsBody > input{
-    width: 50%;
-    height: 3rem;
-    background: #efefef;
-    border: none;
-    border-radius: 1rem;
-    color: #5c9ae5;
-    padding-left: 3rem;
-    /* position: relative; */
 
 .input {
   position: relative;
@@ -27,7 +18,7 @@
   & input {
     border-radius: 20px;
     margin-inline-start: -2rem;
-    /* height: 40px; */
+    height: 40px;
   }
 }
 
@@ -37,18 +28,6 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
-::placeholder {
-  /* border: 3px solid red; */
-}
-
-/* .input .cancel {
-  position: absolute;
-  right: 190px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-} */
 
 ::placeholder {
   color: #5c9ae5;
@@ -114,13 +93,22 @@ aside {
   gap: 10px;
   /* background-color: aqua; */
 }
+
+@media (width <= 768px) {
+  aside {
+    /* border: 3px solid red; */
+  }
+}
 aside > .recordHolder {
   /* background: #f00a0a; */
+  /* border: 3px solid red; */
+
   width: 100%;
   display: flex;
   /* height: 3rem !important; */
   justify-content: space-between;
 }
+
 aside > .recordHolder > .record {
   display: flex;
   justify-content: space-between;
@@ -254,7 +242,9 @@ button:hover {
   aside {
     height: auto;
     max-height: 40vh;
+    /* overflow: hidden; */
     width: 100%; /* Limit height for better scrolling */
+    /* border: 3px solid red; */
   }
 
   aside > .recordHolder > .record {

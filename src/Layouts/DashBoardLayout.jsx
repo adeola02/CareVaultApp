@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const DashBoardLayout = () => {
   const user = useSelector((state) => state.app?.user);
-  console.log(user);
+  // console.log(user);
   return (
     <div className="userPageBody">
       <SideBar />

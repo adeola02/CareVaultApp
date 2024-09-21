@@ -1,85 +1,44 @@
 import "./Records.css";
-import { IoIosSearch, IoIosClose } from "react-icons/io";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import newData from "../../data.json";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
 
 const Records = () => {
   const medicalRecords = useSelector(
     (state) => state?.app?.user?.medicalRecords
   );
   const [filteredData, setFilteredData] = useState(medicalRecords);
-  const token = useSelector((state) => state.app?.token);
   const [searchValue, setSearchValue] = useState("");
 
-  // console.log(filteredData);
-
+  // Filter data on search input change
   const filterOnChange = (e) => {
     const filter = e.target.value;
     setSearchValue(filter);
-    const filtered = newData.filter((item) =>
+    const filtered = medicalRecords.filter((item) =>
       item.entryType.toLowerCase().includes(filter.toLowerCase())
     );
     setFilteredData(filtered);
   };
-  // console.log(item);
 
-  const downloadFile = (doc, fileName) => {
-    console.log(doc);
-    // console.log(`fileUrl ${fileUrl}`);
-    // const fileName = fileUrl.split("/").pop(); // Get the file name from the URL
-    // const link = document.createElement("a"); // Create an anchor element
-    // link.href = fileUrl;
-    // link.setAttribute("download", fileName); // Set the download attribute with file name
-    // document.body.appendChild(link); // Append the link to the body
-    // link.click(); // Programmatically trigger a click to download the file
-    // link.remove(); // Remove the link after triggering the download
-    const canvas = document.querySelector("canvas");
-    console.log(canvas);
-    if (!canvas) {
-      toast.error("Something went wrong, please try again");
-      return;
-    }
-    const url = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.download = doc;
-    link.href = url;
-    link.click();
-
-    // const a = document.createElement("a");
-    // a.href = url;
-    // a.download = fileName;
-    // document.body.appendChild(a);
-    // a.click();
-    // document.body.removeChild(a);
-  };
-
-  const handleGetRecordsByUser = () => {
-    const url = "https://medical-record-project.onrender.com/api/v1/record";
-    axios
-      .get(url, {
-        headers: {
-          application: "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    handleGetRecordsByUser();
-  }, []);
-
+  // Function to handle view file
   const viewRecord = (url) => {
     window.open(url, "_blank");
+  };
+
+  // Function to handle file downloads
+  const handleDownload = (fileUrl) => {
+    const fileExtension = fileUrl.split(".").pop().toLowerCase();
+
+    if (["jpg", "jpeg", "png", "gif", "pdf"].includes(fileExtension)) {
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = true;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("File format not supported for download.");
+    }
   };
 
   const nav = useNavigate();
@@ -87,14 +46,12 @@ const Records = () => {
   return (
     <div className="recordsBody">
       <div className="input">
-        {/* <IoIosSearch size={25} className="search" /> */}
         <input
           type="search"
           placeholder="Search"
           onChange={filterOnChange}
           value={searchValue}
         />
-        {/* <IoIosClose size={25} className="cancel" /> */}
       </div>
 
       <div className="section">
@@ -104,16 +61,16 @@ const Records = () => {
           <nav>Category</nav>
           <nav>Date</nav>
           <nav>Size</nav>
-          {/* <button>View all</button> */}
         </div>
         <aside>
           {filteredData.length === 0 ? (
             <p>No data found</p>
           ) : (
             filteredData.map((item, index) => {
-              const fileNameArr = item?.fileUrl.split("/");
-              const fileName = fileNameArr[fileNameArr.length - 1];
-              // console.log(fileName);
+              const fileNameArr = item?.fileUrl?.split("/");
+              const fileName = fileNameArr
+                ? fileNameArr[fileNameArr.length - 1]
+                : "Unknown";
 
               return (
                 <div key={index} className="recordHolder">
@@ -121,7 +78,7 @@ const Records = () => {
                     <nav>{item.entryType}</nav>
                     <nav>{item.recordType}</nav>
                     <nav>{item.date}</nav>
-                    <nav>500MB</nav>
+                    <nav>{item.fileSize}</nav>
                   </div>
                   <div
                     className="recordBtn"
@@ -135,16 +92,7 @@ const Records = () => {
                     </button>
                     <button
                       className="record-btn"
-                      onClick={() => {
-                        const fileNameArr = item?.fileUrl
-                          ? item?.fileUrl.split("/")
-                          : [];
-                        const fileName =
-                          fileNameArr.length > 0
-                            ? fileNameArr[fileNameArr.length - 1]
-                            : "default-filename";
-                        downloadFile(item?.fileUrl, fileName);
-                      }}
+                      onClick={() => handleDownload(item?.fileUrl)}
                     >
                       Download
                     </button>
@@ -155,6 +103,7 @@ const Records = () => {
           )}
         </aside>
       </div>
+
       <h2>Records Categories</h2>
       <div className="recordsCategory">
         <div className="record-box">
@@ -187,3 +136,30 @@ const Records = () => {
 };
 
 export default Records;
+
+// const handleDownload = async (recordId) => {
+//   try {
+//     const response = await axios({
+//       url: `https://medical-record-project.onrender.com/api/v1/download/${recordId}`,
+//       method: "GET",
+//       responseType: "blob", // Important to get the data as a Blob (binary data)
+//     });
+
+//     // Create a URL for the file to trigger the download
+//     const url = window.URL.createObjectURL(new Blob([response.data]));
+//     const link = document.createElement("a");
+//     link.href = url;
+
+//     // Optionally, set the downloaded file name
+//     const fileName =
+//       response.headers["content-disposition"].split("filename=")[1];
+//     link.setAttribute("download", fileName);
+
+//     // Append the link to the body, trigger the download, and remove the link
+//     document.body.appendChild(link);
+//     link.click();
+//     document.body.removeChild(link);
+//   } catch (error) {
+//     console.error("Error downloading the file:", error);
+//   }
+// };

@@ -13,7 +13,7 @@ const DashBoard = () => {
   );
   console.log(medicalRecords);
   const recentUploads = medicalRecords.slice(0, 3);
-  console.log(recentUploads);
+  // console.log(recentUploads);
   const nav = useNavigate();
   const viewRecord = (url) => {
     window.open(url, "_blank");
