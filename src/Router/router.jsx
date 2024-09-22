@@ -1,4 +1,4 @@
-import {  createHashRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import Error from "../pages/Error";
 import SignUp from "../Auth/SignUp";
@@ -13,6 +13,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import DashBoard from "../components/DashBoard/DashBoard";
+import Settings from "../components/Settings/Settings";
 import Records from "../components/Records/Records";
 import ImageUpload from "../components/Upload/Image/ImageUpload";
 import PdfUpload from "../components/Upload/Pdf/PdfUpload";
@@ -86,37 +87,45 @@ export const router = createHashRouter([
     ],
   },
   {
-    element: <UserRoute element={<DashBoardLayout/>}></UserRoute>,
+    element: <UserRoute element={<DashBoardLayout />}></UserRoute>,
     // path:"/dashBoard",
-    children:[
+    children: [
       {
-        path:"dashBoard",
-        element:<DashBoard/>
+        path: "dashBoard",
+        element: <DashBoard />,
       },
       {
-        path:"records",
-        element:<Records/>
+        path: "records",
+        element: <Records />,
       },
       {
-        path:"uploadImage",
-        element:<ImageUpload/>
+        path: "settings",
+        element: <Settings />,
       },
       {
-        path:"uploadPdf",
-        element:<PdfUpload/>
+        path: "uploadImage",
+        element: <ImageUpload />,
       },
       {
-        path:"uploadManual",
-        element:<ManualUpload/>
+        path: "uploadPdf",
+        element: <PdfUpload />,
       },
       {
-        path:"view",
-        element:<View/>
-      }
-    ]
+        path: "uploadManual",
+        element: <ManualUpload />,
+      },
+      {
+        path: "view",
+        element: <View />,
+      },
+    ],
   },
   {
-    element: <AdminRoute><AdminLayout /></AdminRoute>,    
+    element: (
+      <AdminRoute>
+        <AdminLayout />
+      </AdminRoute>
+    ),
     children: [
       {
         path: "admindashBoard",
@@ -127,8 +136,8 @@ export const router = createHashRouter([
         element: <AdminRecords />,
       },
     ],
-  }
-  
+  },
+
   // {
   //   element:<AdminRoute element={<AdminLayout/>}></AdminRoute>,
   //   path:"adminDashBoard",
