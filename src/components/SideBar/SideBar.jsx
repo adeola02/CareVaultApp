@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import UploadMenu from "../Upload/UploadMenu/UploadMenu";
 import { RxDashboard } from "react-icons/rx";
 import { LuUpload } from "react-icons/lu";
+import { LuSettings } from "react-icons/lu";
 import { MdOutlineSimCardDownload } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
 import axios from "axios";
@@ -132,6 +133,19 @@ const SideBar = () => {
             >
               <LuUpload size={25} />
               Upload
+            </nav>
+          </NavLink>
+
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => (isActive ? "isActive" : "notActive")}
+          >
+            <nav
+              style={{ display: "flex", gap: "10px", color: "white" }}
+              onClick={handleNavLinkClick}
+            >
+              <LuSettings size={25} />
+              Setting
             </nav>
           </NavLink>
         </section>
