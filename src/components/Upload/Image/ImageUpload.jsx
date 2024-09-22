@@ -14,11 +14,11 @@ const ImageUpload = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [entryType, setEntryType] = useState("");
   const [recordType, setRecordType] = useState("");
-  console.log(recordType)
+  console.log(recordType);
   const [isLoading, setIsLoading] = useState(false);
   const token = useSelector((state) => state.app?.token);
   const dispatch = useDispatch();
-  const nav=useNavigate();
+  const nav = useNavigate();
 
   const uploadImage = (event) => {
     const selectedFile = event.target.files[0];
@@ -53,10 +53,9 @@ const ImageUpload = () => {
           console.log(res?.data);
           console.log(res?.data?.data);
           dispatch(setMedicalRecords(res?.data?.data));
-          toast.success("you just made a successful upload")
+          toast.success("you just made a successful upload");
           setTimeout(() => {
-            
-            nav("/dashBoard")
+            nav("/dashBoard");
           }, 2000);
         })
         .catch((error) => {

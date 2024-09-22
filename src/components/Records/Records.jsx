@@ -9,12 +9,12 @@ const Records = () => {
   );
   const [filteredData, setFilteredData] = useState(medicalRecords);
   const token = useSelector((state) => state.app?.token);
-  const [searchValue, setSearchValue] = useState('');
-  const [labTest,setLabTest]=useState([]);
-  const [report,setReport]=useState([]);
-  const [drug,setDrug]=useState([]);
-  
-console.log(labTest)
+  const [searchValue, setSearchValue] = useState("");
+  const [labTest, setLabTest] = useState([]);
+  const [report, setReport] = useState([]);
+  const [drug, setDrug] = useState([]);
+
+  console.log(labTest);
   const filterOnChange = (e) => {
     const filter = e.target.value;
     setSearchValue(filter);
@@ -28,48 +28,54 @@ console.log(labTest)
   const viewRecord = (url) => {
     window.open(url, "_blank");
   };
+console.log(filteredData)
+  const filteredType = () => {
+    const labTestFiltered = filteredData.filter(
+      (e) => e.entryType.toLowerCase() === "lab test"
+    );
+    setLabTest(labTest);
+    console.log(labTestFiltered)
+    const drugType = filteredData.filter(
+      (e) => e.entryType.toLowerCase() === "drug prescription"
+    );
+    setDrug(drugType);
+    console.log(drugType)
+    const reportType = filteredData.filter(
+      (e) => e.entryType.toLowerCase() === "report"
+    );
+    console.log(reportType)
+    setReport(reportType);
+  };
 
-  const filteredType=()=>{
-    const labTest=filteredData.filter((e)=>e.entryType.toLowerCase() === "lab test")
-    setLabTest(labTest)
-    const drugType=filteredData.filter((e)=>e.entryType.toLowerCase() === "drug prescription")
-    setDrug(drugType)
-    const reportType=filteredData.filter((e)=>e.entryType.toLowerCase() === "report")
-    setReport(reportType)
-  }
-
-
-  useEffect(()=>{
+  useEffect(() => {
     filteredType();
-  },[])
-
-
+  }, []);
 
   const handleDownload = (fileUrl) => {
     const fileExtension = fileUrl.split(".").pop().toLowerCase();
-  
+
     // Check if the file extension is supported
-    if (["jpg", "jpeg", "png", "gif", "pdf","txt"].includes(fileExtension)) {
+    if (["jpg", "jpeg", "png", "gif", "pdf", "txt"].includes(fileExtension)) {
       fetch(fileUrl)
-        .then(response => response.blob()) // Convert to blob to handle it as a downloadable object
-        .then(blob => {
+        .then((response) => response.blob()) // Convert to blob to handle it as a downloadable object
+        .then((blob) => {
           const link = document.createElement("a");
           const url = window.URL.createObjectURL(blob);
           link.href = url;
-          
+
           // Extract the filename from the URL and set it as the download name
           const fileName = fileUrl.split("/").pop();
-          link.download = fileName; 
-  
+          link.download = fileName;
+
           // Trigger the download
           document.body.appendChild(link);
           link.click();
-  
+
           // Clean up by revoking the object URL and removing the link element
           document.body.removeChild(link);
           window.URL.revokeObjectURL(url);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error("Failed to download file:", err);
           alert("Failed to download file.");
         });
@@ -77,8 +83,6 @@ console.log(labTest)
       alert("File format not supported for download.");
     }
   };
-  
-  
 
   const nav = useNavigate();
 
@@ -93,13 +97,12 @@ console.log(labTest)
         />
       </div>
 
-      <div className="section">
-        <span>Records list</span>
+      <div className="record-section">
+        <h2>Records list</h2>
         <div className="sectionMenu">
           <nav>Name</nav>
           <nav>Category</nav>
           <nav>Date</nav>
-          <nav>Size</nav>
         </div>
         <aside>
           {filteredData.length === 0 ? (
@@ -113,16 +116,12 @@ console.log(labTest)
 
               return (
                 <div key={index} className="recordHolder">
-                  <div className="record" style={{ height: "3rem" }}>
+                  <div className="record-section2">
                     <nav>{item.entryType}</nav>
                     <nav>{item.recordType}</nav>
-                    <nav>{item.date}</nav>
-                    <nav>{item.fileSize}</nav>
+                    <nav>{new Date().toLocaleDateString()}</nav>
                   </div>
-                  <div
-                    className="recordBtn"
-                    style={{ width: "20%", height: "3rem" }}
-                  >
+                  <div className="recordBtn">
                     <button
                       className="record-btn"
                       onClick={() => viewRecord(item?.fileUrl)}
