@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./SideBar.css";
 import careVault from "../../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
@@ -13,7 +13,7 @@ import Hamburger from "hamburger-react";
 
 const SideBar = () => {
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
-  // const [isActive, setIsActive] = useState(false);
+  const sidebarRef = useRef(null);
   const token = useSelector((state) => state?.app?.token);
 
   const handleNavLinkClick = () => {
@@ -44,6 +44,25 @@ const SideBar = () => {
       });
   };
 
+  // Close sidebar when clicking outside
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        hamburgerIsOpen
+      ) {
+        setHamburgerIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [hamburgerIsOpen]);
+
   return (
     <>
       <div
@@ -73,9 +92,10 @@ const SideBar = () => {
 
       <div
         className={`sideBarBody ${hamburgerIsOpen ? "sidebar-dashboard" : ""}`}
+        ref={sidebarRef}
       >
         <div>
-          <img src={careVault} alt="Logo" className="company-logo" />
+          <img src={careVault} alt="Logo" className="sidebar-company-logo" />
         </div>
         <section className="sideBarSection">
           <NavLink

@@ -23,39 +23,13 @@ const DashBoard = () => {
   };
   console.log(user);
 
-  const handleDownload = (fileUrl) => {
-    const fileExtension = fileUrl.split(".").pop().toLowerCase();
 
-    // Check if the file extension is supported
-    if (["jpg", "jpeg", "png", "gif", "pdf", "txt"].includes(fileExtension)) {
-      fetch(fileUrl)
-        .then((response) => response.blob()) // Convert to blob to handle it as a downloadable object
-        .then((blob) => {
-          const link = document.createElement("a");
-          const url = window.URL.createObjectURL(blob);
-          link.href = url;
-
-          // Extract the filename from the URL and set it as the download name
-          const fileName = fileUrl.split("/").pop();
-          link.download = fileName;
-
-          // Trigger the download
-          document.body.appendChild(link);
-          link.click();
-
-          // Clean up by revoking the object URL and removing the link element
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-        })
-        .catch((err) => {
-          console.error("Failed to download file:", err);
-          alert("Failed to download file.");
-        });
-    } else {
-      alert("File format not supported for download.");
-    }
-  };
- 
+  const handleDownLoad=()=>{
+    toast.success("redirecting you to your records to download")
+    setTimeout(() => {
+      nav("/records")
+    }, 2000);
+  }
     
   return (
     <div className="dashBoardBody">
@@ -116,8 +90,8 @@ const DashBoard = () => {
                 <nav>{new Date().toLocaleDateString()}</nav>
               </div>
               <div className="articleButton bottom-bar">
-                <button onClick={handleDownload}>View</button>
-                <button onClick={()=>nav("/records")}>Download</button>
+                <button onClick={viewRecord}>View</button>
+                <button onClick={handleDownLoad}>Download</button>
               </div>
             </div>
           ))}

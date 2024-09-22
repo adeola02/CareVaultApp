@@ -94,6 +94,7 @@ console.log(filteredData)
           placeholder="Search"
           onChange={filterOnChange}
           value={searchValue}
+          className="record-input"
         />
       </div>
 
