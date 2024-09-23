@@ -1,5 +1,5 @@
 import "../AuthCss/ResetPassword.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash, FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
 import { useState } from "react";
@@ -14,6 +14,7 @@ const ResetPassword = () => {
   });
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
+  const {resetCode}=useParams();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -74,8 +75,8 @@ const ResetPassword = () => {
 
       try {
         // Extract the reset code from the URL (assuming it's the third part of the URL)
-        const resetCode = window.location.pathname.split('/')[2];
-        console.log(resetCode);
+        // const resetCode = window.location.pathname.split('/')[2];
+        // console.log(resetCode);
 
         // Use the resetCode dynamically in the URL
         const url =` https://medical-record-project.onrender.com/api/v1/resetPassword/${resetCode}`;

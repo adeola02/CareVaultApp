@@ -136,7 +136,7 @@ const SideBar = () => {
             </nav>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="/settings"
             className={({ isActive }) => (isActive ? "isActive" : "notActive")}
           >
@@ -147,7 +147,7 @@ const SideBar = () => {
               <LuSettings size={25} />
               Setting
             </nav>
-          </NavLink>
+          </NavLink> */}
         </section>
         <nav onClick={handleLogOut}>
           <TbLogout size={25} />
