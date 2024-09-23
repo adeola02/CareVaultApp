@@ -8,12 +8,18 @@ import { setMedicalRecords } from "../../Global/slice";
 import recordsLogo from "../../assets/mingcute_file-line.png";
 import reportLogo from "../../assets/carbon_result.png";
 import storageLogo from "../../assets/ic_outline-sd-storage.png";
+import axios from "axios";
+import { useEffect } from "react";
 
 const DashBoard = () => {
   const user = useSelector((state) => state.app?.user);
   const medicalRecords = useSelector(
     (state) => state?.app?.user?.medicalRecords
   );
+  const id=useSelector((state)=>state.app?.user?._id)
+  const token=useSelector((state)=>state.app?.token)
+  console.log(token)
+  console.log(id)
   console.log(medicalRecords);
   const recentUploads = medicalRecords.slice(-3);
   // console.log(recentUploads);
@@ -23,6 +29,24 @@ const DashBoard = () => {
   };
   console.log(user);
 
+  const getOneUser=()=>{
+    const url=`https://medical-record-project.onrender.com/api/v1/patient/${id}`
+    axios.get(url,
+     { headers:{
+        application:"application/json",
+        Authorization:`Bearer ${token}`
+      }}
+    )
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((error)=>{
+      console.log(res)
+    })
+  }
+useEffect(()=>{
+  getOneUser()
+},[])
 
   const handleDownLoad=()=>{
     toast.success("redirecting you to your records to download")
@@ -90,7 +114,7 @@ const DashBoard = () => {
                 <nav>{new Date().toLocaleDateString()}</nav>
               </div>
               <div className="articleButton bottom-bar">
-                <button onClick={viewRecord}>View</button>
+                <button onClick={()=>viewRecord(item?.fileUrl)}>View</button>
                 <button onClick={handleDownLoad}>Download</button>
               </div>
             </div>

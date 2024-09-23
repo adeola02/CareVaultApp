@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Settings = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
+  const [imageUrl,setImageUrl]=useState()
 
   useEffect(() => {
     const handleResize = () => {
