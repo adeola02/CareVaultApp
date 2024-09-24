@@ -183,6 +183,7 @@ const SignUp = () => {
               </label>
               <label htmlFor="gender">
                 <select
+                  className="gender-select"
                   id="gender"
                   name="gender"
                   value={formData.gender}

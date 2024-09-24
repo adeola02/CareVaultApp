@@ -34,3 +34,9 @@
     max-width: 300px;
   }
 }
+
+@media (width <= 768px) {
+  .pdfUploadBody {
+    margin-top: 3rem;
+  }
+}

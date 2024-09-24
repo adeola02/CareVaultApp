@@ -25,6 +25,8 @@ import View from "../components/View/View";
 import { VerifyResetCode } from "../Auth/VerifyResetCode";
 import UserRoute from "./UserRoute";
 import AdminRoute from "./AdminRoute";
+import { useEffect } from "react";
+
 // import Header from "../components/Header/Header";
 
 export const router = createHashRouter([
