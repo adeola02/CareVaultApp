@@ -48,10 +48,15 @@
   padding-top: 0px;
 }
 
-.record-section2 {
+/* .record-section2 {
   min-inline-size: 74%;
   display: flex;
   justify-content: space-between;
+} */
+
+.record-section2 {
+  display: grid;
+  grid-template-columns: 320px 340px 1fr;
 }
 
 .record-section2 {
@@ -165,11 +170,10 @@ button:hover {
 
     .record-section2 {
       display: grid;
-      grid-template-columns: 100px 100px 100px 1fr;
+      grid-template-columns: 100px 100px;
     }
 
     .recordHolder .record > nav {
-      border: 3px solid red;
       display: flex;
       justify-content: flex-start;
     }

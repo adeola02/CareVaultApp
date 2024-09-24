@@ -1,4 +1,4 @@
-import {  createHashRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import Error from "../pages/Error";
 import SignUp from "../Auth/SignUp";
@@ -24,6 +24,8 @@ import View from "../components/View/View";
 import { VerifyResetCode } from "../Auth/VerifyResetCode";
 import UserRoute from "./UserRoute";
 import AdminRoute from "./AdminRoute";
+import { useEffect } from "react";
+
 // import Header from "../components/Header/Header";
 
 export const router = createHashRouter([
@@ -86,37 +88,41 @@ export const router = createHashRouter([
     ],
   },
   {
-    element: <UserRoute element={<DashBoardLayout/>}></UserRoute>,
+    element: <UserRoute element={<DashBoardLayout />}></UserRoute>,
     // path:"/dashBoard",
-    children:[
+    children: [
       {
-        path:"dashBoard",
-        element:<DashBoard/>
+        path: "dashBoard",
+        element: <DashBoard />,
       },
       {
-        path:"records",
-        element:<Records/>
+        path: "records",
+        element: <Records />,
       },
       {
-        path:"uploadImage",
-        element:<ImageUpload/>
+        path: "uploadImage",
+        element: <ImageUpload />,
       },
       {
-        path:"uploadPdf",
-        element:<PdfUpload/>
+        path: "uploadPdf",
+        element: <PdfUpload />,
       },
       {
-        path:"uploadManual",
-        element:<ManualUpload/>
+        path: "uploadManual",
+        element: <ManualUpload />,
       },
       {
-        path:"view",
-        element:<View/>
-      }
-    ]
+        path: "view",
+        element: <View />,
+      },
+    ],
   },
   {
-    element: <AdminRoute><AdminLayout /></AdminRoute>,    
+    element: (
+      <AdminRoute>
+        <AdminLayout />
+      </AdminRoute>
+    ),
     children: [
       {
         path: "admindashBoard",
@@ -127,8 +133,8 @@ export const router = createHashRouter([
         element: <AdminRecords />,
       },
     ],
-  }
-  
+  },
+
   // {
   //   element:<AdminRoute element={<AdminLayout/>}></AdminRoute>,
   //   path:"adminDashBoard",

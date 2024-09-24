@@ -72,6 +72,11 @@
   }
 }
 
+.gender-select {
+  border: 2px solid #5f9eeb;
+  border-radius: 10px;
+}
+
 .password-input {
   & .password-input-wrapper {
     position: relative;

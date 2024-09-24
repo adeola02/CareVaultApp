@@ -160,7 +160,7 @@ section > nav:hover {
 @media (width <= 768px) {
   .sideBarBody {
     display: none;
-    width: 40vw;
+    width: 50vw;
     height: 100vh;
     position: fixed;
     top: 0;

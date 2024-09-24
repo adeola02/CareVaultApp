@@ -1,14 +1,15 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router/router";
-import SignUp from "./Auth/SignUp";
-
+import { useEffect } from "react";
 
 const App = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <RouterProvider router={router} 
-      
-      />
+      <RouterProvider router={router} />
     </>
   );
 };
