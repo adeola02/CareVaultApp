@@ -13,6 +13,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import DashBoard from "../components/DashBoard/DashBoard";
+import Settings from "../components/Settings/Settings";
 import Records from "../components/Records/Records";
 import ImageUpload from "../components/Upload/Image/ImageUpload";
 import PdfUpload from "../components/Upload/Pdf/PdfUpload";
@@ -98,6 +99,10 @@ export const router = createHashRouter([
       {
         path: "records",
         element: <Records />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
       {
         path: "uploadImage",

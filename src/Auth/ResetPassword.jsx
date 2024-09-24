@@ -1,5 +1,5 @@
 import "../AuthCss/ResetPassword.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash, FaXmark } from "react-icons/fa6";
 import logo from "../assets/CareVault.png";
 import { useState } from "react";
@@ -14,6 +14,7 @@ const ResetPassword = () => {
   });
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
+  const {resetCode}=useParams();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -39,32 +40,71 @@ const ResetPassword = () => {
     return true;
   };
 
+  // const handleResetPassword = async (event) => {
+  //   event.preventDefault();
+  //   if (validate()) {
+  //     setLoading(true);
+  //     try {
+  //       const token = window.location.pathname.split('/')[2];
+  //       console.log(token)
+  //       const url = `https://medical-record-project.onrender.com/api/v1/resetPassword/resetCode`;
+  //       const response = await axios.put(url, {
+  //         "new password": formData.password,
+  //         "confirm new password": formData.confirmPassword})
+
+  //       if (response.status === 200) {
+  //         toast.success("Password reset successfully.");
+  //         nav("/log-in");
+  //       } else {
+  //         toast.error(response.data.message);
+  //       }
+  //     } catch (error) {
+  //       toast.error("Error resetting password.");
+  //       console.error(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  // };
+
   const handleResetPassword = async (event) => {
     event.preventDefault();
+
     if (validate()) {
       setLoading(true);
+
       try {
-        const token = window.location.pathname.split('/')[2];
-        console.log(token)
-        const url = `https://medical-record-project.onrender.com/api/v1/resetPassword/${token}`;
+        // Extract the reset code from the URL (assuming it's the third part of the URL)
+        // const resetCode = window.location.pathname.split('/')[2];
+        // console.log(resetCode);
+
+        // Use the resetCode dynamically in the URL
+        const url =` https://medical-record-project.onrender.com/api/v1/resetPassword/${resetCode}`;
+
+        // Send the request with new password and confirm new password
         const response = await axios.put(url, {
           "new password": formData.password,
-          "confirm new password": formData.confirmPassword})
+          "confirm new password": formData.confirmPassword
+        });
 
+        // Handle success response
         if (response.status === 200) {
           toast.success("Password reset successfully.");
           nav("/log-in");
         } else {
           toast.error(response.data.message);
         }
+
       } catch (error) {
-        toast.error("Error resetting password.");
+        // Handle errors from the request
+        toast.error(error.response?.data?.message || "Error resetting password.");
         console.error(error);
       } finally {
+        // Stop the loading spinner
         setLoading(false);
-      }
-    }
-  };
+}
+}
+};
 
   return (
     <section className="reset-password-page">

@@ -28,19 +28,22 @@ const Records = () => {
   const viewRecord = (url) => {
     window.open(url, "_blank");
   };
-
+console.log(filteredData)
   const filteredType = () => {
-    const labTest = filteredData.filter(
+    const labTestFiltered = filteredData.filter(
       (e) => e.entryType.toLowerCase() === "lab test"
     );
     setLabTest(labTest);
+    console.log(labTestFiltered)
     const drugType = filteredData.filter(
       (e) => e.entryType.toLowerCase() === "drug prescription"
     );
     setDrug(drugType);
+    console.log(drugType)
     const reportType = filteredData.filter(
       (e) => e.entryType.toLowerCase() === "report"
     );
+    console.log(reportType)
     setReport(reportType);
   };
 

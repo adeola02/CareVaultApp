@@ -26,6 +26,7 @@ export const VerifyResetCode = () => {
       axios
         .post(url, data)
         .then((res) => {
+          console.log(res)
           setIsLoading(false);
           dispatch(appUser(res?.data?.user));
           nav("/resetpassword");
