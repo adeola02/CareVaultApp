@@ -2,6 +2,7 @@ import "./Records.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Records = () => {
   const medicalRecords = useSelector(
@@ -18,11 +19,13 @@ const Records = () => {
   const filterOnChange = (e) => {
     const filter = e.target.value;
     setSearchValue(filter);
-    const filtered = medicalRecords.filter((item) =>
+    const filtered = records.filter((item) =>
       item.entryType.toLowerCase().includes(filter.toLowerCase())
     );
     setFilteredData(filtered);
   };
+
+  const [records,setRecords]=useState([]);
 
   // Function to handle view file
   const viewRecord = (url) => {
@@ -50,6 +53,33 @@ console.log(filteredData)
   useEffect(() => {
     filteredType();
   }, []);
+
+
+  const getOneUser=()=>{
+    const url=`https://medical-record-project.onrender.com/api/v1/patient/one`
+    axios.get(url,
+     { headers:{
+        application:"application/json",
+        Authorization:`Bearer ${token}`
+      }}
+    )
+    .then((res)=>{
+    setRecords(res?.data?.findUser?.medicalRecords)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
+useEffect(()=>{
+  getOneUser()
+},[])
+
+  const handleDownLoad=()=>{
+    toast.success("redirecting you to your records to download")
+    setTimeout(() => {
+      nav("/records")
+    }, 2000);
+  }
 
   const handleDownload = (fileUrl) => {
     const fileExtension = fileUrl.split(".").pop().toLowerCase();
@@ -109,7 +139,7 @@ console.log(filteredData)
           {filteredData.length === 0 ? (
             <p>No data found</p>
           ) : (
-            filteredData.map((item, index) => {
+            records.map((item, index) => {
               const fileNameArr = item?.fileUrl?.split("/");
               const fileName = fileNameArr
                 ? fileNameArr[fileNameArr.length - 1]

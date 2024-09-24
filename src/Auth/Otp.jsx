@@ -1,7 +1,7 @@
 import "../AuthCss/Otp.css";
 import OtpInput from "react-otp-input";
 import logo from "../assets/CareVault.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +12,7 @@ import { FaXmark } from "react-icons/fa6";
 export const Otp = () => {
   const [otp, setOtp] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const id=useSelector((state)=>state.app?.user?._id)
+  const {id}=useParams();
   const user = useSelector((state) => state.app?.user);
 
   console.log(user)
@@ -50,9 +50,6 @@ export const Otp = () => {
     }
   };
 
-  const getOneUser=()=>{
-    const url=`https://medical-record-project.onrender.com/api/v1/patient/${id}`
-  }
   return (
     <div className="otp-page">
       <ToastContainer />

@@ -37,8 +37,10 @@ const SideBar = () => {
         },
       })
       .then((res) => {
-        console.log(res);
-        nav("/");
+        console.log(res?.data?.message);
+        if (res?.data?.message) {
+          nav("/log-in");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -136,7 +138,7 @@ const SideBar = () => {
             </nav>
           </NavLink>
 
-          {/* <NavLink
+          <NavLink
             to="/settings"
             className={({ isActive }) => (isActive ? "isActive" : "notActive")}
           >
@@ -147,7 +149,7 @@ const SideBar = () => {
               <LuSettings size={25} />
               Setting
             </nav>
-          </NavLink> */}
+          </NavLink>
         </section>
         <nav onClick={handleLogOut}>
           <TbLogout size={25} />

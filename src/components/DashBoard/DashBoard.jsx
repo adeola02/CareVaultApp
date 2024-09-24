@@ -9,7 +9,7 @@ import recordsLogo from "../../assets/mingcute_file-line.png";
 import reportLogo from "../../assets/carbon_result.png";
 import storageLogo from "../../assets/ic_outline-sd-storage.png";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DashBoard = () => {
   const user = useSelector((state) => state.app?.user);
@@ -18,11 +18,11 @@ const DashBoard = () => {
   );
   const id=useSelector((state)=>state.app?.user?._id)
   const token=useSelector((state)=>state.app?.token)
-  console.log(token)
-  console.log(id)
+  const [records,setRecords]=useState([]);
+  console.log(records)
   console.log(medicalRecords);
-  const recentUploads = medicalRecords.slice(-3);
-  // console.log(recentUploads);
+  const recentUploads = medicalRecords.slice(0,3);
+
   const nav = useNavigate();
   const viewRecord = (url) => {
     window.open(url, "_blank");
@@ -30,7 +30,7 @@ const DashBoard = () => {
   console.log(user);
 
   const getOneUser=()=>{
-    const url=`https://medical-record-project.onrender.com/api/v1/patient/${id}`
+    const url=`https://medical-record-project.onrender.com/api/v1/patient/one`
     axios.get(url,
      { headers:{
         application:"application/json",
@@ -38,10 +38,10 @@ const DashBoard = () => {
       }}
     )
     .then((res)=>{
-      console.log(res)
+    setRecords(res?.data?.findUser?.medicalRecords)
     })
     .catch((error)=>{
-      console.log(res)
+      console.log(error)
     })
   }
 useEffect(()=>{
@@ -72,7 +72,7 @@ useEffect(()=>{
         <div className="dashboard-box">
           <div className="dashboard-inner-box">
             <img src={reportLogo} className="dashboard-box-icon" />
-            <h2>Report</h2>
+            <h2>{records[1]?.entryType}</h2>
           </div>
           <div>
             <span> Last update</span>
