@@ -9,43 +9,54 @@ import { LuSettings } from "react-icons/lu";
 import { MdOutlineSimCardDownload } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Hamburger from "hamburger-react";
+import { userLoggedIn } from "../../Global/slice";
+import { toast } from "react-toastify";
 
 const SideBar = () => {
+  const loggedInUser = useSelector((state) => state?.app?.loggedInUser);
+
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
   const sidebarRef = useRef(null);
   const token = useSelector((state) => state?.app?.token);
+  const dispatch = useDispatch();
 
   const handleNavLinkClick = () => {
     setHamburgerIsOpen(false);
   };
 
   const handleLogOut = () => {
-    const url =
-      "https://medical-record-project.onrender.com/api/v1/patients/signOut";
-    if (!token) {
-      console.log("Token is not provided");
-      setHamburgerIsOpen(false);
-      return;
-    }
-
-    axios
-      .patch(url, null, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res?.data?.message);
-        if (res?.data?.message) {
-          nav("/log-in");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(userLoggedIn(false));
+    toast.success("User logged out successfully!! See you soon!!!");
+    console.log(loggedInUser);
   };
+
+  // const handleLogOut = () => {
+  //   const url =
+  //     "https://medical-record-project.onrender.com/api/v1/patients/signOut";
+  //   if (!token) {
+  //     console.log("Token is not provided");
+  //     setHamburgerIsOpen(false);
+  //     return;
+  //   }
+
+  //   axios
+  //     .patch(url, null, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //     .then((res) => {
+  //       console.log(res?.data?.message);
+  //       if (res?.data?.message) {
+  //         nav("/log-in");
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   // Close sidebar when clicking outside
 
