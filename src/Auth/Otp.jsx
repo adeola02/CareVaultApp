@@ -12,11 +12,11 @@ import { FaXmark } from "react-icons/fa6";
 export const Otp = () => {
   const [otp, setOtp] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {id}=useParams();
+  const { id } = useParams();
   const user = useSelector((state) => state.app?.user);
 
-  console.log(user)
-  console.log(id)
+  console.log(user);
+  console.log(id);
 
   const dispatch = useDispatch();
   console.log(otp);
@@ -29,6 +29,7 @@ export const Otp = () => {
       const url =
         "https://medical-record-project.onrender.com/api/v1/patient/verify-code";
       const data = { code: otp };
+      console.log(url);
       axios
         .post(url, data)
         .then((res) => {
