@@ -12,6 +12,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const DashBoard = () => {
+  const [storage,setStorage]=useState(0);
   const user = useSelector((state) => state.app?.user);
   const medicalRecords = useSelector(
     (state) => state?.app?.user?.medicalRecords
@@ -21,7 +22,7 @@ const DashBoard = () => {
   const [records,setRecords]=useState([]);
   console.log(records)
   console.log(medicalRecords);
-  const recentUploads = medicalRecords.slice(0,3);
+  const recentUploads = records.slice(0,3);
 
   const nav = useNavigate();
   const viewRecord = (url) => {
@@ -39,11 +40,16 @@ const DashBoard = () => {
     )
     .then((res)=>{
     setRecords(res?.data?.findUser?.medicalRecords)
+    console.log(res?.data?.findUser?.medicalRecords)
+    setStorage(res?.data?.findUser?.usedStorage)
     })
     .catch((error)=>{
       console.log(error)
     })
   }
+
+
+
 useEffect(()=>{
   getOneUser()
 },[])
@@ -72,7 +78,7 @@ useEffect(()=>{
         <div className="dashboard-box">
           <div className="dashboard-inner-box">
             <img src={reportLogo} className="dashboard-box-icon" />
-            <h2>{records[1]?.entryType}</h2>
+            <h2>{ records.length <= 0 ? "no update yet":records[0]?.entryType}</h2>
           </div>
           <div>
             <span> Last update</span>
@@ -82,7 +88,7 @@ useEffect(()=>{
           <div className="dashboard-inner-box">
             <img src={storageLogo} className="dashboard-box-icon" />
             <h2>
-              {user?.usedStorage}mb of {user?.totalStorage}mb
+              {storage}mb of {user?.totalStorage}mb
             </h2>
           </div>
           <div>

@@ -36,7 +36,7 @@ console.log(filteredData)
     const labTestFiltered = filteredData.filter(
       (e) => e.entryType.toLowerCase() === "lab test"
     );
-    setLabTest(labTest);
+    setLabTest(labTestFiltered);
     console.log(labTestFiltered)
     const drugType = filteredData.filter(
       (e) => e.entryType.toLowerCase() === "drug prescription"

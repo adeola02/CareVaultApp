@@ -19,13 +19,12 @@ const members = [
   {
     id: 4476,
     image:
-      "https://scontent.flos5-3.fna.fbcdn.net/v/t39.30808-1/302132477_1264524784283213_3765369479081575717_n.jpg?stp=c0.57.960.960a_dst-jpg_s200x200&_nc_cat=111&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeEI11GM_tL94wWuX5Q2wYfMOsxE0rTOUTM6zETStM5RM7gPMePcolNkRXI8Z3WD7TdvjXqqX1DxRZ8taLLiu8C7&_nc_ohc=fDiVzkv3DfgQ7kNvgFDRonl&_nc_ht=scontent.flos5-3.fna&oh=00_AYA8qXJcladVeyN8QTubfCSrpQVUG0O4Mksu6BVU5gcGAQ&oe=66E4BEFC",
+    "https://scontent.flos1-1.fna.fbcdn.net/v/t39.30808-1/302132477_1264524784283213_3765369479081575717_n.jpg?stp=c0.57.960.960a_dst-jpg_s200x200&_nc_cat=111&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeEJZSlIRcaEtEClKP-MGynXOsxE0rTOUTM6zETStM5RMzCwI_nJTT8Nk2LRpo2y1gqeymHseYYKmIY7N25yEFms&_nc_ohc=JcjOjDfC-foQ7kNvgEMBTcx&_nc_ht=scontent.flos1-1.fna&_nc_gid=AS0zYTf96hLbeOpIuogfDiB&oh=00_AYAOoemGVK6RpWsvDpH_uwMB53P_LbfO5UM9nebYTHajlA&oe=66FA7FBC",
     name: "Akintunde Quadri",
   },
   {
     id: 44767,
-    image: "",
-
+    image: "../../../assets/Esther.jpg",
     name: "Esther Raji",
   },
   {
