@@ -71,7 +71,7 @@ const ImageUpload = () => {
   return (
     <div className="pdfUploadBody">
       <ToastContainer />
-      <h3>Image upload</h3>
+      <h3>make an upload</h3>
       <div className="image-upload-div">
         {imageUrl ? (
           <img src={imageUrl} alt="Selected" />
